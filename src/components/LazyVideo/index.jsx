@@ -29,7 +29,7 @@ const LazyVideo = ({ src, type, fallback, ariaLabel, ...props }) => {
         <video
           {...props}
           autoPlay
-          muted
+          
           playsInline
           loop
           controls={false}
