@@ -1,0 +1,160 @@
+header {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  position: fixed;
+  padding: 8px;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+  background: var(--navy);
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  transition: all 2s ease;
+  cursor: pointer;
+
+  .logo {
+    width: 100px;
+    height: 50px;
+  }
+
+  .mobile-logo {
+    display: none;
+  }
+
+  nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 3rem;
+    color: var(--text);
+
+    .active .menu-container {
+      border-bottom: 2px solid var(--gold);
+    }
+
+    .text {
+      color: var(--ivory);
+
+      &:hover {
+        color: var(--gold);
+        transition: all 0.3s ease-in-out;
+      }
+    }
+  }
+}
+
+.navbar-scroll {
+  opacity: 1;
+  visibility: visible;
+  transition:
+    opacity 0.1s ease-in-out,
+    visibility 0.1s ease-in-out;
+}
+
+.navbar-hidden {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.mobile-icon {
+  display: none;
+}
+
+@media screen and (max-width: 1024px) {
+  header {
+    width: 100vw;
+    justify-content: space-between;
+    padding: 0 2rem;
+    .desktop-btn {
+      display: none;
+    }
+
+    .iconList {
+      display: none;
+    }
+
+    .logo {
+      display: none;
+    }
+
+    .mobile-logo {
+      display: block;
+      width: 50px;
+      height: auto;
+      object-fit: contain;
+      padding-top: 5px;
+    }
+
+    nav {
+      display: none;
+    }
+
+    nav {
+      position: absolute;
+      top: 50%;
+      right: 0;
+      width: 100%;
+      background: var(--navy);
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-position: 0em -3em;
+      background-blend-mode: luminosity;
+      z-index: 9999;
+
+      .active {
+        border-bottom: none;
+      }
+
+      .desktop-icon {
+        display: none;
+      }
+
+      .mobile-icon {
+        display: block;
+        font-size: 18px;
+        color: var(--ivory);
+      }
+
+      &.mobile-show {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        gap: 2.5rem;
+        margin-top: -2rem;
+        padding: 5rem 3rem;
+        height: 120vh;
+        width: 100%;
+        animation: slideInRight 0.3s;
+
+        .active {
+          border-bottom: none;
+        }
+
+        .text {
+          font-size: 18px;
+          color: var(--ivory);
+        }
+
+        .small {
+          font-size: 14px;
+        }
+
+        .menu-container {
+          display: flex;
+          align-items: center;
+          gap: 28px;
+          border-bottom: none;
+        }
+
+        .contact-container {
+          display: flex;
+          flex-direction: column;
+          gap: 1rem;
+          margin-top: 3rem;
+        }
+      }
+    }
+  }
+}

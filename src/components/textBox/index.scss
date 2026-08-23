@@ -1,0 +1,48 @@
+.flip {
+  flex-direction: column;
+}
+.textbox-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  padding: 5rem 4rem 2rem;
+  cursor: pointer;
+  .blur-img {
+    width: 500px;
+    height: auto;
+    max-height: 500px;
+    object-fit: cover;
+    filter: brightness(1.1);
+    filter: saturate(0.8);
+  }
+  .text-box {
+    flex: 1;
+    padding: 1rem 4rem;
+  }
+  &.reverse {
+    flex-direction: row-reverse;
+  }
+
+}
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .flip {
+    img.blur-img {
+      &:hover {
+        transform: scale(1);
+        padding: initial;
+      }
+    }
+  }
+
+  .text-box-contaner {
+    gap: 1rem;
+    padding: 2rem 0;
+
+    img.blur-img {
+      flex: 1;
+      width: 400px;
+      max-height: 500px;
+    }
+  }
+}

@@ -1,0 +1,505 @@
+.events {
+    position: relative;
+    padding: 2rem 0;
+    &__container {
+        width: min(1200px, calc(100% - 80px));
+        margin: 0 auto 5rem;
+    }
+
+    // ==========================================
+    // GRID
+    // ==========================================
+
+    &__grid {
+        display: grid;
+
+        grid-template-columns: repeat(3, 1fr);
+
+        gap: 24px;
+
+        align-items: stretch;
+    }
+
+
+    // ==========================================
+    // EVENT CARD
+    // ==========================================
+
+    .event-card {
+        position: relative;
+
+        min-height: 480px;
+
+        padding: 42px 35px 32px;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        text-align: center;
+        box-shadow: var(--box-shadow);
+        color: var(--ivory);
+
+        background: var(--navy);
+
+        overflow: hidden;
+
+        border: 1px solid rgba(200, 169, 106, 0.5);
+        cursor: pointer;
+        transition:
+            transform 0.35s ease,
+            box-shadow 0.35s ease;
+
+        // ----------------------------------------
+        // Inner Art Deco frame
+        // ----------------------------------------
+
+        &::before {
+            content: "";
+
+            position: absolute;
+
+            inset: 10px;
+
+            border: 1px solid rgba(200, 169, 106, 0.4);
+
+            pointer-events: none;
+
+            z-index: 2;
+        }
+
+        &::after {
+            content: "";
+
+            position: absolute;
+
+            inset: 16px;
+
+            border: 1px solid rgba(200, 169, 106, 0.5);
+
+            pointer-events: none;
+
+            z-index: 2;
+        }
+
+
+        // ----------------------------------------
+        // Hover
+        // ----------------------------------------
+
+        &:hover {
+            transform: translateY(-8px);
+
+            box-shadow:
+                0 25px 50px rgba(14, 26, 43, 0.38);
+
+            .event-card__link {
+                color: var(--gold-light);
+
+                .event-card__arrow {
+                    transform: translateX(15px);
+                }
+            }
+
+            .event-card__pattern {
+                opacity: 0.2;
+
+                transform: translate(-50%, -50%) scale(1.08);
+            }
+        }
+
+
+        // ----------------------------------------
+        // Featured
+        // ----------------------------------------
+
+        &--featured {
+            background: #101f33;
+
+            border-color: var(--gold);
+
+            transform: translateY(-12px);
+
+            box-shadow:
+                0 20px 45px rgba(14, 26, 43, 0.18);
+
+            &:hover {
+                transform: translateY(-20px);
+            }
+        }
+    }
+
+
+    // ==========================================
+    // ART DECO PATTERN
+    // ==========================================
+
+    .event-card__pattern {
+        position: absolute;
+
+        width: 500px;
+        height: 500px;
+
+        top: 35%;
+        left: 50%;
+
+        transform: translate(-50%, -50%);
+
+        opacity: 0.1;
+
+        pointer-events: none;
+
+        transition:
+            opacity 0.5s ease,
+            transform 0.5s ease;
+
+        // Fan / sunburst
+        background:
+            repeating-conic-gradient(from 0deg,
+                transparent 0deg 8deg,
+                rgba(200, 169, 106, 0.9) 8deg 9deg);
+
+        border-radius: 50%;
+
+        mask-image:
+            radial-gradient(circle,
+                black 0%,
+                transparent 68%);
+
+        -webkit-mask-image:
+            radial-gradient(circle,
+                black 0%,
+                transparent 68%);
+    }
+
+
+    // ==========================================
+    // DATE
+    // ==========================================
+
+    .event-card__date {
+        position: relative;
+
+        z-index: 3;
+
+        display: flex;
+
+        flex-direction: column;
+
+        align-items: center;
+
+        margin-bottom: 35px;
+    }
+
+    .event-card__day {
+        font-family: "Limelight", serif;
+
+        font-size: 82px;
+
+        font-weight: 500;
+
+        line-height: 0.85;
+
+        color: var(--gold);
+    }
+
+    .event-card__month {
+        margin-top: 10px;
+
+        font-family: "Montserrat", sans-serif;
+
+        font-size: 14px;
+
+        font-weight: 700;
+
+        letter-spacing: 0.25em;
+
+        color: var(--ivory);
+    }
+
+
+    // ==========================================
+    // DECORATIVE DIVIDER
+    // ==========================================
+
+    .event-card__divider {
+        position: relative;
+
+        z-index: 3;
+
+        display: flex;
+
+        align-items: center;
+
+        gap: 10px;
+
+        width: 100%;
+
+        margin-bottom: 28px;
+
+        span {
+            flex: 1;
+
+            height: 2px;
+
+            background: rgba(200, 169, 106, 0.45);
+        }
+
+        i {
+            font-family: serif;
+
+            font-size: 16px;
+
+            font-style: normal;
+
+            color: var(--gold);
+        }
+    }
+
+
+    // ==========================================
+    // CONTENT
+    // ==========================================
+
+    .event-card__content {
+        position: relative;
+
+        z-index: 3;
+
+        flex: 1;
+
+        width: 100%;
+    }
+
+    .event-card__label {
+        display: block;
+
+        margin-bottom: 12px;
+
+        font-family: "Montserrat", sans-serif;
+
+        font-size: 12px;
+
+        font-weight: 600;
+
+        letter-spacing: 0.18em;
+
+        text-transform: uppercase;
+
+        color: var(--gold);
+    }
+
+    .event-card h3 {
+        margin: 0 0 18px;
+
+        font-family: "Limelight", serif;
+
+        font-size: 30px;
+
+        font-weight: 500;
+
+        line-height: 1.15;
+
+        color: var(--ivory);
+    }
+
+    .event-card__venue {
+        margin: 0;
+
+        font-weight: 600;
+
+        line-height: 1.5;
+
+        color: var(--ivory)!important;
+    }
+
+    .event-card__location {
+        margin: 5px 0 0;
+
+        font-family: "Montserrat", sans-serif;
+
+        font-size: 11px;
+
+        line-height: 1.5;
+
+        color: rgba(247, 243, 236, 0.65)!important;
+    }
+
+
+    // ==========================================
+    // LINK
+    // ==========================================
+
+    .event-card__link {
+        position: relative;
+
+        z-index: 4;
+
+        display: flex;
+
+        align-items: center;
+
+        gap: 12px;
+
+        margin-top: 30px;
+
+        font-family: "Montserrat", sans-serif;
+
+        font-size: 10px;
+
+        font-weight: 700;
+
+        letter-spacing: 0.16em;
+
+        text-transform: uppercase;
+
+        text-decoration: none;
+
+        color: var(--ivory);
+
+        transition: color 0.25s ease;
+
+        .event-card__arrow {
+            font-size: 16px;
+
+            transition: transform 0.25s ease;
+        }
+    }
+
+
+    // ==========================================
+    // FOOTER LINK
+    // ==========================================
+
+    &__footer {
+        display: flex;
+
+        justify-content: center;
+
+        margin-top: 55px;
+    }
+
+    &__all {
+        display: inline-flex;
+
+        align-items: center;
+
+        gap: 14px;
+
+        padding-bottom: 7px;
+
+        border-bottom: 1px solid var(--gold);
+
+        font-family: "Montserrat", sans-serif;
+
+        font-size: 10px;
+
+        font-weight: 700;
+
+        letter-spacing: 0.15em;
+
+        text-transform: uppercase;
+
+        text-decoration: none;
+
+        transition: gap 0.25s ease;
+
+        span {
+            font-size: 16px;
+
+            color: var(--gold);
+        }
+
+        &:hover {
+            gap: 20px;
+        }
+    }
+}
+
+
+// ==========================================
+// TABLET
+// ==========================================
+
+@media (max-width: 950px) {
+
+    .events {
+        padding: 100px 0;
+
+        &__container {
+            width: min(100% - 50px, 750px);
+        }
+
+        &__grid {
+            grid-template-columns: 1fr;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        .event-card {
+            min-height: 430px;
+
+            &--featured {
+                transform: none;
+
+                &:hover {
+                    transform: translateY(-8px);
+                }
+            }
+        }
+    }
+}
+
+
+// ==========================================
+// MOBILE
+// ==========================================
+
+@media (max-width: 600px) {
+
+    .events {
+        padding: 80px 0;
+
+        &__container {
+            width: calc(100% - 40px);
+        }
+
+        &__heading {
+            margin-bottom: 45px;
+        }
+
+        &__title {
+            gap: 12px;
+        }
+
+        &__title h2 {
+            font-size: 2.2rem;
+        }
+
+        &__line {
+            width: 30px;
+        }
+
+        &__heading p {
+            font-size: 13px;
+        }
+
+        &__grid {
+            gap: 20px;
+        }
+
+        .event-card {
+            min-height: 420px;
+
+            padding: 40px 28px 30px;
+        }
+
+        .event-card__day {
+            font-size: 62px;
+        }
+
+        .event-card h3 {
+            font-size: 25px;
+        }
+    }
+}

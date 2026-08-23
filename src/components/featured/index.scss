@@ -1,0 +1,55 @@
+.featured-container {
+  display: flex;
+  justify-content: space-between;
+  padding: 0rem 4rem;
+  background: var(--navy);
+  margin: 4rem 0 0;
+  cursor: pointer;
+  .quarter {
+    position: absolute;
+    width: 300px;
+    opacity: 0.6;
+    z-index: 0;
+  }
+
+  .top-left {
+    left: 0;
+  }
+
+  .top-right {
+    transform: rotateY(180deg);
+    right: 0;
+  }
+
+  .btm-left {
+    transform: rotateX(180deg);
+    margin-top: 9rem;
+    left: 0;
+  }
+
+  .btm-right {
+    transform: rotate(180deg);
+    right: 0;
+    margin-top: 9rem;
+  }
+  .feature-img {
+    width: 500px;
+    height: 250px;
+    object-fit: cover;
+  }
+  .img-text-box {
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem;
+    padding: 3rem 0;
+    .feature-text-box {
+      width: 46%;
+      h3 {
+        color: var(--ivory);
+      }
+      p {
+        color: var(--ivory);
+      }
+    }
+  }
+}

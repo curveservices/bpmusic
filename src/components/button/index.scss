@@ -1,0 +1,40 @@
+.flat-btn {
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-decoration: none;
+  text-align: center;
+  width: fit-content;
+  padding: 0.6rem;
+  border: 1px solid var(--gold);
+  background: var(--gold);
+  color: var(--navy);
+  font-size: 18px;
+  font-weight: 500;
+  box-shadow: var(--button-shadow);
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+
+  &:hover {
+    transform: translateY(-1px);
+    background: var(--walnut);
+    color: var(--ivory);
+    box-shadow: var(--box-shadow);
+    transform: translateY(-3px);
+  }
+
+  .flat-btn + .flat-btn {
+    margin-top: 1rem;
+  }
+}
+
+a {
+  text-decoration: none;
+}
+
+@media screen and (max-width: 768px) {
+  .flat-btn {
+    font-size: 14px;
+    padding: 1rem;
+    min-height: fit-content;
+  }
+}

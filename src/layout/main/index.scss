@@ -1,0 +1,223 @@
+.app {
+  font-family: "Montseratt" sans-serif;
+  .error-message {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 12rem 0;
+    font-size: 2rem;
+  }
+  .home-page,
+  .about-page,
+  .contact-page,
+  .gallery-page,
+  .events-page {
+    h1 {
+      font-family: "Limelight", serif;
+      font-optical-sizing: auto;
+      margin: 0;
+      font-weight: 500;
+      font-size: 48px;
+      font-style: normal;
+      text-transform: uppercase;
+      line-height: 1.2;
+      color: var(--text);
+    }
+    h2 {
+      font-family: "Limelight", serif;
+      font-size: 42px;
+      margin: 0;
+      color: var(--text);
+      text-transform: uppercase;
+    }
+    .h2-title {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1.5rem;
+      width: 100%;
+
+      .divider {
+        position: relative;
+
+        width: 85px;
+        height: 2px;
+
+        background: var(--gold);
+
+        &::after {
+          content: "";
+
+          position: absolute;
+
+          top: 50%;
+
+          width: 6px;
+          height: 6px;
+
+          border: 2px solid var(--gold);
+
+          background: var(--ivory);
+
+          transform: translateY(-50%) rotate(45deg);
+        }
+
+        &:first-child::after {
+          right: -3px;
+        }
+
+        &:last-child::after {
+          left: -3px;
+        }
+    }
+    }
+    h3 {
+      font-family: "Limelight", serif;
+      font-optical-sizing: auto;
+      margin: 0;
+      font-weight: 500;
+      font-size: 32px;
+      font-style: normal;
+      text-transform: uppercase;
+      color: var(--text);
+    }
+    h4 {
+      font-size: 20px;
+      font-family: "Montserrt" sans-serif;
+    }
+    p {
+      font-family: "Montserrat", sans-serif;
+      font-weight: 600;
+      color: var(--text);
+    }
+
+    .hero {
+      height: 100vh;
+      
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 16px;
+
+      margin-bottom: 22px;
+
+      font-family: "Montserrat", sans-serif;
+      font-size: 18px;
+      font-weight: 600;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+
+      color: var(--gold);
+
+      &::before {
+        content: "";
+        width: 58px;
+        height: 2px;
+
+        background: var(--gold);
+      }
+    }
+    .scroll {
+      position: absolute;
+
+      bottom: 30px;
+      left: 7vw;
+
+      z-index: 5;
+
+      display: flex;
+      align-items: center;
+      gap: 12px;
+
+      font-family: "Montserrat", sans-serif;
+      font-size: 9px;
+      font-weight: 600;
+
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+
+      color: var(--navy);
+      text-decoration: none;
+
+      span:last-child {
+        opacity: 0.7;
+      }
+    }
+
+    .scroll-line {
+      width: 50px;
+      height: 1px;
+
+      background: var(--gold);
+    }
+    .heading {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      max-width: 700px;
+      margin: 0 auto 1.5rem;
+      text-align: center;
+    }
+  }
+}
+
+.back-to-top {
+  font-family: "Montserrat",sans-serif;
+  font-weight: 600;
+  position: fixed;
+  display: flex;
+  gap: 1rem;
+  bottom: 2rem;
+  left: 1rem;
+  padding: 10px;
+  margin: 0;
+  background: var(--gold);
+  color: var(--text);
+  font-size: 1rem;
+  width: fit-content;
+  height: auto;
+  border: solid 2px var(--gold);
+  box-shadow: var(--button-shadow);
+  z-index: 999;
+  cursor: pointer;
+  animation: fadeInUp 2s;
+  transition: all 0.3s ease-in-out;
+
+  &:hover {
+    background: var(--walnut);
+    box-shadow: var(--box-shadow);
+    transform: translateY(-3px);
+    color: var(--ivory);
+  }
+}
+
+.fade-in-on-scroll {
+  opacity: 0;
+  transform: translateY(30px);
+  transition:
+    opacity 0.8s ease-out,
+    transform 0.8s ease-out;
+  will-change: opacity, transform;
+
+  &.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .app {
+    .home-page,
+    .about-page,
+    .contact-page,
+    .gallery-page,
+    .events-page {
+      h1 {
+      }
+      h2 {
+      }
+    }
+  }
+}

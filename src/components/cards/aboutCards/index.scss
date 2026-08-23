@@ -1,0 +1,342 @@
+.about-container {
+  position: relative;
+  padding: 3rem 0;
+  background: var(--ivory);
+  overflow: hidden;
+
+  // ==========================================
+  // SECTION TITLE
+  // ==========================================
+
+  .h2-title {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 25px;
+
+    margin-bottom: 75px;
+  }
+
+  // ==========================================
+  // CARD GRID
+  // ==========================================
+
+  .about-card-container {
+    display: grid;
+
+    grid-template-columns: repeat(5, 1fr);
+
+    gap: 22px;
+
+    width: min(1250px, calc(100% - 80px));
+
+    margin: 0 auto;
+  }
+
+
+  // ==========================================
+  // CARD
+  // ==========================================
+
+  .card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 320px;
+    padding: 65px 24px 35px;
+    text-align: center;
+    background: var(--navy);
+    border: 1px solid rgba(200, 169, 106, 0.7);
+    box-shadow: var(--box-shadow);
+    overflow: hidden;
+
+    transition:
+      transform 0.35s ease,
+      box-shadow 0.35s ease,
+      border-color 0.35s ease;
+
+
+    // ----------------------------------------
+    // Outer Art Deco frame
+    // ----------------------------------------
+
+    &::before {
+      content: "";
+
+      position: absolute;
+
+      inset: 9px;
+
+      border: 1px solid rgba(200, 169, 106, 0.35);
+
+      pointer-events: none;
+
+      z-index: 2;
+    }
+
+
+    // ----------------------------------------
+    // Subtle geometric pattern
+    // ----------------------------------------
+
+    &::after {
+      content: "";
+
+      position: absolute;
+
+      width: 320px;
+      height: 320px;
+      top: 40%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      border-radius: 50%;
+      opacity: 0.25;
+      pointer-events: none;
+
+      background:
+        repeating-conic-gradient(from 0deg,
+          transparent 0deg 9deg,
+          var(--gold) 9deg 10deg);
+
+      mask-image:
+        radial-gradient(circle,
+          black 0%,
+          transparent 68%);
+
+      -webkit-mask-image:
+        radial-gradient(circle,
+          black 0%,
+          transparent 68%);
+    }
+
+
+    // ----------------------------------------
+    // Hover
+    // ----------------------------------------
+
+    &:hover {
+      transform: translateY(-6px);
+      border-color: var(--gold-light);
+      box-shadow:
+        var(--box-shadow-hover);
+      .card-icon {
+        color: var(--navy);
+        background: var(--gold);
+        transform: translateY(-3px);
+
+        box-shadow:
+          var(--button-glow);
+      }
+    }
+  }
+
+
+  // ==========================================
+  // ICON
+  // ==========================================
+
+  .img-outer {
+    position: relative;
+    z-index: 4;
+    margin-bottom: 28px;
+  }
+  .card-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 72px;
+    height: 72px;
+    padding: 17px;
+    color: var(--gold);
+    background: var(--navy);
+    border: 1px solid var(--gold);
+    border-radius: 50%;
+    box-shadow:
+      var(--box-shadow);
+
+    transition:
+      color 0.35s ease,
+      background 0.35s ease,
+      transform 0.35s ease,
+      box-shadow 0.35s ease;
+  }
+
+
+  // ==========================================
+  // CONTENT
+  // ==========================================
+
+  .card-content {
+    position: relative;
+    z-index: 4;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    align-items: center;
+  }
+
+  .title {
+    margin: 0 0 2rem;
+    font-family: "Montserrat", sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1.4;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--gold);
+  }
+
+  p {
+    max-width: 190px;
+    margin: 0;
+    font-size: 12px;
+    line-height: 1.75;
+    color: var(--ivory) !important;
+  }
+
+  // ==========================================
+  // CORNER DETAILS
+  // ==========================================
+
+  .card-corner {
+    position: absolute;
+    width: 18px;
+    height: 18px;
+    z-index: 4;
+    pointer-events: none;
+
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      background: var(--gold);
+    }
+
+    &::before {
+      width: 18px;
+      height: 1px;
+    }
+
+    &::after {
+      width: 1px;
+      height: 18px;
+    }
+
+    &--tl {
+      top: 18px;
+      left: 18px;
+    }
+
+    &--br {
+      right: 18px;
+      bottom: 18px;
+
+      transform: rotate(180deg);
+    }
+  }
+}
+
+
+// ==========================================
+// LARGE TABLET
+// ==========================================
+
+@media (max-width: 1100px) {
+
+  .about-container {
+
+    .about-card-container {
+      grid-template-columns: repeat(3, 1fr);
+
+      width: min(850px, calc(100% - 60px));
+    }
+
+    .card {
+      min-height: 300px;
+    }
+  }
+}
+
+
+// ==========================================
+// TABLET
+// ==========================================
+
+@media (max-width: 750px) {
+
+  .about-container {
+
+    padding: 90px 0 80px;
+
+    .h2-title {
+      gap: 15px;
+
+      margin-bottom: 55px;
+
+      .divider {
+        width: 35px;
+      }
+
+      h2 {
+        font-size: 2.3rem;
+      }
+    }
+
+    .about-card-container {
+      grid-template-columns: repeat(2, 1fr);
+
+      width: calc(100% - 40px);
+
+      gap: 18px;
+    }
+  }
+}
+
+
+// ==========================================
+// MOBILE
+// ==========================================
+
+@media (max-width: 500px) {
+
+  .about-container {
+
+    padding: 75px 0;
+
+    .h2-title {
+      gap: 10px;
+
+      h2 {
+        font-size: 1.9rem;
+      }
+
+      .divider {
+        width: 25px;
+      }
+    }
+
+    .about-card-container {
+      grid-template-columns: 1fr;
+
+      width: calc(100% - 40px);
+
+      max-width: 400px;
+    }
+
+    .card {
+      min-height: 280px;
+
+      padding: 55px 30px 35px;
+    }
+
+    .card-icon {
+      width: 65px;
+      height: 65px;
+
+      padding: 15px;
+    }
+  }
+}
