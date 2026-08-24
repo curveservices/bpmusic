@@ -64,11 +64,12 @@ const Home = () => {
                 </p>
 
                 <div className="btn-container">
-                  <Button text="Upcomming events" />
+                  <Button text="Upcomming events" link="/events" />
 
                   <Button
                     text="Book the band"
-                    background="var(--navy)"
+                    link="/contact"
+                    background="var(--navy-light)"
                     color="var(--ivory)"
                   />
                 </div>
@@ -101,6 +102,7 @@ const Home = () => {
                 p="Formed in Kent, The Peninsula Big Band brings together professional and experienced amateur musicians who share a passion for the timeless sound of the big band erd
                         For over 15 years we have been delighting audiences across the South East with authentic swing classics and modern favourites."
                 buttonText="learn more about us"
+                link="/about"
               />
               <a href="#sax" className="scroll" aria-label="Scroll to about">
                 <span className="scroll-line" />
@@ -112,6 +114,7 @@ const Home = () => {
                 h1="Another sound from the Peninsula Big Band"
                 p="Meet Mainly Sax — a smaller ensemble bringing the distinctive sound of live saxophones to bandstands, community events and venues across the South East."
                 buttonText="Discover Mainly Sax"
+                link="/mainly-sax"
                 reverse={true}
               />
               <a href="#where" className="scroll" aria-label="Scroll to about">
@@ -131,6 +134,7 @@ const Home = () => {
             featureTitle="SALUTE TO THE '40S"
             featureP="we are proud perform annually at the Historic Dockyard, highlight of our calendar and a much-loved tradition."
             featurebtn="Find out more"
+            link="/events"
           />
         </section>
         <section className="third-section">

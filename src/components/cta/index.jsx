@@ -20,6 +20,7 @@ const CTA = () => {
       <div className="cta__btn-container">
         <Button
           text="Book The Band Now"
+          link="/contact"
           background="var(--navy)"
                   color="var(--ivory)"
                   padding={1.4}

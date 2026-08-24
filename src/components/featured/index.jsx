@@ -21,7 +21,7 @@ const Featured = (props) => {
           <span className="eyebrow">{eyebrow}</span>
           <h3 className="feature-title">{featureTitle}</h3>
           <p>{featureP}</p>
-          <Button text={featurebtn} />
+          <Button text={featurebtn} link="/events"/>
         </div>
       </div>
     </div>

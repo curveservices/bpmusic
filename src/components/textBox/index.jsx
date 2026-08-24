@@ -7,6 +7,7 @@ const Textbox = ({
   h1,
   p,
   buttonText,
+  link,
   display = true,
   reverse = false,
   flip = false,
@@ -30,8 +31,8 @@ const Textbox = ({
             <span />
           </div>
           <p className="">{p}</p>
-          <div className="btn-container" display={display}>
-            <Button text={buttonText} />
+          <div className="btn-container">
+            <Button text={buttonText} link={link} />
           </div>
         </div>
       </div>

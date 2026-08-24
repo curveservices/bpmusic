@@ -94,7 +94,7 @@ const Events = () => {
 
         {/* All events */}
         <div className="events__footer">
-          <Button text="View all Events" />
+          <Button text="View all Events" link="/events" />
         </div>
       </div>
     </section>
