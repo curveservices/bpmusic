@@ -8,6 +8,7 @@ import {
 
 import LoadingSpinner from "./components/loadingSpinner/index.jsx";
 const Layout = lazy(() => import("./layout/main/index.jsx"));
+const NotFound = lazy(() => import("./pages/404"));
 const Home = lazy(() => import("./pages/home/index.jsx"));
 import "./App.scss";
 
@@ -24,6 +25,14 @@ const router = createBrowserRouter(
           }
         />
       </Route>
+       <Route
+        path="*"
+        element={
+          <Suspense fallback={<LoadingSpinner />}>
+            <NotFound />
+          </Suspense>
+        }
+      />
     </>,
   ),
 );
