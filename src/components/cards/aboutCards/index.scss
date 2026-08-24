@@ -35,7 +35,6 @@
     margin: 0 auto;
   }
 
-
   // ==========================================
   // CARD
   // ==========================================
@@ -58,7 +57,6 @@
       box-shadow 0.35s ease,
       border-color 0.35s ease;
 
-
     // ----------------------------------------
     // Outer Art Deco frame
     // ----------------------------------------
@@ -76,7 +74,6 @@
 
       z-index: 2;
     }
-
 
     // ----------------------------------------
     // Subtle geometric pattern
@@ -96,22 +93,16 @@
       opacity: 0.25;
       pointer-events: none;
 
-      background:
-        repeating-conic-gradient(from 0deg,
-          transparent 0deg 9deg,
-          var(--gold) 9deg 10deg);
+      background: repeating-conic-gradient(
+        from 0deg,
+        transparent 0deg 9deg,
+        var(--gold) 9deg 10deg
+      );
 
-      mask-image:
-        radial-gradient(circle,
-          black 0%,
-          transparent 68%);
+      mask-image: radial-gradient(circle, black 0%, transparent 68%);
 
-      -webkit-mask-image:
-        radial-gradient(circle,
-          black 0%,
-          transparent 68%);
+      -webkit-mask-image: radial-gradient(circle, black 0%, transparent 68%);
     }
-
 
     // ----------------------------------------
     // Hover
@@ -120,19 +111,16 @@
     &:hover {
       transform: translateY(-6px);
       border-color: var(--gold-light);
-      box-shadow:
-        var(--box-shadow-hover);
+      box-shadow: var(--box-shadow-hover);
       .card-icon {
         color: var(--navy);
         background: var(--gold);
         transform: translateY(-3px);
 
-        box-shadow:
-          var(--button-glow);
+        box-shadow: var(--button-glow);
       }
     }
   }
-
 
   // ==========================================
   // ICON
@@ -154,8 +142,7 @@
     background: var(--navy);
     border: 1px solid var(--gold);
     border-radius: 50%;
-    box-shadow:
-      var(--box-shadow);
+    box-shadow: var(--box-shadow);
 
     transition:
       color 0.35s ease,
@@ -163,7 +150,6 @@
       transform 0.35s ease,
       box-shadow 0.35s ease;
   }
-
 
   // ==========================================
   // CONTENT
@@ -239,15 +225,12 @@
   }
 }
 
-
 // ==========================================
 // LARGE TABLET
 // ==========================================
 
 @media (max-width: 1100px) {
-
   .about-container {
-
     .about-card-container {
       grid-template-columns: repeat(3, 1fr);
 
@@ -260,15 +243,12 @@
   }
 }
 
-
 // ==========================================
 // TABLET
 // ==========================================
 
 @media (max-width: 750px) {
-
   .about-container {
-
     padding: 90px 0 80px;
 
     .h2-title {
@@ -295,15 +275,12 @@
   }
 }
 
-
 // ==========================================
 // MOBILE
 // ==========================================
 
 @media (max-width: 500px) {
-
   .about-container {
-
     padding: 75px 0;
 
     .h2-title {

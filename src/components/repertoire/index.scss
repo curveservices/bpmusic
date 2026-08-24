@@ -1,378 +1,358 @@
 .repertoire {
+  position: relative;
+
+  padding: 3rem 0;
+
+  background: var(--ivory);
+  overflow: hidden;
+
+  // ==========================================
+  // ITEMS
+  // ==========================================
+
+  &__items {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    width: min(1150px, calc(100% - 80px));
+    margin: 0 auto;
+  }
+
+  // ==========================================
+  // CARD
+  // ==========================================
+
+  .repertoire-card {
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    min-height: 480px;
+    background: var(--navy);
+    overflow: hidden;
+    cursor: pointer;
+
+    // ----------------------------------------
+    // Reverse layout
+    // ----------------------------------------
+
+    &--reverse {
+      .repertoire-card__image {
+        order: 2;
+      }
+
+      .repertoire-card__content {
+        order: 1;
+      }
+    }
+  }
+
+  // ==========================================
+  // IMAGE
+  // ==========================================
+
+  .repertoire-card__image {
     position: relative;
 
-    padding: 3rem 0;
+    height: 100%;
 
-    background: var(--ivory);
+    min-height: 480px;
+
     overflow: hidden;
 
-    // ==========================================
-    // ITEMS
-    // ==========================================
+    img {
+      width: 100%;
+      height: 100%;
 
-    &__items {
-        display: flex;
-        flex-direction: column;
-        gap: 3rem;
-        width: min(1150px, calc(100% - 80px));
-        margin: 0 auto;
+      object-fit: cover;
+
+      display: block;
+
+      filter: saturate(0.8);
+
+      transition:
+        transform 0.6s ease,
+        filter 0.6s ease;
     }
 
-    // ==========================================
-    // CARD
-    // ==========================================
+    &::after {
+      content: "";
 
-    .repertoire-card {
-        position: relative;
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        align-items: center;
-        min-height: 480px;
-        background: var(--navy);
-        overflow: hidden;
-        cursor: pointer;
+      position: absolute;
 
+      inset: 0;
 
-        // ----------------------------------------
-        // Reverse layout
-        // ----------------------------------------
+      background: linear-gradient(
+        90deg,
+        rgba(14, 26, 43, 0.05),
+        rgba(14, 26, 43, 0.3)
+      );
+    }
+  }
 
-        &--reverse {
-            .repertoire-card__image {
-                order: 2;
-            }
+  // ------------------------------------------
+  // Image frame
+  // ------------------------------------------
 
-            .repertoire-card__content {
-                order: 1;
-            }
-        }
+  .repertoire-card__image-frame {
+    position: absolute;
+
+    inset: 18px;
+
+    z-index: 2;
+
+    border: 1px solid rgba(200, 169, 106, 0.55);
+
+    pointer-events: none;
+
+    &::after {
+      content: "";
+
+      position: absolute;
+
+      inset: 8px;
+
+      border: 1px solid rgba(200, 169, 106, 0.2);
+    }
+  }
+
+  // ==========================================
+  // CONTENT
+  // ==========================================
+
+  .repertoire-card__content {
+    position: relative;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    min-height: 480px;
+
+    padding: 70px 60px;
+
+    text-align: center;
+
+    color: var(--ivory);
+
+    // Subtle geometric background
+    &::before {
+      content: "";
+
+      position: absolute;
+
+      width: 450px;
+      height: 450px;
+
+      top: 50%;
+      left: 50%;
+
+      transform: translate(-50%, -50%);
+
+      opacity: 0.055;
+
+      border-radius: 50%;
+
+      background: repeating-conic-gradient(
+        from 0deg,
+        transparent 0deg 10deg,
+        var(--gold) 10deg 11deg
+      );
+
+      mask-image: radial-gradient(circle, black 0%, transparent 70%);
+
+      -webkit-mask-image: radial-gradient(circle, black 0%, transparent 70%);
+    }
+  }
+
+  // ==========================================
+  // CONTENT TYPOGRAPHY
+  // ==========================================
+
+  .repertoire-card__eyebrow,
+  .repertoire-card h3,
+  .repertoire-card__ornament,
+  .repertoire-card__artists {
+    position: relative;
+
+    z-index: 2;
+  }
+
+  .repertoire-card h3 {
+    font-family: "Limelight", serif;
+    font-size: 56px;
+    font-weight: 500;
+    line-height: 1.05;
+    color: var(--ivory);
+  }
+
+  // ==========================================
+  // ORNAMENT
+  // ==========================================
+
+  .repertoire-card__ornament {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    width: 180px;
+    margin: 28px 0 32px;
+    span {
+      flex: 1;
+      height: 2px;
+      background: rgba(200, 169, 106, 0.5);
+    }
+    i {
+      font-family: serif;
+      font-size: 14px;
+      font-style: normal;
+      color: var(--gold);
+    }
+  }
+
+  // ==========================================
+  // ARTISTS
+  // ==========================================
+
+  .repertoire-card__artists {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    max-width: 430px;
+    gap: 12px 8px;
+  }
+
+  .repertoire-card__artists span {
+    font-family: "Montserrat", sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: rgba(247, 243, 236, 0.8);
+
+    &::after {
+      content: "◆";
+
+      margin-left: 8px;
+
+      font-size: 5px;
+
+      vertical-align: middle;
+
+      color: var(--gold);
     }
 
-
-    // ==========================================
-    // IMAGE
-    // ==========================================
-
-    .repertoire-card__image {
-        position: relative;
-
-        height: 100%;
-
-        min-height: 480px;
-
-        overflow: hidden;
-
-        img {
-            width: 100%;
-            height: 100%;
-
-            object-fit: cover;
-
-            display: block;
-
-            filter: saturate(0.8);
-
-            transition:
-                transform 0.6s ease,
-                filter 0.6s ease;
-        }
-
-        &::after {
-            content: "";
-
-            position: absolute;
-
-            inset: 0;
-
-            background:
-                linear-gradient(90deg,
-                    rgba(14, 26, 43, 0.05),
-                    rgba(14, 26, 43, 0.3));
-        }
+    &:last-child::after {
+      display: none;
     }
+  }
 
+  // ==========================================
+  // HOVER
+  // ==========================================
 
-    // ------------------------------------------
-    // Image frame
-    // ------------------------------------------
+  .repertoire-card:hover {
+    .repertoire-card__image img {
+      transform: scale(1.04);
 
-    .repertoire-card__image-frame {
-        position: absolute;
-
-        inset: 18px;
-
-        z-index: 2;
-
-        border: 1px solid rgba(200, 169, 106, 0.55);
-
-        pointer-events: none;
-
-        &::after {
-            content: "";
-
-            position: absolute;
-
-            inset: 8px;
-
-            border: 1px solid rgba(200, 169, 106, 0.2);
-        }
+      filter: saturate(1);
     }
-
-
-    // ==========================================
-    // CONTENT
-    // ==========================================
-
-    .repertoire-card__content {
-        position: relative;
-
-        display: flex;
-
-        flex-direction: column;
-
-        align-items: center;
-
-        justify-content: center;
-
-        min-height: 480px;
-
-        padding: 70px 60px;
-
-        text-align: center;
-
-        color: var(--ivory);
-
-
-        // Subtle geometric background
-        &::before {
-            content: "";
-
-            position: absolute;
-
-            width: 450px;
-            height: 450px;
-
-            top: 50%;
-            left: 50%;
-
-            transform: translate(-50%, -50%);
-
-            opacity: 0.055;
-
-            border-radius: 50%;
-
-            background:
-                repeating-conic-gradient(from 0deg,
-                    transparent 0deg 10deg,
-                    var(--gold) 10deg 11deg);
-
-            mask-image:
-                radial-gradient(circle,
-                    black 0%,
-                    transparent 70%);
-
-            -webkit-mask-image:
-                radial-gradient(circle,
-                    black 0%,
-                    transparent 70%);
-        }
-    }
-
-
-    // ==========================================
-    // CONTENT TYPOGRAPHY
-    // ==========================================
-
-    .repertoire-card__eyebrow,
-    .repertoire-card h3,
-    .repertoire-card__ornament,
-    .repertoire-card__artists {
-        position: relative;
-
-        z-index: 2;
-    }
-
-    .repertoire-card h3 {
-        font-family: "Limelight", serif;
-        font-size: 56px;
-        font-weight: 500;
-        line-height: 1.05;
-        color: var(--ivory);
-    }
-
-    // ==========================================
-    // ORNAMENT
-    // ==========================================
-
-    .repertoire-card__ornament {
-        display: flex;
-        align-items: center;
-        gap: 12px;
-        width: 180px;
-        margin: 28px 0 32px;
-        span {
-            flex: 1;
-            height: 2px;
-            background: rgba(200, 169, 106, 0.5);
-        }
-        i {
-            font-family: serif;
-            font-size: 14px;
-            font-style: normal;
-            color: var(--gold);
-        }
-    }
-
-
-    // ==========================================
-    // ARTISTS
-    // ==========================================
-
-    .repertoire-card__artists {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        max-width: 430px;
-        gap: 12px 8px;
-    }
-
-    .repertoire-card__artists span {
-        font-family: "Montserrat", sans-serif;
-        font-size: 14px;
-        font-weight: 500;
-        letter-spacing: 0.08em;
-        text-transform: uppercase;
-        color: rgba(247, 243, 236, 0.8);
-
-        &::after {
-            content: "◆";
-
-            margin-left: 8px;
-
-            font-size: 5px;
-
-            vertical-align: middle;
-
-            color: var(--gold);
-        }
-
-        &:last-child::after {
-            display: none;
-        }
-    }
-
-
-    // ==========================================
-    // HOVER
-    // ==========================================
-
-    .repertoire-card:hover {
-
-        .repertoire-card__image img {
-            transform: scale(1.04);
-
-            filter: saturate(1);
-        }
-    }
+  }
 }
-
 
 // ==========================================
 // TABLET
 // ==========================================
 
 @media (max-width: 900px) {
+  .repertoire {
+    &__items {
+      width: min(650px, calc(100% - 50px));
 
-    .repertoire {
-
-        &__items {
-            width: min(650px, calc(100% - 50px));
-
-            gap: 70px;
-        }
-
-        .repertoire-card {
-            grid-template-columns: 1fr;
-
-            &--reverse {
-
-                .repertoire-card__image {
-                    order: 1;
-                }
-
-                .repertoire-card__content {
-                    order: 2;
-                }
-            }
-
-            .repertoire-card__image {
-                min-height: 350px;
-                height: 350px;
-            }
-
-            .repertoire-card__content {
-                min-height: 400px;
-            }
-        }
+      gap: 70px;
     }
-}
 
+    .repertoire-card {
+      grid-template-columns: 1fr;
+
+      &--reverse {
+        .repertoire-card__image {
+          order: 1;
+        }
+
+        .repertoire-card__content {
+          order: 2;
+        }
+      }
+
+      .repertoire-card__image {
+        min-height: 350px;
+        height: 350px;
+      }
+
+      .repertoire-card__content {
+        min-height: 400px;
+      }
+    }
+  }
+}
 
 // ==========================================
 // MOBILE
 // ==========================================
 
 @media (max-width: 600px) {
+  .repertoire {
+    padding: 80px 0 100px;
 
-    .repertoire {
-        padding: 80px 0 100px;
-
-        &__heading {
-            margin-bottom: 55px;
-        }
-
-        &__title {
-            gap: 12px;
-        }
-
-        &__title h2 {
-            font-size: 2rem;
-        }
-
-        &__divider {
-            width: 30px;
-        }
-
-        &__items {
-            width: calc(100% - 40px);
-
-            gap: 50px;
-        }
-
-        .repertoire-card {
-
-            .repertoire-card__image {
-                min-height: 280px;
-                height: 280px;
-            }
-
-            .repertoire-card__content {
-                min-height: 400px;
-
-                padding: 60px 25px;
-            }
-
-            .repertoire-card h3 {
-                font-size: 2.3rem;
-            }
-
-            .repertoire-card__artists {
-                max-width: 300px;
-            }
-
-            .repertoire-card__artists span {
-                font-size: 10px;
-            }
-        }
+    &__heading {
+      margin-bottom: 55px;
     }
+
+    &__title {
+      gap: 12px;
+    }
+
+    &__title h2 {
+      font-size: 2rem;
+    }
+
+    &__divider {
+      width: 30px;
+    }
+
+    &__items {
+      width: calc(100% - 40px);
+
+      gap: 50px;
+    }
+
+    .repertoire-card {
+      .repertoire-card__image {
+        min-height: 280px;
+        height: 280px;
+      }
+
+      .repertoire-card__content {
+        min-height: 400px;
+
+        padding: 60px 25px;
+      }
+
+      .repertoire-card h3 {
+        font-size: 2.3rem;
+      }
+
+      .repertoire-card__artists {
+        max-width: 300px;
+      }
+
+      .repertoire-card__artists span {
+        font-size: 10px;
+      }
+    }
+  }
 }

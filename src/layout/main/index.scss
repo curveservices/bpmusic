@@ -69,7 +69,7 @@
         &:last-child::after {
           left: -3px;
         }
-    }
+      }
     }
     h3 {
       font-family: "Limelight", serif;
@@ -83,7 +83,7 @@
     }
     h4 {
       font-size: 20px;
-      font-family: "Montserrt" sans-serif;
+      font-family: "Montserrat", sans-serif;
     }
     p {
       font-family: "Montserrat", sans-serif;
@@ -93,7 +93,6 @@
 
     .hero {
       height: 100vh;
-      
     }
 
     .eyebrow {
@@ -164,7 +163,7 @@
 }
 
 .back-to-top {
-  font-family: "Montserrat",sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-weight: 600;
   position: fixed;
   display: flex;

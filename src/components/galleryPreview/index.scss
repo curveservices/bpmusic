@@ -1,0 +1,314 @@
+.gallery-preview {
+    position: relative;
+    padding: 2rem 0 1rem;
+    background: var(--navy);
+    overflow: hidden;
+
+    // ==========================================
+    // SUBTLE BACKGROUND PATTERN
+    // ==========================================
+
+    &::before {
+        content: "";
+
+        position: absolute;
+
+        width: 700px;
+        height: 700px;
+
+        top: 50%;
+        left: 50%;
+
+        transform: translate(-50%, -50%);
+
+        opacity: 0.3;
+
+        border-radius: 50%;
+
+        background:
+            repeating-conic-gradient(from 0deg,
+                transparent 0deg 9deg,
+                var(--gold) 9deg 10deg);
+
+        mask-image:
+            radial-gradient(circle,
+                black 0%,
+                transparent 68%);
+
+        -webkit-mask-image:
+            radial-gradient(circle,
+                black 0%,
+                transparent 68%);
+
+        pointer-events: none;
+    }
+
+
+    // ==========================================
+    // HEADING
+    // ==========================================
+
+    .heading {
+        position: relative;
+        z-index: 2;
+        max-width: 700px;
+        margin: 0 auto 55px;
+        padding: 0 30px;
+        text-align: center;
+        h2 {
+            color: var(--ivory);
+        }
+    }
+
+    .heading p {
+        max-width: 600px;
+        color: rgba(247, 243, 236, 0.7);
+    }
+
+    // ==========================================
+    // IMAGE VIEWPORT
+    // ==========================================
+
+    &__viewport {
+        position: relative;
+        z-index: 2;
+        width: 100%;
+        overflow: hidden;
+        // Fade images at either edge
+        mask-image:
+            linear-gradient(90deg,
+                transparent 0%,
+                black 7%,
+                black 93%,
+                transparent 100%);
+
+        -webkit-mask-image:
+            linear-gradient(90deg,
+                transparent 0%,
+                black 7%,
+                black 93%,
+                transparent 100%);
+    }
+
+
+    // ==========================================
+    // ROLLING TRACK
+    // ==========================================
+
+    &__track {
+        display: flex;
+        align-items: center;
+        gap: 2rem;
+        width: max-content;
+        animation: gallery-scroll 45s linear infinite;
+        &:hover {
+            animation-play-state: paused;
+        }
+    }
+
+
+    // ==========================================
+    // IMAGE
+    // ==========================================
+
+    &__item {
+        position: relative;
+        flex: 0 0 275px;
+        height: 275px;
+        overflow: hidden;
+        border: 1px solid rgba(200, 169, 106, 0.65);
+        background: #101f33;
+        transition:
+            transform 0.4s ease,
+            border-color 0.4s ease;
+
+        &:hover {
+            transform: translateY(-8px);
+            border-color: var(--gold-light);
+            .gallery-preview__frame {
+                inset: 1rem;
+            }
+            img {
+                transform: scale(1.04);
+            }
+        }
+        img {
+            width: 100%;
+            height: 100%;
+            display: block;
+            object-fit: cover;
+            transition: transform 0.6s ease;
+        }
+    }
+
+
+    // ==========================================
+    // IMAGE FRAME
+    // ==========================================
+
+    &__frame {
+        position: absolute;
+        inset: 15px;
+        z-index: 2;
+        border: 1px solid rgba(247, 243, 236, 0.55);
+        pointer-events: none;
+        transition: inset 0.4s ease;
+        &::after {
+            content: "";
+            position: absolute;
+            inset: 7px;
+            border: 1px solid rgba(200, 169, 106, 0.4);
+        }
+    }
+
+    // ==========================================
+    // FOOTER
+    // ==========================================
+
+    &__footer {
+        position: relative;
+
+        z-index: 2;
+
+        display: flex;
+
+        justify-content: center;
+
+        margin-top: 45px;
+    }
+
+    &__link {
+        display: inline-flex;
+
+        align-items: center;
+
+        gap: 14px;
+
+        padding-bottom: 8px;
+
+        border-bottom: 1px solid var(--gold);
+
+        font-family: "Montserrat", sans-serif;
+
+        font-size: 10px;
+
+        font-weight: 700;
+
+        letter-spacing: 0.16em;
+
+        text-transform: uppercase;
+
+        text-decoration: none;
+
+        color: var(--ivory);
+
+        transition:
+            gap 0.25s ease,
+            color 0.25s ease;
+
+        &:hover {
+            gap: 2rem;
+
+            color: var(--gold-light);
+        }
+    }
+
+    &__arrow {
+        font-size: 16px;
+
+        color: var(--gold);
+    }
+}
+
+
+// ==========================================
+// ANIMATION
+// ==========================================
+
+@keyframes gallery-scroll {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-50%);
+    }
+}
+
+
+// ==========================================
+// TABLET
+// ==========================================
+
+@media (max-width: 800px) {
+
+    .gallery-preview {
+        padding: 90px 0 80px;
+
+        &__item {
+            flex-basis: 230px;
+
+            height: 290px;
+        }
+
+        &__track {
+            gap: 15px;
+
+            animation-duration: 35s;
+        }
+    }
+}
+
+
+// ==========================================
+// MOBILE
+// ==========================================
+
+@media (max-width: 600px) {
+
+    .gallery-preview {
+        padding: 75px 0 70px;
+
+        &__heading {
+            margin-bottom: 35px;
+        }
+
+        &__title {
+            gap: 12px;
+        }
+
+        &__title h2 {
+            font-size: 2rem;
+        }
+
+        &__divider {
+            width: 30px;
+        }
+
+        &__heading p {
+            font-size: 12px;
+        }
+
+        &__item {
+            flex-basis: 200px;
+
+            height: 270px;
+        }
+
+        &__track {
+            animation-duration: 30s;
+        }
+    }
+}
+
+
+// ==========================================
+// ACCESSIBILITY
+// ==========================================
+
+@media (prefers-reduced-motion: reduce) {
+
+    .gallery-preview__track {
+        animation: none;
+    }
+}

@@ -197,29 +197,29 @@
       }
     }
   }
-    .third-section {
-      position: relative;
-      overflow: hidden;
-      &__inner {
-        z-index: 0;
-      }
-      .event__image {
-        position:absolute;
+  .third-section {
+    position: relative;
+    overflow: hidden;
+    &__inner {
+      z-index: 0;
+    }
+    .event__image {
+      position: absolute;
+      width: 100%;
+      height: auto;
+
+      pointer-events: none;
+
+      opacity: 0.2;
+
+      &__img {
         width: 100%;
         height: auto;
-  
-        pointer-events: none;
-  
-        opacity: 0.2;
-  
-        &__img {
-          width: 100%;
-          height: auto;
-          object-fit: contain;
-          display: block;
-        }
+        object-fit: contain;
+        display: block;
       }
     }
+  }
 }
 
 // ==================================================

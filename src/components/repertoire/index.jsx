@@ -1,5 +1,5 @@
 import g4 from "../../assets/images/g4.jpg";
-import rep1 from "../../assets/images/rep1.jpg"
+import rep1 from "../../assets/images/rep1.jpg";
 import "./index.scss";
 
 const repertoireItems = [

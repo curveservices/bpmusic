@@ -3,7 +3,7 @@ import home from "../../assets/images/hero.mp4";
 import sax from "../../assets/images/sax.webp";
 import about from "../../assets/images/about.webp";
 import rep from "../../assets/images/g4.jpg";
-import modern from "../../assets/images/rep1.jpg"
+import modern from "../../assets/images/rep1.jpg";
 import fan from "../../assets/images/bg_5.png";
 import artex from "../../assets/images/bg_4.jpg";
 import LazyVideo from "../../components/LazyVideo";
@@ -19,6 +19,7 @@ import Featured from "../../components/featured";
 import "./index.scss";
 import Events from "../../components/cards/eventCards";
 import Repertoire from "../../components/repertoire";
+import GalleryPreview from "../../components/galleryPreview";
 
 const Home = () => {
   const FadeInSection = ({ children }) => {
@@ -142,7 +143,9 @@ const Home = () => {
             </div>
           </FadeInSection>
         </section>
-        <section className="fourth-section"></section>
+        <section className="fourth-section">
+          <GalleryPreview />
+        </section>
       </div>
     </>
   );
