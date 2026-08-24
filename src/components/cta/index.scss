@@ -1,0 +1,188 @@
+.cta {
+    position: relative;
+    display: flex;
+    height: 275px;
+    min-height: 275px;
+    background: var(--gold);
+    overflow: hidden;
+
+    // ==========================================
+    // FAN BACKGROUND
+    // ==========================================
+
+    &__fan {
+        position: absolute;
+        top: 90%;
+        left: 50%;
+        width: 1200px;
+        max-width: 100%;
+        height: auto;
+        transform:
+            translate(-50%, -50%) rotate(180deg);
+        opacity: 0.3;
+        pointer-events: none;
+        user-select: none;
+        z-index: 0;
+        mix-blend-mode: multiply;
+    }
+
+
+    // ==========================================
+    // ART DECO OUTER FRAME
+    // ==========================================
+
+    &::before {
+        content: "";
+        position: absolute;
+        inset: 14px;
+        border: 1px solid rgba(14, 26, 43, 0.45);
+        pointer-events: none;
+        z-index: 1;
+    }
+
+    // ==========================================
+    // INNER FRAME
+    // ==========================================
+
+    &::after {
+        content: "";
+        position: absolute;
+        inset: 21px;
+        border: 1px solid rgba(14, 26, 43, 0.18);
+        pointer-events: none;
+        z-index: 1;
+    }
+
+    // ==========================================
+    // CONTENT
+    // ==========================================
+
+    &__content {
+        position: relative;
+        z-index: 2;
+        display: flex;
+        flex-direction: column;
+        padding: 3rem 5rem;
+        
+    }
+
+    // ==========================================
+    // EYEBROW
+    // ==========================================
+
+    &__eyebrow {
+        display: block;
+        margin-bottom: 1rem;
+        font-family: "Montserrat", sans-serif;
+        font-size: 18px;
+        font-weight: 700;
+        letter-spacing: 0.28em;
+        text-transform: uppercase;
+        color: var(--walnut);
+    }
+
+
+    // ==========================================
+    // HEADING
+    // ==========================================
+
+    h2 {
+        max-width: 750px;
+        font-weight: 500;
+        line-height: 1.05;
+        color: var(--ivory);
+        span {
+            font-style: italic;
+        }
+    }
+
+    // ==========================================
+    // DESCRIPTION
+    // ==========================================
+
+    p {
+        font-size: 18px;
+        color: var(--ivory)!important;
+    }
+
+    // ==========================================
+    // BUTTON
+    // ==========================================
+
+    &__btn-container {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        padding: 3rem 5rem;
+
+    }
+}
+
+
+// ==========================================
+// TABLET
+// ==========================================
+
+@media (max-width: 800px) {
+
+    .cta {
+        min-height: 400px;
+        padding: 75px 30px;
+
+        &__fan {
+            width: 750px;
+
+            opacity: 0.1;
+        }
+
+        h2 {
+            font-size: clamp(2.3rem, 6vw, 3.5rem);
+        }
+    }
+}
+
+
+// ==========================================
+// MOBILE
+// ==========================================
+
+@media (max-width: 600px) {
+
+    .cta {
+        min-height: 430px;
+
+        padding: 75px 35px;
+
+        &::before {
+            inset: 10px;
+        }
+
+        &::after {
+            inset: 16px;
+        }
+
+        &__fan {
+            width: 600px;
+
+            opacity: 0.08;
+        }
+
+        &__eyebrow {
+            font-size: 9px;
+
+            letter-spacing: 0.2em;
+        }
+
+        h2 {
+            font-size: 2.4rem;
+
+            line-height: 1.1;
+        }
+
+        p {
+            max-width: 320px;
+
+            font-size: 12px;
+        }
+    }
+}

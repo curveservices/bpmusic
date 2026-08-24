@@ -168,8 +168,8 @@
   position: fixed;
   display: flex;
   gap: 1rem;
-  bottom: 2rem;
-  left: 1rem;
+  bottom: 6rem;
+  left: 1.2rem;
   padding: 10px;
   margin: 0;
   background: var(--gold);
@@ -177,7 +177,7 @@
   font-size: 1rem;
   width: fit-content;
   height: auto;
-  border: solid 2px var(--gold);
+  border: solid 2px var(--gold-light);
   box-shadow: var(--button-shadow);
   z-index: 999;
   cursor: pointer;

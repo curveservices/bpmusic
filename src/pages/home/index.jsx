@@ -20,6 +20,7 @@ import "./index.scss";
 import Events from "../../components/cards/eventCards";
 import Repertoire from "../../components/repertoire";
 import GalleryPreview from "../../components/galleryPreview";
+import CTA from "../../components/cta";
 
 const Home = () => {
   const FadeInSection = ({ children }) => {
@@ -63,7 +64,7 @@ const Home = () => {
                 </p>
 
                 <div className="btn-container">
-                  <Button text="View Upcomming events" />
+                  <Button text="Upcomming events" />
 
                   <Button
                     text="Book the band"
@@ -144,8 +145,13 @@ const Home = () => {
           </FadeInSection>
         </section>
         <section className="fourth-section">
-          <GalleryPreview />
+          <FadeInSection>
+            <GalleryPreview />
+          </FadeInSection>
         </section>
+        <FadeInSection>
+          <CTA />
+        </FadeInSection>
       </div>
     </>
   );

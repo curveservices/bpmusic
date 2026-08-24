@@ -5,6 +5,7 @@ import { Outlet, ScrollRestoration, useLocation } from "react-router-dom";
 import "./index.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowUp } from "@fortawesome/free-solid-svg-icons";
+import Footer from "../footer";
 
 const Layout = () => {
   const [showButton, setShowButton] = useState(false);
@@ -54,6 +55,7 @@ const Layout = () => {
           </button>
         </>
       )}
+      <Footer />
       {/* <Footer isVisible={showFooter} /> */}
       <ScrollRestoration />
     </>

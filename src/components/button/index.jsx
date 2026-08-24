@@ -12,6 +12,7 @@ const Button = (props) => {
     fontSize,
     display,
     boxShadow,
+    padding,
     isInternal = true,
     download = false,
   } = props;
@@ -22,6 +23,7 @@ const Button = (props) => {
     fontSize: fontSize + "px",
     display,
     boxShadow,
+    padding: padding + "rem",
   };
 
   const buttonElement = (

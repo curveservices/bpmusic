@@ -4,7 +4,7 @@
   text-decoration: none;
   text-align: center;
   width: fit-content;
-  padding: 0.6rem;
+  padding: 0.6rem 2rem;
   border: 1px solid var(--gold);
   background: var(--gold);
   color: var(--navy);
@@ -15,8 +15,7 @@
   cursor: pointer;
 
   &:hover {
-    transform: translateY(-1px);
-    background: var(--walnut);
+    background: var(--navy-light);
     color: var(--ivory);
     box-shadow: var(--box-shadow);
     transform: translateY(-3px);
