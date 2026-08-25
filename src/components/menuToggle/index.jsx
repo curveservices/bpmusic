@@ -5,7 +5,7 @@ import "./index.scss";
 const MenuToggle = ({ showNav, setShowNav }) => {
   return (
     <AnimatePresence mode="wait">
-      <motion.div
+      <motion.button
         key={showNav ? "close" : "bars"}
         initial={{ opacity: 0, scale: 0.8 }}
         animate={{ opacity: 1, scale: 1 }}
@@ -16,9 +16,9 @@ const MenuToggle = ({ showNav, setShowNav }) => {
       >
         <FontAwesomeIcon
           icon={showNav ? faTimes : faBars}
-          color="var(--main-bg)"
+          color="var(--gold)"
         />
-      </motion.div>
+      </motion.button>
     </AnimatePresence>
   );
 };

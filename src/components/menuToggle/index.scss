@@ -1,20 +1,141 @@
 .menu-icon {
   display: none;
+
 }
 
+
 @media screen and (max-width: 1024px) {
+  nav.mobile-show {
+  
+      .menu-container {
+        opacity: 0;
+        transform: translateX(15px);
+  
+        animation:
+          menuItemIn 1s ease forwards;
+      }
+  
+      a:nth-child(1) .menu-container {
+        animation-delay: 0.15s;
+      }
+  
+      a:nth-child(2) .menu-container {
+        animation-delay: 0.20s;
+      }
+  
+      a:nth-child(3) .menu-container {
+        animation-delay: 0.22s;
+      }
+  
+      a:nth-child(4) .menu-container {
+        animation-delay: 0.35s;
+      }
+  
+      a:nth-child(5) .menu-container {
+        animation-delay: 0.40s;
+      }
+    }
+  
+  
+    @keyframes menuItemIn {
+  
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+  
+    }
   .menu-icon {
+
+    position: relative;
+
     display: flex;
+
     align-items: center;
     justify-content: center;
-    width: 50px;
-    height: 50px;
-    font-size: 24px;
-    cursor: pointer;
-    z-index: 9999;
-  }
 
-  .fa-xmark {
-    color: #fff;
+    width: 46px;
+    height: 46px;
+
+    padding: 0;
+
+    border: 1px solid rgba(200, 169, 106, 0.6);
+
+    background: transparent;
+
+    color: var(--gold);
+
+    font-size: 20px;
+
+    cursor: pointer;
+
+    z-index: 10001;
+
+    transition:
+      background 0.3s ease,
+      color 0.3s ease,
+      border-color 0.3s ease,
+      transform 0.3s ease;
+
+
+    // Small inner Art Deco frame
+
+    &::before {
+
+      content: "";
+
+      position: absolute;
+
+      inset: 4px;
+
+      border: 1px solid rgba(200, 169, 106, 0.2);
+
+      pointer-events: none;
+    }
+
+
+    svg {
+
+      position: relative;
+
+      z-index: 2;
+
+      transition:
+        transform 0.3s ease;
+    }
+
+
+    &:hover {
+
+      border-color: var(--gold-light);
+
+      color: var(--gold-light);
+
+      transform: translateY(-2px);
+
+      background:
+        rgba(200, 169, 106, 0.05);
+    }
+
+
+    // ========================================
+    // OPEN STATE
+    // ========================================
+
+    &.is-open {
+
+      border-color: var(--gold);
+
+      background:
+        rgba(200, 169, 106, 0.08);
+
+      color: var(--gold-light);
+
+
+      svg {
+        transform: rotate(90deg);
+      }
+    }
   }
+  
 }
