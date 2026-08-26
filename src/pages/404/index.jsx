@@ -6,8 +6,6 @@ import "./index.scss";
 const NotFound = () => {
   return (
     <main className="not-found">
-
-
       <div className="not-found__frame">
         <div className="not-found__content">
           <span className="not-found__eyebrow">The Peninsula Big Band</span>

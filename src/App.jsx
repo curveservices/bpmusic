@@ -25,7 +25,7 @@ const router = createBrowserRouter(
           }
         />
       </Route>
-       <Route
+      <Route
         path="*"
         element={
           <Suspense fallback={<LoadingSpinner />}>

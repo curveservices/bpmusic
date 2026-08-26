@@ -222,375 +222,455 @@
   }
 }
 // ==================================================
-// MOBILE
-// ==================================================
-@media screen and (max-width: 768px) {
-  .hero {
-    // ----------------------------------------
-    // VIDEO
-    // ----------------------------------------
-
-    &__video {
-      position: absolute;
-      inset: 0;
-      z-index: -0;
-      overflow: hidden;
-      // Creates the angled edge between content
-      // and video.
-      clip-path: polygon(54% 0, 100% 0, 100% 100%, 44% 100%);
-
-      background: #373737;
-    }
-
-    &__video-overlay {
-      position: absolute;
-      inset: 0;
-      z-index: -2;
-
-      background: linear-gradient(90deg,
-          rgba(14, 26, 43, 0.05) 0%,
-          rgba(14, 26, 43, 0.12) 100%);
-
-      clip-path: polygon(54% 0, 100% 0, 100% 100%, 44% 100%);
-    }
-
-    // ----------------------------------------
-    // LEFT CONTENT PANEL
-    // ----------------------------------------
-
-    &::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-
-      z-index: -1;
-
-      width: 100%;
-
-      background: var(--navy);
-
-      clip-path: polygon(0 0, 80% 0, 71% 100%, 0 100%);
-    }
-
-    // ----------------------------------------
-    // ART DECO FAN
-    // ----------------------------------------
-
-    &__fan {
-      position: absolute;
-      top: 0%;
-      width: 850px;
-      height: auto;
-      transform: rotateX(180deg);
-      z-index: -1;
-
-      pointer-events: none;
-
-      opacity: 0.2;
-
-      img {
-        width: 100%;
-        height: 100%;
-
-        object-fit: contain;
-        object-position: left center;
-
-        display: block;
-      }
-    }
-
-    // ----------------------------------------
-    // CONTENT
-    // ----------------------------------------
-
-    &__content {
-      width: 58%;
-      margin-top: 2rem;
-      display: flex;
-      align-items: center;
-
-      position: relative;
-      z-index: 2;
-
-      padding: 100px 0 100px 64px;
-    }
-
-    &__inner {
-      width: min(720px, 100%);
-    }
-
-    // ----------------------------------------
-    // HEADING
-    // ----------------------------------------
-
-    h1 {
-      max-width: 650px;
-    }
-
-    // ----------------------------------------
-    // DECORATIVE DIVIDER
-    // ----------------------------------------
-
-    .divider {
-      display: flex;
-      align-items: center;
-
-      margin: 28px 0 24px;
-
-      width: 80px;
-
-      span {
-        display: block;
-
-        width: 56px;
-        height: 2px;
-
-        background: var(--gold);
-
-        position: relative;
-
-        &::after {
-          content: "";
-
-          position: absolute;
-
-          right: -8px;
-          top: 50%;
-
-          width: 7px;
-          height: 7px;
-
-          border: 2px solid var(--gold);
-
-          transform: translateY(-50%) rotate(45deg);
-        }
-      }
-    }
-
-    // ----------------------------------------
-    // DESCRIPTION
-    // ----------------------------------------
-
-    p {
-      max-width: 520px;
-      font-family: "Montserrat", sans-serif;
-      font-weight: 600;
-    }
-
-    // ----------------------------------------
-    // BUTTONS
-    // ----------------------------------------
-
-    .btn-container {
-      display: flex;
-      align-items: center;
-      gap: 16px;
-
-      margin-top: 34px;
-    }
-  }
-
-  .second-section {
-    .about__fan {
-      position: absolute;
-      top: -17rem;
-      right: 0;
-      width: 700px;
-      height: auto;
-      transform: rotate(270deg);
-      z-index: -2;
-      pointer-events: none;
-
-      opacity: 0.2;
-
-      img {
-        width: 100%;
-        height: 100%;
-
-        object-fit: contain;
-        object-position: right center;
-
-        display: block;
-      }
-    }
-  }
-
-  .third-section {
-    position: relative;
-    overflow: hidden;
-
-    &__inner {
-      z-index: 0;
-    }
-
-    .event__image {
-      position: absolute;
-      width: 100%;
-      height: auto;
-
-      pointer-events: none;
-
-      opacity: 0.2;
-
-      &__img {
-        width: 100%;
-        height: auto;
-        object-fit: contain;
-        display: block;
-      }
-    }
-  }
-}
-
-// ==================================================
 // TABLET
 // ==================================================
 
-@media (max-width: 1024px) {
-  .hero {
-    &::before {
-      width: 65%;
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .home-page {
+    .hero {
+      min-height: calc(100svh - 72px);
 
-      clip-path: polygon(0 0, 88% 0, 78% 100%, 0 100%);
+      // ----------------------------------------------
+      // VIDEO
+      // ----------------------------------------------
+
+      &__video {
+        clip-path: polygon(62% 0, 100% 0, 100% 100%, 46% 100%);
+      }
+
+      // ----------------------------------------------
+      // VIDEO OVERLAY
+      // ----------------------------------------------
+
+      &__video-overlay {
+        clip-path: polygon(62% 0, 100% 0, 100% 100%, 46% 100%);
+
+        background: linear-gradient(
+          90deg,
+          rgba(14, 26, 43, 0.02) 0%,
+          rgba(14, 26, 43, 0.2) 100%
+        );
+      }
+      // ----------------------------------------------
+      // IVORY PANEL
+      // ----------------------------------------------
+
+      &::before {
+        width: 7%;
+        clip-path: polygon(0 0, 82% 0, 73% 100%, 0 100%);
+      }
+
+      // ----------------------------------------------
+      // FAN
+      // ----------------------------------------------
+
+      &__fan {
+        top: 6%;
+      }
+
+      // ----------------------------------------------
+      // CONTENT
+      // ----------------------------------------------
+
+      &__content {
+        width: 64%;
+
+        margin-top: -5rem;
+
+        padding: 80px 0 80px 6vw;
+      }
+
+      &__inner {
+        width: 100%;
+
+        max-width: 540px;
+      }
+
+      // ----------------------------------------------
+      // BUTTONS
+      // ----------------------------------------------
+
+      .btn-container {
+        gap: 12px;
+
+        margin-top: 28px;
+
+        flex-wrap: wrap;
+      }
     }
 
-    &__content {
-      width: 65%;
-      padding-left: 6vw;
+    // ==================================================
+    // SECOND SECTION
+    // ==================================================
+
+    .second-section {
+      position: relative;
+
+      overflow: hidden;
+
+      .about__fan {
+        top: -10rem;
+
+        right: -170px;
+
+        width: 600px;
+
+        opacity: 0.1;
+      }
     }
 
-    &__video {
-      clip-path: polygon(55% 0, 100% 0, 100% 100%, 48% 100%);
-    }
+    // ==================================================
+    // THIRD SECTION
+    // ==================================================
 
-    &__video-overlay {
-      clip-path: polygon(55% 0, 100% 0, 100% 100%, 48% 100%);
-    }
+    .third-section {
+      position: relative;
 
-    &__fan {
-      left: -150px;
-      opacity: 0.09;
+      overflow: hidden;
+
+      &__inner {
+        position: relative;
+
+        z-index: 1;
+      }
+
+      .event__image {
+        top: 5%;
+
+        left: -10%;
+
+        width: 120%;
+
+        opacity: 0.12;
+      }
     }
   }
 }
 
 // ==================================================
 // MOBILE
+// <= 600px
 // ==================================================
 
-@media (max-width: 768px) {
-  .hero {
-    min-height: auto;
+@media screen and (max-width: 600px) {
+  .home-page {
+    // ==================================================
+    // HERO
+    // ==================================================
 
-    display: block;
+    .hero {
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      background: var(--ivory);
 
-    // ----------------------------------------
-    // VIDEO
-    // ----------------------------------------
+      // ----------------------------------------------
+      // VIDEO
+      // ----------------------------------------------
 
-    &__video {
-      position: relative;
+      &__video {
+        position: relative;
+        inset: auto;
+        order: 1;
+        width: 100%;
+        height: 42svh;
+        min-height: 300px;
+        max-height: 400px;
+        clip-path: none;
+        overflow: hidden;
+        video {
+          width: 100%;
 
-      width: 100%;
-      height: 48vh;
+          height: 100svh;
 
-      min-height: 320px;
+          display: block;
 
-      clip-path: none;
+          object-fit: cover;
 
-      order: 1;
+          /*
+           * Adjust horizontally depending on
+           * where the musicians are in the footage.
+           */
 
-      video {
-        object-position: center;
+          object-position: 55% center;
+        }
+      }
+
+      // ----------------------------------------------
+      // VIDEO OVERLAY
+      // ----------------------------------------------
+
+      &__video-overlay {
+        position: absolute;
+
+        inset: 0;
+
+        z-index: 1;
+
+        display: block;
+
+        clip-path: none;
+
+        background: linear-gradient(
+          180deg,
+          rgba(14, 26, 43, 0.02) 0%,
+          rgba(14, 26, 43, 0.08) 50%,
+          rgba(14, 26, 43, 0.32) 100%
+        );
+
+        pointer-events: none;
+      }
+
+      // ----------------------------------------------
+      // CONTENT
+      // ----------------------------------------------
+
+      &__content {
+        position: relative;
+
+        order: 2;
+
+        width: 100%;
+
+        min-height: auto;
+
+        margin-top: 0;
+
+        padding: 55px 24px 75px;
+
+        display: flex;
+
+        align-items: flex-start;
+
+        background: var(--ivory);
+      }
+
+      &__inner {
+        position: relative;
+
+        width: 100%;
+
+        max-width: none;
+
+        z-index: 2;
+      }
+
+      // ----------------------------------------------
+      // FAN
+      // ----------------------------------------------
+
+      &__fan {
+        left: -180px;
+
+        top: auto;
+
+        bottom: -100px;
+
+        width: 470px;
+
+        height: auto;
+
+        transform: rotateX(180deg) rotateZ(8deg);
+
+        opacity: 0.07;
+
+        z-index: 0;
+      }
+
+      // ----------------------------------------------
+      // HEADING
+      // ----------------------------------------------
+
+      h1 {
+        position: relative;
+
+        max-width: 100%;
+
+        margin: 0;
+
+        font-size: clamp(2.6rem, 12vw, 4rem);
+
+        line-height: 0.98;
+
+        letter-spacing: -0.025em;
+      }
+
+      // ----------------------------------------------
+      // DIVIDER
+      // ----------------------------------------------
+
+      .divider {
+        position: relative;
+
+        z-index: 2;
+
+        width: 70px;
+
+        margin: 22px 0 20px;
+
+        span {
+          width: 48px;
+
+          height: 2px;
+        }
+      }
+
+      // ----------------------------------------------
+      // DESCRIPTION
+      // ----------------------------------------------
+
+      p {
+        position: relative;
+
+        z-index: 2;
+
+        max-width: 100%;
+
+        margin: 0;
+
+        font-size: 13px;
+
+        line-height: 1.75;
+      }
+
+      // ----------------------------------------------
+      // BUTTONS
+      // ----------------------------------------------
+
+      .btn-container {
+        position: relative;
+
+        z-index: 2;
+
+        display: flex;
+
+        flex-direction: column;
+
+        align-items: stretch;
+
+        gap: 12px;
+
+        width: 100%;
+
+        margin-top: 28px;
+      }
+
+      // If your Button component creates .btn
+
+      .btn {
+        width: 100%;
+      }
+
+      // ----------------------------------------------
+      // SCROLL INDICATOR
+      // ----------------------------------------------
+
+      &__scroll {
+        display: none;
       }
     }
 
-    &__video-overlay {
-      display: none;
+    // ==================================================
+    // SECOND SECTION
+    // ==================================================
+
+    .second-section {
+      position: relative;
+
+      overflow: hidden;
+
+      .about__fan {
+        top: -6rem;
+
+        right: -230px;
+
+        width: 500px;
+
+        opacity: 0.07;
+      }
     }
 
-    // ----------------------------------------
-    // CONTENT
-    // ----------------------------------------
+    // ==================================================
+    // THIRD SECTION
+    // ==================================================
 
-    &::before {
-      display: none;
+    .third-section {
+      position: relative;
+
+      overflow: hidden;
+
+      &__inner {
+        position: relative;
+
+        z-index: 1;
+      }
+
+      .event__image {
+        top: 8%;
+
+        left: -30%;
+
+        width: 160%;
+
+        opacity: 0.08;
+      }
     }
+  }
+}
 
-    &__content {
-      width: 100%;
+// ==================================================
+// SMALL MOBILE
+// <= 380px
+// ==================================================
 
-      min-height: 58vh;
+@media screen and (max-width: 380px) {
+  .home-page {
+    .hero {
+      // ----------------------------------------------
+      // VIDEO
+      // ----------------------------------------------
 
-      padding: 70px 24px 90px;
+      &__video {
+        height: 38svh;
 
-      background: var(--ivory);
+        min-height: 250px;
+      }
 
-      align-items: flex-start;
-    }
+      // ----------------------------------------------
+      // CONTENT
+      // ----------------------------------------------
 
-    &__inner {
-      width: 100%;
-    }
+      &__content {
+        padding: 48px 20px 65px;
+      }
 
-    // ----------------------------------------
-    // FAN
-    // ----------------------------------------
+      // ----------------------------------------------
+      // HEADING
+      // ----------------------------------------------
 
-    &__fan {
-      left: -160px;
-      top: auto;
-      bottom: 0;
+      h1 {
+        font-size: 2.45rem;
 
-      width: 450px;
-      height: 550px;
+        line-height: 1;
+      }
 
-      transform: none;
+      // ----------------------------------------------
+      // COPY
+      // ----------------------------------------------
 
-      opacity: 0.08;
-    }
+      p {
+        font-size: 12px;
 
-    // ----------------------------------------
-    // HEADING
-    // ----------------------------------------
+        line-height: 1.7;
+      }
 
-    h1 {
-      font-size: clamp(2.7rem, 11vw, 4rem);
-      line-height: 1;
-    }
+      // ----------------------------------------------
+      // BUTTONS
+      // ----------------------------------------------
 
-    // ----------------------------------------
-    // COPY
-    // ----------------------------------------
-
-    p {
-      font-size: 14px;
-      line-height: 1.75;
-    }
-
-    // ----------------------------------------
-    // BUTTONS
-    // ----------------------------------------
-
-    &__actions {
-      flex-direction: column;
-      align-items: stretch;
-
-      gap: 12px;
-
-      margin-top: 28px;
-    }
-
-    .btn {
-      width: 100%;
-    }
-
-    // ----------------------------------------
-    // SCROLL
-    // ----------------------------------------
-
-    &__scroll {
-      display: none;
+      .btn-container {
+        margin-top: 24px;
+      }
     }
   }
 }

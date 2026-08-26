@@ -22,8 +22,8 @@ const CTA = () => {
           text="Book The Band Now"
           link="/contact"
           background="var(--navy)"
-                  color="var(--ivory)"
-                  padding={1.4}
+          color="var(--ivory)"
+          padding={1.4}
         />
       </div>
     </section>

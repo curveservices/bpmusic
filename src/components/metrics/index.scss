@@ -61,20 +61,95 @@
   }
 }
 
-@media screen and (max-width: 768px) {
+//======================================================
+// TABLET
+//======================================================
+@media screen and (min-width: 768px) and (max-width: 1024px) {
   .metrics-container {
     flex-wrap: wrap;
-    padding: 2rem;
+    padding: 3rem 3rem;
     .metric {
       max-width: 200px;
-      margin: 1rem 0;
+      margin: 0rem;
       .metric-icon {
-        width: 50px;
+        width: 40px;
       }
 
       .metric-label {
         font-size: 14px;
       }
+      .metric-value {
+        font-size: 36px;
+      }
+    }
+    .quarter {
+      width: 250px;
+    }
+
+    .top-left {
+      margin-top: -3rem;
+      left: 0;
+    }
+
+    .top-right {
+      transform: rotateY(180deg);
+      right: 0;
+      margin-top: -3rem;
+    }
+
+    .btm-left {
+      transform: rotateX(180deg);
+      margin-top: 1rem;
+      left: 0;
+    }
+
+    .btm-right {
+      transform: rotate(180deg);
+      right: 0;
+      margin-top: 1rem;
+    }
+  }
+}
+// ====================
+// MOBILE
+// ====================
+@media screen and (max-width: 768px) {
+  .metrics-container {
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 2rem;
+    .metric {
+      max-width: 200px;
+      margin: 1rem 1rem;
+      .metric-icon {
+        width: 28px;
+      }
+
+      .metric-label {
+        font-size: 12px;
+      }
+      .metric-value {
+        font-size: 28px;
+      }
+    }
+    .quarter {
+      width: 200px;
+    }
+
+    .top-left {
+      margin-top: -2rem;
+    }
+
+    .top-right {
+      margin-top: -2rem;
+    }
+
+    .btm-left {
+      margin-top: 14rem;
+    }
+
+    .btm-right {
+      margin-top: 14rem;
     }
   }
 }

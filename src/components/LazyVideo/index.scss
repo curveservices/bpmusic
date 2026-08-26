@@ -7,7 +7,7 @@
   width: 100%;
   height: auto;
   object-fit: cover;
-  opacity: 0.4;
+  opacity: 0.8;
   transition: opacity 0.3s ease;
   &.loading {
     opacity: 0;
@@ -21,9 +21,10 @@
   height: 100%;
   object-fit: cover;
   display: block;
-  transform: translateX(500px);
   opacity: 0.8;
   transition: opacity 0.5s ease;
+  filter: brightness(1.2);
+  filter: saturate(0.8);
   &.loading {
     opacity: 0;
   }
@@ -31,11 +32,28 @@
     opacity: 1;
   }
 }
+// =====================================
+// TABLET
+// =====================================
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .video-container {
+    width: 100%;
+    height: 100%;
+  }
+  .fallback {
+    height: 100%;
+  }
+}
+//======================================
+// MOBILE
+//======================================
 @media screen and (max-width: 768px) {
+  .video-container {
+    height: 100%;
+  }
   .video,
   .fallback {
+    transform: initial;
     object-fit: cover;
-    width: 100%;
-    top: -15%;
   }
 }

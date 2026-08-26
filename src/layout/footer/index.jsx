@@ -10,10 +10,10 @@ import "./index.scss";
 const Footer = () => {
   return (
     <footer className="footer">
-          <img src={quarter} alt="" className="top-left quarter" />
-                <img src={quarter} alt="" className="top-right quarter" />
-                <img src={quarter} alt="" className="btm-left quarter" />
-                <img src={quarter} alt="" className="btm-right quarter" />
+      <img src={quarter} alt="" className="top-left quarter" />
+      <img src={quarter} alt="" className="top-right quarter" />
+      <img src={quarter} alt="" className="btm-left quarter" />
+      <img src={quarter} alt="" className="btm-right quarter" />
 
       <div className="footer__inner">
         {/* ========================================
@@ -116,8 +116,15 @@ const Footer = () => {
       <div className="footer__bottom">
         <div className="footer__bottom-inner">
           <p>
-            © {new Date().getFullYear()} <a href="https://immutable-studio.co.uk" target="_blank" rel="noopener noreferrer">Immutable Studio</a>. All rights
-            reserved.
+            © {new Date().getFullYear()}{" "}
+            <a
+              href="https://immutable-studio.co.uk"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Immutable Studio
+            </a>
+            . All rights reserved.
           </p>
 
           <div className="footer__legal">

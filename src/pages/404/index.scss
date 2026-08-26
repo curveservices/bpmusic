@@ -1,342 +1,324 @@
 .not-found {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: calc(100vh - 80px);
+  padding: 20px 30px;
+  background: var(--navy);
+  overflow: hidden;
+
+  // ==========================================
+  // SUBTLE BACKGROUND PATTERN
+  // ==========================================
+
+  &::before {
+    content: "";
+
+    position: absolute;
+
+    width: 700px;
+    height: 700px;
+
+    top: 50%;
+    left: 50%;
+
+    transform: translate(-50%, -50%);
+
+    opacity: 0.3;
+
+    border-radius: 50%;
+
+    background: repeating-conic-gradient(
+      from 0deg,
+      transparent 0deg 9deg,
+      var(--gold) 9deg 10deg
+    );
+
+    mask-image: radial-gradient(circle, black 0%, transparent 68%);
+
+    -webkit-mask-image: radial-gradient(circle, black 0%, transparent 68%);
+
+    pointer-events: none;
+  }
+
+  // ==========================================
+  // OUTER FRAME
+  // ==========================================
+
+  &__frame {
     position: relative;
+
     display: flex;
+
     align-items: center;
     justify-content: center;
-    min-height: calc(100vh - 80px);
-    padding: 20px 30px;
-    background: var(--navy);
-    overflow: hidden;
 
-    // ==========================================
-    // SUBTLE BACKGROUND PATTERN
-    // ==========================================
+    width: min(900px, 100%);
 
+    min-height: 620px;
+
+    padding: 80px 40px;
+
+    border: 1px solid rgba(200, 169, 106, 0.7);
+
+    background: rgba(14, 26, 43, 0.55);
+
+    box-shadow: 0 30px 80px rgba(0, 0, 0, 0.25);
+
+    // Inner Art Deco frame
     &::before {
-        content: "";
+      content: "";
 
-        position: absolute;
+      position: absolute;
 
-        width: 700px;
-        height: 700px;
+      inset: 12px;
 
-        top: 50%;
-        left: 50%;
+      border: 1px solid rgba(200, 169, 106, 0.3);
 
-        transform: translate(-50%, -50%);
-
-        opacity: 0.3;
-
-        border-radius: 50%;
-
-        background:
-            repeating-conic-gradient(from 0deg,
-                transparent 0deg 9deg,
-                var(--gold) 9deg 10deg);
-
-        mask-image:
-            radial-gradient(circle,
-                black 0%,
-                transparent 68%);
-
-        -webkit-mask-image:
-            radial-gradient(circle,
-                black 0%,
-                transparent 68%);
-
-        pointer-events: none;
+      pointer-events: none;
     }
 
-    // ==========================================
-    // OUTER FRAME
-    // ==========================================
+    &::after {
+      content: "";
 
-    &__frame {
-        position: relative;
+      position: absolute;
 
-        display: flex;
+      inset: 19px;
 
-        align-items: center;
-        justify-content: center;
+      border: 1px solid rgba(200, 169, 106, 0.12);
 
-        width: min(900px, 100%);
+      pointer-events: none;
+    }
+  }
 
-        min-height: 620px;
+  // ==========================================
+  // CONTENT
+  // ==========================================
 
-        padding: 80px 40px;
+  &__content {
+    position: relative;
 
-        border: 1px solid rgba(200, 169, 106, 0.7);
+    z-index: 2;
 
-        background:
-            rgba(14, 26, 43, 0.55);
+    display: flex;
 
-        box-shadow:
-            0 30px 80px rgba(0, 0, 0, 0.25);
+    flex-direction: column;
 
+    align-items: center;
 
-        // Inner Art Deco frame
-        &::before {
-            content: "";
+    max-width: 620px;
 
-            position: absolute;
+    text-align: center;
+  }
 
-            inset: 12px;
+  // ==========================================
+  // EYEBROW
+  // ==========================================
 
-            border: 1px solid rgba(200, 169, 106, 0.3);
+  &__eyebrow {
+    margin-bottom: 25px;
 
-            pointer-events: none;
-        }
+    font-family: "Montserrat", sans-serif;
 
+    font-size: 14px;
 
-        &::after {
-            content: "";
+    font-weight: 700;
 
-            position: absolute;
+    letter-spacing: 0.3em;
 
-            inset: 19px;
+    text-transform: uppercase;
 
-            border: 1px solid rgba(200, 169, 106, 0.12);
+    color: var(--gold);
+  }
 
-            pointer-events: none;
-        }
+  // ==========================================
+  // DIVIDER
+  // ==========================================
+
+  &__divider {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 12px;
+
+    width: 180px;
+
+    margin-bottom: 30px;
+
+    span {
+      flex: 1;
+
+      height: 2px;
+
+      background: var(--gold);
     }
 
+    i {
+      font-family: serif;
 
-    // ==========================================
-    // CONTENT
-    // ==========================================
+      font-size: 13px;
 
-    &__content {
-        position: relative;
+      font-style: normal;
 
-        z-index: 2;
+      color: var(--gold);
+    }
+  }
 
-        display: flex;
+  // ==========================================
+  // 404
+  // ==========================================
 
-        flex-direction: column;
+  &__number {
+    font-family: "Bodoni Moda", serif;
 
-        align-items: center;
+    font-size: clamp(6rem, 14vw, 10rem);
 
-        max-width: 620px;
+    font-weight: 500;
 
-        text-align: center;
+    line-height: 0.8;
+
+    letter-spacing: -0.05em;
+
+    color: var(--ivory);
+
+    opacity: 0.95;
+  }
+
+  // ==========================================
+  // HEADING
+  // ==========================================
+
+  h1 {
+    margin: 30px 0 15px;
+
+    font-family: "Limelight", serif;
+
+    font-size: clamp(2.3rem, 5vw, 4rem);
+
+    font-weight: 500;
+
+    line-height: 1.1;
+
+    color: var(--ivory);
+
+    em {
+      color: var(--gold-light);
+
+      font-style: italic;
+    }
+  }
+
+  // ==========================================
+  // DESCRIPTION
+  // ==========================================
+
+  p {
+    max-width: 480px;
+
+    margin: 0 0 35px;
+
+    font-family: "Montserrat", sans-serif;
+
+    font-size: 14px;
+
+    line-height: 1.8;
+
+    color: rgba(247, 243, 236, 0.75);
+  }
+
+  // ==========================================
+  // BUTTON
+  // ==========================================
+
+  &__button {
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 15px;
+
+    padding: 15px 28px;
+
+    border: 1px solid var(--gold);
+
+    background: var(--gold);
+
+    font-family: "Montserrat", sans-serif;
+
+    font-size: 14px;
+
+    font-weight: 700;
+
+    letter-spacing: 0.15em;
+
+    text-transform: uppercase;
+
+    text-decoration: none;
+
+    color: var(--navy);
+
+    transition:
+      background 0.3s ease,
+      color 0.3s ease,
+      gap 0.3s ease,
+      transform 0.3s ease;
+
+    span {
+      font-size: 16px;
     }
 
+    &:hover {
+      gap: 22px;
 
-    // ==========================================
-    // EYEBROW
-    // ==========================================
+      background: transparent;
 
-    &__eyebrow {
-        margin-bottom: 25px;
+      color: var(--gold-light);
 
-        font-family: "Montserrat", sans-serif;
-
-        font-size: 14px;
-
-        font-weight: 700;
-
-        letter-spacing: 0.3em;
-
-        text-transform: uppercase;
-
-        color: var(--gold);
+      transform: translateY(-3px);
     }
-
-
-    // ==========================================
-    // DIVIDER
-    // ==========================================
-
-    &__divider {
-        display: flex;
-
-        align-items: center;
-
-        justify-content: center;
-
-        gap: 12px;
-
-        width: 180px;
-
-        margin-bottom: 30px;
-
-        span {
-            flex: 1;
-
-            height: 2px;
-
-            background: var(--gold);
-        }
-
-        i {
-            font-family: serif;
-
-            font-size: 13px;
-
-            font-style: normal;
-
-            color: var(--gold);
-        }
-    }
-
-
-    // ==========================================
-    // 404
-    // ==========================================
-
-    &__number {
-        font-family: "Bodoni Moda", serif;
-
-        font-size: clamp(6rem, 14vw, 10rem);
-
-        font-weight: 500;
-
-        line-height: 0.8;
-
-        letter-spacing: -0.05em;
-
-        color: var(--ivory);
-
-        opacity: 0.95;
-    }
-
-
-    // ==========================================
-    // HEADING
-    // ==========================================
-
-    h1 {
-        margin: 30px 0 15px;
-
-        font-family: "Limelight", serif;
-
-        font-size: clamp(2.3rem, 5vw, 4rem);
-
-        font-weight: 500;
-
-        line-height: 1.1;
-
-        color: var(--ivory);
-
-        em {
-            color: var(--gold-light);
-
-            font-style: italic;
-        }
-    }
-
-
-    // ==========================================
-    // DESCRIPTION
-    // ==========================================
-
-    p {
-        max-width: 480px;
-
-        margin: 0 0 35px;
-
-        font-family: "Montserrat", sans-serif;
-
-        font-size: 14px;
-
-        line-height: 1.8;
-
-        color: rgba(247, 243, 236, 0.75);
-    }
-
-
-    // ==========================================
-    // BUTTON
-    // ==========================================
-
-    &__button {
-        display: inline-flex;
-
-        align-items: center;
-
-        gap: 15px;
-
-        padding: 15px 28px;
-
-        border: 1px solid var(--gold);
-
-        background: var(--gold);
-
-        font-family: "Montserrat", sans-serif;
-
-        font-size: 14px;
-
-        font-weight: 700;
-
-        letter-spacing: 0.15em;
-
-        text-transform: uppercase;
-
-        text-decoration: none;
-
-        color: var(--navy);
-
-        transition:
-            background 0.3s ease,
-            color 0.3s ease,
-            gap 0.3s ease,
-            transform 0.3s ease;
-
-        span {
-            font-size: 16px;
-        }
-
-        &:hover {
-            gap: 22px;
-
-            background: transparent;
-
-            color: var(--gold-light);
-
-            transform: translateY(-3px);
-        }
-    }
+  }
 }
-
 
 // ==========================================
 // MOBILE
 // ==========================================
 
 @media (max-width: 600px) {
+  .not-found {
+    min-height: calc(100vh - 70px);
 
-    .not-found {
-        min-height: calc(100vh - 70px);
+    padding: 30px 20px;
 
-        padding: 30px 20px;
+    &__frame {
+      min-height: 550px;
 
-        &__frame {
-            min-height: 550px;
-
-            padding: 70px 25px;
-        }
-
-        &__eyebrow {
-            font-size: 8px;
-
-            letter-spacing: 0.22em;
-        }
-
-        &__number {
-            font-size: 6rem;
-        }
-
-        h1 {
-            font-size: 2.4rem;
-        }
-
-        p {
-            font-size: 12px;
-        }
-
-        &__fan {
-            width: 650px;
-        }
+      padding: 70px 25px;
     }
+
+    &__eyebrow {
+      font-size: 8px;
+
+      letter-spacing: 0.22em;
+    }
+
+    &__number {
+      font-size: 6rem;
+    }
+
+    h1 {
+      font-size: 2.4rem;
+    }
+
+    p {
+      font-size: 12px;
+    }
+
+    &__fan {
+      width: 650px;
+    }
+  }
 }

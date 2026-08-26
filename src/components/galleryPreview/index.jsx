@@ -47,7 +47,6 @@ const GalleryPreview = () => {
   return (
     <section className="gallery-preview">
       <div className="heading">
-
         <div className="h2-title">
           <span className="divider" />
 
