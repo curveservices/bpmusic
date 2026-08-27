@@ -117,19 +117,11 @@
 // TABLET
 // ==========================================
 
-@media (max-width: 800px) {
+@media (max-width: 1024px) {
   .cta {
-    min-height: 400px;
-    padding: 75px 30px;
 
     &__fan {
-      width: 750px;
-
-      opacity: 0.1;
-    }
-
-    h2 {
-      font-size: clamp(2.3rem, 6vw, 3.5rem);
+      width: 100%;
     }
   }
 }
