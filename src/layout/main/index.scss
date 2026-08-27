@@ -257,7 +257,10 @@
     .gallery-page,
     .events-page {
       h1 {
-        font-size: 36px;
+        font-size: clamp(2.6rem, 12vw, 4rem);
+        line-height: 0.98;
+
+        letter-spacing: -0.025em;
       }
 
       h2 {
@@ -311,7 +314,7 @@
       }
 
       p {
-        font-size: 16px;
+        font-size: 14px;
       }
 
       .eyebrow {

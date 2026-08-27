@@ -169,16 +169,16 @@
       display: flex;
       align-items: center;
       gap: 16px;
-
+      z-index: 2;
       margin-top: 34px;
     }
   }
   .second-section {
     .about__fan {
       position: absolute;
-      top: -17rem;
-      right: 0;
-      width: 700px;
+      top: -19.5rem;
+      right: 18rem;
+      width: 800px;
       height: auto;
       transform: rotate(270deg);
       z-index: -2;
@@ -265,7 +265,7 @@
       // ----------------------------------------------
 
       &__fan {
-        top: 6%;
+        top: 9%;
       }
 
       // ----------------------------------------------
@@ -285,18 +285,6 @@
 
         max-width: 540px;
       }
-
-      // ----------------------------------------------
-      // BUTTONS
-      // ----------------------------------------------
-
-      .btn-container {
-        gap: 12px;
-
-        margin-top: 28px;
-
-        flex-wrap: wrap;
-      }
     }
 
     // ==================================================
@@ -309,13 +297,10 @@
       overflow: hidden;
 
       .about__fan {
-        top: -10rem;
+        top: -25rem;
 
-        right: -170px;
-
-        width: 600px;
-
-        opacity: 0.1;
+        right: 24rem;
+        width: 100%;
       }
     }
 
@@ -372,7 +357,7 @@
         inset: auto;
         order: 1;
         width: 100%;
-        height: 42svh;
+        height: 40svh;
         min-height: 300px;
         max-height: 400px;
         clip-path: none;
@@ -385,13 +370,6 @@
           display: block;
 
           object-fit: cover;
-
-          /*
-           * Adjust horizontally depending on
-           * where the musicians are in the footage.
-           */
-
-          // object-position: 55% center;
         }
       }
 
@@ -409,13 +387,6 @@
 
         clip-path: none;
 
-        background: linear-gradient(
-          180deg,
-          rgba(14, 26, 43, 0.02) 0%,
-          rgba(14, 26, 43, 0.08) 50%,
-          rgba(14, 26, 43, 0.32) 100%
-        );
-
         pointer-events: none;
       }
 
@@ -429,6 +400,7 @@
         order: 2;
 
         width: 100%;
+        height: 100svh;
 
         min-height: auto;
 
@@ -440,7 +412,6 @@
 
         align-items: flex-start;
 
-        background: var(--ivory);
       }
 
       &__inner {
@@ -450,7 +421,7 @@
 
         max-width: none;
 
-        z-index: 2;
+        z-index: 1;
       }
 
       // ----------------------------------------------
@@ -459,98 +430,17 @@
 
       &__fan {
 
-        top: 280px;
+        top: 1rem;
 
-        bottom: -100px;
-
-        width: 470px;
-
-        height: auto;
-
-        transform: rotateX(180deg) rotateZ(8deg);
-
-        opacity: 1;
-
-        z-index: 0;
-      }
-
-      // ----------------------------------------------
-      // HEADING
-      // ----------------------------------------------
-
-      h1 {
-        position: relative;
-
-        max-width: 100%;
-
-        margin: 0;
-
-        font-size: clamp(2.6rem, 12vw, 4rem);
-
-        line-height: 0.98;
-
-        letter-spacing: -0.025em;
-      }
-
-      // ----------------------------------------------
-      // DIVIDER
-      // ----------------------------------------------
-
-      .divider {
-        position: relative;
-
-        z-index: 2;
-
-        width: 70px;
-
-        margin: 22px 0 20px;
-
-        span {
-          width: 48px;
-
-          height: 2px;
-        }
-      }
-
-      // ----------------------------------------------
-      // DESCRIPTION
-      // ----------------------------------------------
-
-      p {
-        position: relative;
-
-        z-index: 2;
-
-        max-width: 100%;
-
-        margin: 0;
-
-        font-size: 13px;
-
-        line-height: 1.75;
-      }
-
-      // ----------------------------------------------
-      // BUTTONS
-      // ----------------------------------------------
-
-      .btn-container {
-        position: relative;
-
-        z-index: 2;
-
-        display: flex;
-
-        flex-direction: column;
-
-        align-items: stretch;
-
-        gap: 12px;
+        bottom: -25rem;
 
         width: 100%;
 
-        margin-top: 28px;
+        height: auto;
       }
+
+
+
 
       // If your Button component creates .btn
 
@@ -561,12 +451,11 @@
       // ----------------------------------------------
       // SCROLL INDICATOR
       // ----------------------------------------------
-
-      &__scroll {
+      & a.scroll {
         display: none;
       }
     }
-
+    
     // ==================================================
     // SECOND SECTION
     // ==================================================

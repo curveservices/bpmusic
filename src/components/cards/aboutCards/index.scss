@@ -90,7 +90,7 @@
       left: 50%;
       transform: translate(-50%, -50%);
       border-radius: 50%;
-      opacity: 0.25;
+      opacity: 0.35;
       pointer-events: none;
 
       background: repeating-conic-gradient(
@@ -247,18 +247,12 @@
 // TABLET
 // ==========================================
 
-@media (max-width: 750px) {
+@media (min-width: 768px) and (max-width: 1024px) {
   .about-container {
     padding: 90px 0 80px;
 
     .h2-title {
-      gap: 15px;
-
       margin-bottom: 55px;
-
-      .divider {
-        width: 35px;
-      }
 
       h2 {
         font-size: 2.3rem;
@@ -266,11 +260,12 @@
     }
 
     .about-card-container {
-      grid-template-columns: repeat(2, 1fr);
-
-      width: calc(100% - 40px);
-
-      gap: 18px;
+      // grid-template-columns: repeat(2, 1fr);
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      justify-items: center;
+      gap: 1.5rem;
     }
   }
 }
