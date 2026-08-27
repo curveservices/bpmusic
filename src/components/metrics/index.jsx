@@ -30,9 +30,9 @@ const MetricsData = [
     icon: faMusic,
   },
   {
-    value: 2,
+    value: 150,
     suffix: "+",
-    label: "Kent & south east",
+    label: "locations",
     icon: faLocationPin,
   },
 ];
