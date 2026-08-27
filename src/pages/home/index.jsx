@@ -153,9 +153,7 @@ const Home = () => {
             <GalleryPreview />
           </section>
         </FadeInSection>
-        <FadeInSection>
           <CTA />
-        </FadeInSection>
       </div>
     </>
   );
