@@ -61,7 +61,7 @@ header {
   display: none;
 }
 
-@media screen and (max-width: 1024px) {
+@media screen and  (max-width: 1024px) {
   header {
     justify-content: space-between;
     padding: 1rem 4rem;
@@ -248,16 +248,24 @@ header {
     }
   }
 }
-@media screen and (min-width: 101px) and (max-width: 768px) {
+@media screen and (max-width: 768px) {
   header {
     padding: 0.15rem 1rem;
+    background: transparent;
+    .desktop-btn {
+      display: none;
+    }
+    &.menu-open {
+      background: var(--navy);
+      animation: none;
+    }
 
     nav.mobile-show {
       top: 65px;
 
       height: calc(100vh - 75px);
 
-      padding: 6rem 8rem;
+      padding: 6rem;
 
       &::before {
         width: 1000px;
@@ -294,7 +302,8 @@ header {
         padding-top: 25px;
 
         .text {
-          font-size: 13px;
+          font-size: 16px;
+          width: 100%;
         }
 
         .small {

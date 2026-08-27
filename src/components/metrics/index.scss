@@ -115,12 +115,12 @@
 // ====================
 @media screen and (max-width: 768px) {
   .metrics-container {
-    flex-wrap: wrap;
-    justify-content: space-between;
-    padding: 2rem;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0;
     .metric {
       max-width: 200px;
-      margin: 1rem 1rem;
+      margin: 0.5rem;
       .metric-icon {
         width: 28px;
       }
@@ -129,7 +129,7 @@
         font-size: 12px;
       }
       .metric-value {
-        font-size: 28px;
+        font-size: 26px;
       }
     }
     .quarter {
@@ -137,19 +137,19 @@
     }
 
     .top-left {
-      margin-top: -2rem;
+      margin-top: 0rem;
     }
 
     .top-right {
-      margin-top: -2rem;
+      margin-top: 0rem;
     }
 
     .btm-left {
-      margin-top: 14rem;
+      margin-top: 11rem;
     }
 
     .btm-right {
-      margin-top: 14rem;
+      margin-top: 11rem;
     }
   }
 }
