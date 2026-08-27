@@ -264,20 +264,21 @@
       }
 
       h2 {
-        font-size: 28px;
+        font-size: 24px;
       }
 
       .h2-title {
         display: flex;
         align-items: center;
         justify-content: center;
-        gap: 1.5rem;
+        text-align: center;
+        gap: 1rem;
         width: 100%;
 
         .divider {
           position: relative;
 
-          width: 85px;
+          width: 55px;
           height: 2px;
 
           background: var(--gold);

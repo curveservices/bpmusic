@@ -303,32 +303,6 @@
         width: 100%;
       }
     }
-
-    // ==================================================
-    // THIRD SECTION
-    // ==================================================
-
-    .third-section {
-      position: relative;
-
-      overflow: hidden;
-
-      &__inner {
-        position: relative;
-
-        z-index: 1;
-      }
-
-      .event__image {
-        top: 5%;
-
-        left: -10%;
-
-        width: 120%;
-
-        opacity: 0.12;
-      }
-    }
   }
 }
 
@@ -346,8 +320,7 @@
       display: flex;
       flex-direction: column;
       overflow: hidden;
-      background: var(--ivory);
-
+      height: 100svh;
       // ----------------------------------------------
       // VIDEO
       // ----------------------------------------------
@@ -464,15 +437,16 @@
       position: relative;
 
       overflow: hidden;
+      .second-inner {
+        a.scroll {
+          display: none;
+        }
+      }
 
       .about__fan {
-        top: -6rem;
-
-        right: -230px;
-
+        top: 5.5rem;
+        right: 0px;
         width: 500px;
-
-        opacity: 0.07;
       }
     }
 
@@ -489,73 +463,6 @@
         position: relative;
 
         z-index: 1;
-      }
-
-      .event__image {
-        top: 8%;
-
-        left: -30%;
-
-        width: 160%;
-
-        opacity: 0.08;
-      }
-    }
-  }
-}
-
-// ==================================================
-// SMALL MOBILE
-// <= 380px
-// ==================================================
-
-@media screen and (max-width: 380px) {
-  .home-page {
-    .hero {
-      // ----------------------------------------------
-      // VIDEO
-      // ----------------------------------------------
-
-      &__video {
-        height: 38svh;
-
-        min-height: 250px;
-      }
-
-      // ----------------------------------------------
-      // CONTENT
-      // ----------------------------------------------
-
-      &__content {
-        padding: 48px 20px 65px;
-      }
-
-      // ----------------------------------------------
-      // HEADING
-      // ----------------------------------------------
-
-      h1 {
-        font-size: 2.45rem;
-
-        line-height: 1;
-      }
-
-      // ----------------------------------------------
-      // COPY
-      // ----------------------------------------------
-
-      p {
-        font-size: 12px;
-
-        line-height: 1.7;
-      }
-
-      // ----------------------------------------------
-      // BUTTONS
-      // ----------------------------------------------
-
-      .btn-container {
-        margin-top: 24px;
       }
     }
   }

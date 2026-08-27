@@ -111,7 +111,7 @@ const Home = () => {
               <Textbox
                 src={sax}
                 eyebrow="Mainly Sax"
-                h1="Another sound from the Peninsula Big Band"
+                h1="Another sound from the Big Band"
                 p="Meet Mainly Sax — a smaller ensemble bringing the distinctive sound of live saxophones to bandstands, community events and venues across the South East."
                 buttonText="Discover Mainly Sax"
                 link="/mainly-sax"

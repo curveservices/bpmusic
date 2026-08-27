@@ -274,16 +274,15 @@
 // MOBILE
 // ==========================================
 
-@media (max-width: 500px) {
+@media (max-width: 768px) {
   .about-container {
-    padding: 75px 0;
+    padding: 75px 16px;
 
     .h2-title {
-      gap: 10px;
-
-      h2 {
-        font-size: 1.9rem;
-      }
+      justify-content: space-between;
+      gap: 0px;
+    
+      margin-bottom: 35px;
 
       .divider {
         width: 25px;
@@ -305,10 +304,10 @@
     }
 
     .card-icon {
-      width: 65px;
-      height: 65px;
+      width: 55px;
+      height: 55px;
 
-      padding: 15px;
+      padding: 20px;
     }
   }
 }
