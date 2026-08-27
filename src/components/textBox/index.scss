@@ -2,26 +2,87 @@
   flex-direction: column;
 }
 .textbox-container {
+  position: relative;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   gap: 1rem;
   padding: 5rem 4rem 2rem;
   cursor: pointer;
+
+  // ==========================================
+  // ART DECO FRAME
+  // ==========================================
+
+  .frame {
+    position: absolute;
+
+    top: 2.5rem;
+    left: 2.2rem;
+
+    width: 560px;
+    height: 500px;
+
+    opacity: 0.8;
+
+    z-index: 2;
+
+    pointer-events: none;
+  }
+
+
+  // ==========================================
+  // IMAGE
+  // ==========================================
+
   .blur-img {
+    position: relative;
+
     width: 500px;
     height: auto;
+
     max-height: 500px;
+
     object-fit: cover;
-    filter: brightness(1.1);
-    filter: saturate(0.8);
+
+    filter:
+      brightness(1.1) saturate(0.8);
+
+    z-index: 1;
   }
+
+
+  // ==========================================
+  // TEXT
+  // ==========================================
+
   .text-box {
     flex: 1;
+
     padding: 1rem 4rem;
+
+    position: relative;
+
+    z-index: 3;
   }
+
+
+  // ==========================================
+  // REVERSE
+  // ==========================================
+
   &.reverse {
+
     flex-direction: row-reverse;
+
+
+    .frame {
+      width: 560px;
+      height: 550px;
+      top: 2.1rem;
+      left: auto;
+      right: 2.2rem;
+    }
   }
 }
 
@@ -35,10 +96,35 @@
     flex-direction: column;
     align-items: center;
     padding: 3rem 2rem 2rem;
-
+  .frame {
+      position: absolute;
+  
+      top: 1rem;
+      left: 7rem;
+  
+      width: 800px;
+      height: 525px;
+  
+      opacity: 0.8;
+  
+      z-index: 2;
+  
+      pointer-events: none;
+    }
     .blur-img {
       width: 700px;
     }
+        &.reverse {
+    
+          flex-direction: row-reverse;
+    
+    
+          .frame {
+            height: 550px;
+    
+            right: 7rem;
+          }
+        }
   }
 }
 
@@ -51,7 +137,13 @@
       flex-direction: column;
       align-items: center;
       padding: 0rem 0rem 2rem;
-  
+    .frame {
+        top: 0rem;
+        left: -0.8rem;
+    
+        width: 455px;
+        height: 300px;
+      }
       .blur-img {
         width: 100%;
         padding: 0;
@@ -60,5 +152,18 @@
         flex: initial;
         padding: 1rem 2rem;
       }
+      &.reverse {
+
+
+        .frame {
+          top: 0rem;
+
+          width: 455px;
+          height: 410px;
+
+          right: -0.5rem;
+        }
+      }
     }
+       
 }

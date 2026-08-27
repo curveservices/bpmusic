@@ -1,4 +1,5 @@
 import Button from "../button";
+import frame from "../../assets/images/frame.png";
 import "./index.scss";
 
 const Textbox = ({
@@ -18,6 +19,7 @@ const Textbox = ({
       <div
         className={`textbox-container ${flip ? "flip" : ""} ${reverse ? "reverse" : ""}`}
       >
+        <img src={frame} className="frame" aria-hidden="true" />
         <img
           className="blur-img"
           src={src}
