@@ -137,22 +137,22 @@ const Home = () => {
             link="/events"
           />
         </section>
-        <section className="third-section">
-          <div className="event__image" aria-hidden="true">
-            <img className="event__img" src={artex} alt="" />
-          </div>
-          <FadeInSection>
+        <FadeInSection>
+          <section className="third-section">
+            <div className="event__image" aria-hidden="true">
+              <img className="event__img" src={artex} alt="" />
+            </div>
             <div className="third__inner">
               <Events />
               <Repertoire />
             </div>
-          </FadeInSection>
-        </section>
-        <section className="fourth-section">
-          <FadeInSection>
+          </section>
+        </FadeInSection>
+        <FadeInSection>
+          <section className="fourth-section">
             <GalleryPreview />
-          </FadeInSection>
-        </section>
+          </section>
+        </FadeInSection>
         <FadeInSection>
           <CTA />
         </FadeInSection>

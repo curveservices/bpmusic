@@ -337,7 +337,7 @@
 // MOBILE
 // ==========================================
 
-@media (max-width: 600px) {
+@media (max-width: 768px) {
   .footer {
     &__inner {
       grid-template-columns: 1fr;
@@ -347,6 +347,20 @@
       width: calc(100% - 50px);
 
       padding: 70px 0 60px;
+    }
+    .quarter {
+      width: 200px;
+    }
+
+    .btm-left {
+      bottom: 10%;
+    }
+
+    .btm-right {
+      transform: rotate(180deg);
+      right: 0;
+      bottom: 10%;
+      margin-top: 6.75rem;
     }
 
     &__brand {

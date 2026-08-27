@@ -14,7 +14,7 @@
     position: absolute;
     top: 90%;
     left: 50%;
-    width: 1200px;
+    width: 100%;
     max-width: 100%;
     height: auto;
     transform: translate(-50%, -50%) rotate(180deg);
@@ -130,12 +130,21 @@
 // MOBILE
 // ==========================================
 
-@media (max-width: 600px) {
+@media (max-width: 768px) {
   .cta {
-    min-height: 430px;
-
-    padding: 75px 35px;
-
+    width: 100%;
+    height: auto;
+    flex-direction: column;
+    &__content {
+      padding: 2rem;
+      h2 {
+        font-weight: 600;
+      }
+      .cta__eyebrow {
+        font-size: 13px;
+      }
+    }
+     
     &::before {
       inset: 10px;
     }
@@ -146,8 +155,6 @@
 
     &__fan {
       width: 600px;
-
-      opacity: 0.08;
     }
 
     &__eyebrow {
@@ -155,17 +162,11 @@
 
       letter-spacing: 0.2em;
     }
-
-    h2 {
-      font-size: 2.4rem;
-
-      line-height: 1.1;
-    }
-
-    p {
-      max-width: 320px;
-
-      font-size: 12px;
+    &__btn-container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0rem 0em 2rem;
     }
   }
 }

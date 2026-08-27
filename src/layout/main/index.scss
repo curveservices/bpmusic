@@ -1,41 +1,5 @@
 .app {
   font-family: "Montseratt" sans-serif;
-  .error-message {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 12rem 0;
-    font-size: 2rem;
-  }
-  .back-to-top {
-    font-family: "Montserrat", sans-serif;
-    font-weight: 600;
-    position: fixed;
-    display: flex;
-    gap: 1rem;
-    bottom: 6rem;
-    left: 1.2rem;
-    padding: 10px;
-    margin: 0;
-    background: var(--gold);
-    color: var(--text);
-    font-size: 1rem;
-    width: fit-content;
-    height: auto;
-    border: solid 2px var(--gold-light);
-    box-shadow: var(--button-shadow);
-    z-index: 999;
-    cursor: pointer;
-    animation: fadeInUp 2s;
-    transition: all 0.3s ease-in-out;
-
-    &:hover {
-      background: var(--walnut);
-      box-shadow: var(--box-shadow);
-      transform: translateY(-3px);
-      color: var(--ivory);
-    }
-  }
 
   .fade-in-on-scroll {
     opacity: 0;
@@ -203,7 +167,43 @@
       text-align: center;
     }
   }
-  
+}
+.error-message {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 12rem 0;
+  font-size: 2rem;
+}
+
+.back-to-top {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+  position: fixed;
+  display: flex;
+  gap: 1rem;
+  bottom: 6rem;
+  left: 1.2rem;
+  padding: 10px;
+  margin: 0;
+  background: var(--gold);
+  color: var(--text);
+  font-size: 1rem;
+  width: fit-content;
+  height: auto;
+  border: solid 2px var(--gold-light);
+  box-shadow: var(--button-shadow);
+  z-index: 999;
+  cursor: pointer;
+  animation: fadeInUp 2s;
+  transition: all 0.3s ease-in-out;
+
+  &:hover {
+    background: var(--walnut);
+    box-shadow: var(--box-shadow);
+    transform: translateY(-3px);
+    color: var(--ivory);
+  }
 }
 // ==================================================
 // TABLET

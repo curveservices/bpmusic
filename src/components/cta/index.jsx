@@ -4,7 +4,7 @@ import "./index.scss";
 
 const CTA = () => {
   return (
-    <section className="cta">
+    <div className="cta">
       <img src={fan} alt="" className="cta__fan" aria-hidden="true" />
 
       <div className="cta__content">
@@ -26,7 +26,7 @@ const CTA = () => {
           padding={1.4}
         />
       </div>
-    </section>
+    </div>
   );
 };
 
