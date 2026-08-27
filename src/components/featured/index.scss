@@ -96,19 +96,26 @@
 
 @media screen and (max-width: 768px) {
   .featured-container {
-    padding: 0rem 2rem;
+    padding: 2rem 2rem;
     margin: 1rem 0 0;
 
     .quarter {
       width: 200px;
     }
+    .top-left {
+      margin-top: -1.75rem;
+    }
+
+    .top-right {
+      margin-top: -1.75rem;
+    }
 
     .btm-left {
-      margin-top: 22rem;
+      margin-top: 23.5rem;
     }
 
     .btm-right {
-      margin-top: 22rem;
+      margin-top: 23.5rem;
     }
 
     .feature-img {
