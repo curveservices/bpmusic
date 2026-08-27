@@ -262,14 +262,13 @@ header {
 
     nav.mobile-show {
       top: 65px;
-
-      height: calc(100vh - 75px);
-
-      padding: 6rem;
+      height: calc(100vh - 65px);
+      gap: 2rem;
+      padding: 5rem 6rem;
 
       &::before {
-        width: 1000px;
-        height: 1000px;
+        width: 900px;
+        height: 900px;
 
         opacity: 0.15;
       }
@@ -281,7 +280,7 @@ header {
       .menu-container {
         gap: 28px;
 
-        padding-bottom: 14px;
+        padding-bottom: 0;
       }
 
       .mobile-icon {
