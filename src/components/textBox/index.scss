@@ -30,7 +30,6 @@
     pointer-events: none;
   }
 
-
   // ==========================================
   // IMAGE
   // ==========================================
@@ -39,18 +38,16 @@
     position: relative;
 
     width: 500px;
-    height: auto;
+    height: 420px;
 
     max-height: 500px;
 
     object-fit: cover;
 
-    filter:
-      brightness(1.1) saturate(0.8);
+    filter: brightness(1.1) saturate(0.8);
 
     z-index: 1;
   }
-
 
   // ==========================================
   // TEXT
@@ -66,22 +63,19 @@
     z-index: 3;
   }
 
-
   // ==========================================
   // REVERSE
   // ==========================================
 
   &.reverse {
-
     flex-direction: row-reverse;
-
 
     .frame {
       width: 560px;
-      height: 550px;
-      top: 2.1rem;
+      height: 500px;
+      top: 2.5rem;
       left: auto;
-      right: 2.2rem;
+      right: 2.1rem;
     }
   }
 }
@@ -91,40 +85,39 @@
 // =================
 
 @media screen and (min-width: 768px) and (max-width: 1024px) {
-
-.textbox-container {
+  .textbox-container {
     flex-direction: column;
     align-items: center;
     padding: 3rem 2rem 2rem;
-  .frame {
+    gap: 4rem;
+    .frame {
       position: absolute;
-  
-      top: 1rem;
+
+      top: 0rem;
       left: 7rem;
-  
+
       width: 800px;
       height: 525px;
-  
+
       opacity: 0.8;
-  
+
       z-index: 2;
-  
+
       pointer-events: none;
     }
     .blur-img {
       width: 700px;
     }
-        &.reverse {
-    
-          flex-direction: row-reverse;
-    
-    
-          .frame {
-            height: 550px;
-    
-            right: 7rem;
-          }
-        }
+    &.reverse {
+      flex-direction: row-reverse;
+
+      .frame {
+        width: 800px;
+        height: 525px;
+        top: 0rem;
+        left: 7rem;
+      }
+    }
   }
 }
 
@@ -134,25 +127,24 @@
 
 @media screen and (max-width: 768px) {
   .textbox-container {
-      flex-direction: column;
-      align-items: center;
-      padding: 0rem 0rem 2rem;
+    flex-direction: column;
+    align-items: center;
+    padding: 0rem 0rem 2rem;
     .frame {
+      display: none;
+    }
+    .blur-img {
+      width: 100%;
+      padding: 0;
+    }
+    .text-box {
+      flex: initial;
+      padding: 1rem 2rem;
+    }
+    &.reverse {
+      .frame {
         display: none;
       }
-      .blur-img {
-        width: 100%;
-        padding: 0;
-      }
-      .text-box {
-        flex: initial;
-        padding: 1rem 2rem;
-      }
-      &.reverse {
-        .frame {
-          display: none;
-        }
-      }
     }
-       
+  }
 }

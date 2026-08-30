@@ -1,6 +1,6 @@
 import { Suspense } from "react";
 import home from "../../assets/images/hero.mp4";
-import sax from "../../assets/images/sax.webp";
+import sax from "../../assets/images/sax.jpg";
 import about from "../../assets/images/about.webp";
 import rep from "../../assets/images/g4.jpg";
 import modern from "../../assets/images/rep1.jpg";
@@ -15,12 +15,12 @@ import salute from "../../assets/images/salute-40s.jpg";
 import Textbox from "../../components/textBox";
 import AboutCards from "../../components/cards/aboutCards";
 import Featured from "../../components/featured";
-
-import "./index.scss";
 import Events from "../../components/cards/eventCards";
 import Repertoire from "../../components/repertoire";
 import GalleryPreview from "../../components/galleryPreview";
 import CTA from "../../components/cta";
+
+import "./index.scss";
 
 const Home = () => {
   const FadeInSection = ({ children }) => {
@@ -102,7 +102,7 @@ const Home = () => {
                 p="Formed in Kent, The Peninsula Big Band brings together professional and experienced amateur musicians who share a passion for the timeless sound of the big band erd
                         For over 15 years we have been delighting audiences across the South East with authentic swing classics and modern favourites."
                 buttonText="learn more about us"
-                link="/about"
+                link="/about-us"
               />
               <a href="#sax" className="scroll" aria-label="Scroll to about">
                 <span className="scroll-line" />
@@ -114,7 +114,7 @@ const Home = () => {
                 h1="Another sound from the Big Band"
                 p="Meet Mainly Sax — a smaller ensemble bringing the distinctive sound of live saxophones to bandstands, community events and venues across the South East."
                 buttonText="Discover Mainly Sax"
-                link="/mainly-sax"
+                link="/about-us/#mainly-sax"
                 reverse={true}
               />
               <a href="#where" className="scroll" aria-label="Scroll to about">
@@ -153,7 +153,7 @@ const Home = () => {
             <GalleryPreview />
           </section>
         </FadeInSection>
-          <CTA />
+        <CTA />
       </div>
     </>
   );

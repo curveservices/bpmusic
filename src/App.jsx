@@ -10,6 +10,7 @@ import LoadingSpinner from "./components/loadingSpinner/index.jsx";
 const Layout = lazy(() => import("./layout/main/index.jsx"));
 const NotFound = lazy(() => import("./pages/404"));
 const Home = lazy(() => import("./pages/home/index.jsx"));
+const About = lazy(() => import("./pages/about/index.jsx"));
 import "./App.scss";
 
 const router = createBrowserRouter(
@@ -21,6 +22,14 @@ const router = createBrowserRouter(
           element={
             <Suspense fallback={<LoadingSpinner />}>
               <Home />
+            </Suspense>
+          }
+        />
+        <Route
+          path="about-us"
+          element={
+            <Suspense fallback={<LoadingSpinner />}>
+              <About />
             </Suspense>
           }
         />
