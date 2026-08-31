@@ -30,13 +30,21 @@ const Textbox = ({
         />
         <div className="text-box">
           <span className="eyebrow">{eyebrow}</span>
-          <h1 className="main">{h1}</h1>
+          <h1 className="main">
+            {h1}
+          </h1>
           <div className="divider">
             <span />
           </div>
-          <p className="">{p}</p>
-          <p className="">{p1}</p>
-          <p className=""><b>{p2}</b></p>
+          <p className="">
+            {p}
+          </p>
+          <p className="">
+            {p1}
+          </p>
+          <p className="">
+            <b>{p2}</b>
+          </p>
           <div className="btn-container">
             <Button text={buttonText} link={link} />
           </div>

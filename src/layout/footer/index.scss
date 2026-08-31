@@ -26,14 +26,14 @@
 
   .btm-left {
     transform: rotateX(180deg);
-    margin-top: 6.75rem;
+    margin-top: 8rem;
     left: 0;
   }
 
   .btm-right {
     transform: rotate(180deg);
     right: 0;
-    margin-top: 6.75rem;
+    margin-top: 8rem;
   }
 
   // ==========================================
@@ -57,6 +57,9 @@
 
   &__brand {
     max-width: 330px;
+    h2 {
+      font-family: "Limelight", sans-serif;
+    }
   }
 
   // ==========================================
@@ -80,10 +83,10 @@
   &__logo-small {
     display: block;
     margin-bottom: 5px;
-    font-family: "Montserrat", sans-serif;
-    font-size: 12px;
+    font-family: "Oswald", sans-serif;
+    font-size: 14px;
     font-weight: 700;
-    letter-spacing: 0.3em;
+    letter-spacing: 0.35em;
     text-transform: uppercase;
     color: var(--gold);
   }
@@ -100,8 +103,8 @@
   &__brand > p {
     max-width: 280px;
     margin: 0;
-    font-family: "Montserrat", sans-serif;
-    font-size: 12px;
+    font-family: "Oswald", sans-serif;
+    font-size: 14px;
     line-height: 1.8;
     text-align: center;
     color: rgba(247, 243, 236, 0.6);
@@ -114,10 +117,10 @@
   &__column {
     h3 {
       margin: 0 0 25px;
-      font-family: "Montserrat", sans-serif;
+      font-family: "Oswald", sans-serif;
       font-size: 14px;
       font-weight: 700;
-      letter-spacing: 0.2em;
+      letter-spacing: 0.35em;
       text-transform: uppercase;
       color: var(--gold);
     }
@@ -130,12 +133,12 @@
   &__nav {
     display: flex;
     flex-direction: column;
-    gap: 12px;
+    gap: 10px;
 
     a {
       width: fit-content;
-      font-family: "Montserrat", sans-serif;
-      font-size: 12px;
+      font-family: "Oswald", sans-serif;
+      font-size: 14px;
       text-decoration: none;
       color: rgba(247, 243, 236, 0.75);
       transition:
@@ -165,9 +168,9 @@
     a {
       margin: 0;
 
-      font-family: "Montserrat", sans-serif;
+      font-family: "Oswald", sans-serif;
 
-      font-size: 12px;
+      font-size: 14px;
 
       line-height: 1.6;
 
@@ -231,7 +234,7 @@
 
     margin: 0;
 
-    font-family: "Montserrat", sans-serif;
+    font-family: "Oswald", sans-serif;
 
     font-size: 11px;
 
@@ -269,11 +272,11 @@
   &__legal {
     margin: 0;
 
-    font-family: "Montserrat", sans-serif;
+    font-family: "Oswald", sans-serif;
 
-    font-size: 9px;
+    font-size: 11px;
 
-    letter-spacing: 0.05em;
+    letter-spacing: 0.25em;
 
     color: rgba(247, 243, 236, 0.45);
   }

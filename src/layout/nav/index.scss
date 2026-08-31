@@ -8,7 +8,7 @@ header {
   top: 0;
   z-index: 1000;
   background: var(--navy);
-  font-family: "Montserrat", sans-serif;
+  font-family: "Oswald", sans-serif;
   font-optical-sizing: auto;
   transition: all 2s ease;
   cursor: pointer;
@@ -26,6 +26,7 @@ header {
     display: flex;
     align-items: center;
     justify-content: center;
+    text-transform: uppercase;
     gap: 3rem;
     color: var(--text);
 
@@ -231,8 +232,6 @@ header {
           padding-top: 2rem;
 
           border-top: 1px solid rgba(200, 169, 106, 0.25);
-
-          font-family: "Montserrat", sans-serif;
 
           .text {
             color: var(--gold);

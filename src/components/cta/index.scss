@@ -60,7 +60,7 @@
     z-index: 2;
     display: flex;
     flex-direction: column;
-    padding: 3rem 5rem;
+    padding: 1.5rem 4rem;
   }
 
   // ==========================================
@@ -70,12 +70,12 @@
   &__eyebrow {
     display: block;
     margin-bottom: 1rem;
-    font-family: "Montserrat", sans-serif;
-    font-size: 18px;
+    font-family: "Oswald", sans-serif;
+    font-size: 16px;
     font-weight: 700;
     letter-spacing: 0.28em;
     text-transform: uppercase;
-    color: var(--walnut);
+    color: var(--navy);
   }
 
   // ==========================================
@@ -85,7 +85,7 @@
   h2 {
     max-width: 750px;
     font-weight: 500;
-    line-height: 1.05;
+    line-height: 1;
     color: var(--ivory);
     span {
       font-style: italic;

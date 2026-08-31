@@ -1,6 +1,6 @@
 .app {
-  font-family: "Montseratt" sans-serif;
-
+  font-family: "Oswald" sans-serif;
+  will-change: contents;
   .fade-in-on-scroll {
     opacity: 0;
     transform: translateY(30px);
@@ -20,18 +20,19 @@
   .gallery-page,
   .events-page {
     h1 {
-      font-family: "Limelight", serif;
-      font-optical-sizing: auto;
-      margin: 0;
-      font-weight: 500;
-      font-size: 48px;
+      font-family: "Limelight", sans-serif;
+      font-weight: 400;
       font-style: normal;
+      margin: 0;
+      font-size: 48px;
       text-transform: uppercase;
       line-height: 1.2;
       color: var(--text);
     }
     h2 {
-      font-family: "Limelight", serif;
+      font-family: "Limelight", sans-serif;
+      font-weight: 400;
+      font-style: normal;
       font-size: 42px;
       margin: 0;
       color: var(--text);
@@ -90,12 +91,20 @@
     }
     h4 {
       font-size: 20px;
-      font-family: "Montserrat", sans-serif;
+      font-family: "Oswald", sans-serif;
+      font-optical-sizing: auto;
+      font-style: normal;
     }
     p {
-      font-family: "Montserrat", sans-serif;
+      font-family: "Oswald", sans-serif;
+      font-optical-sizing: auto;
+      font-style: normal;
+      font-size: 18px;
       font-weight: 600;
       color: var(--text);
+    }
+    img {
+      filter: saturate(0.8);
     }
 
     .hero {
@@ -118,7 +127,7 @@
           // and video.
           clip-path: polygon(54% 0, 100% 0, 100% 100%, 44% 100%);
       
-          background: #373737;
+          background: #bfb6a0;
         }
       
         &__video-overlay {
@@ -250,8 +259,6 @@
 
       p {
         max-width: 520px;
-        font-family: "Montserrat", sans-serif;
-        font-weight: 600;
       }
 
       // ----------------------------------------
@@ -274,10 +281,10 @@
 
       margin-bottom: 22px;
 
-      font-family: "Montserrat", sans-serif;
+      font-family: "Oswald", sans-serif;
       font-size: 18px;
-      font-weight: 600;
-      letter-spacing: 0.22em;
+      font-weight: 900;
+      letter-spacing: 0.35em;
       text-transform: uppercase;
 
       color: var(--gold);
@@ -302,8 +309,8 @@
       align-items: center;
       gap: 12px;
 
-      font-family: "Montserrat", sans-serif;
-      font-size: 9px;
+      font-family: "Oswald", sans-serif;
+      font-size: 11px;
       font-weight: 600;
 
       letter-spacing: 0.2em;
@@ -342,7 +349,7 @@
 }
 
 .back-to-top {
-  font-family: "Montserrat", sans-serif;
+  font-family: "Oswald", sans-serif;
   font-weight: 600;
   position: fixed;
   display: flex;
@@ -465,7 +472,7 @@
           &__inner {
             width: 100%;
         
-            max-width: 540px;
+            max-width: 475px;
           }
         }
       }
@@ -546,8 +553,6 @@
         gap: 12px;
 
         margin-bottom: 12px;
-
-        font-family: "Montserrat", sans-serif;
         font-size: 16px;
         font-weight: 600;
         letter-spacing: 0.22em;
@@ -689,8 +694,6 @@
         display: flex;
         align-items: center;
         gap: 12px;
-
-        font-family: "Montserrat", sans-serif;
         font-size: 9px;
         font-weight: 600;
 

@@ -8,8 +8,9 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 
 import "./index.scss";
+import { Link } from "react-router-dom";
 
-const AboutCards = ({ items, mainTitle }) => {
+const AboutCards = ({ items, mainTitle, link }) => {
   const defaultItems = [
     {
       icon: faHeartMusicCameraBolt,
@@ -64,6 +65,12 @@ const AboutCards = ({ items, mainTitle }) => {
             <p>{card.description}</p>
           </div>
         ))}
+      </div>
+      <div className="about-footer">
+        <Link to="/book-us" className="about-link">
+          <span>Book the Band</span>
+          <span className="about-arrow">→</span>
+        </Link>
       </div>
     </div>
   );
