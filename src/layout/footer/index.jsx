@@ -85,7 +85,7 @@ const Footer = () => {
 
           <div className="footer__socials">
             <a
-              href="YOUR_FACEBOOK_URL"
+              href="https://www.facebook.com/profile.php?id=100039182902478&locale=en_GB"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Peninsula Big Band on Facebook"
@@ -94,7 +94,7 @@ const Footer = () => {
             </a>
 
             <a
-              href="YOUR_YOUTUBE_URL"
+              href="https://www.youtube.com/@bpmusic5357"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Peninsula Big Band on YouTube"
