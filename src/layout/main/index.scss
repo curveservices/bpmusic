@@ -5,8 +5,8 @@
     opacity: 0;
     transform: translateY(30px);
     transition:
-      opacity 0.8s ease-out,
-      transform 0.8s ease-out;
+      opacity 0.8s ease-in-out,
+      transform 0.8s ease-in-out;
     will-change: opacity, transform;
 
     &.visible {
@@ -107,229 +107,6 @@
       filter: saturate(0.8);
     }
 
-    .hero {
-      position: relative;
-      min-height: calc(100vh - 82px);
-      overflow: hidden;
-      background: var(--ivory);
-      isolation: isolate;
-      display: flex;
-      align-items: stretch;
-      // ----------------------------------------
-      // VIDEO
-      // ----------------------------------------
-        &__video {
-          position: absolute;
-          inset: 0;
-          z-index: -0;
-          overflow: hidden;
-          // Creates the angled edge between content
-          // and video.
-          clip-path: polygon(54% 0, 100% 0, 100% 100%, 44% 100%);
-      
-          background: #bfb6a0;
-        }
-      
-        &__video-overlay {
-          position: absolute;
-          inset: 0;
-          z-index: -2;
-      
-          background: linear-gradient(90deg,
-              rgba(14, 26, 43, 0.05) 0%,
-              rgba(14, 26, 43, 0.12) 100%);
-      
-          clip-path: polygon(54% 0, 100% 0, 100% 100%, 44% 100%);
-      }
-     
-      // ----------------------------------------
-      // ART DECO FAN
-      // ----------------------------------------
-    
-      .hero__fan {
-        position: absolute;
-        top: 0%;
-        width: 850px;
-        height: auto;
-        transform: rotateX(180deg);
-        z-index: -1;
-    
-        pointer-events: none;
-    
-        opacity: 0.2;
-    
-        img {
-          width: 100%;
-          height: 100%;
-    
-          object-fit: contain;
-          object-position: left center;
-    
-          display: block;
-        }
-      }
-      // ----------------------------------------
-      // LEFT CONTENT PANEL
-      // ----------------------------------------
-
-      &::before {
-        content: "";
-        position: absolute;
-        inset: 0;
-
-        z-index: -1;
-
-        width: 66%;
-
-        background: var(--ivory);
-
-        clip-path: polygon(0 0, 80% 0, 71% 100%, 0 100%);
-      }
-      // ----------------------------------------
-      // CONTENT
-      // ----------------------------------------
-
-      &__content {
-        width: 58%;
-        margin-top: 2rem;
-        display: flex;
-        align-items: center;
-
-        position: relative;
-        z-index: 2;
-
-        padding: 100px 0 100px 64px;
-      }
-
-      &__inner {
-        width: min(720px, 100%);
-      }
-
-      // ----------------------------------------
-      // HEADING
-      // ----------------------------------------
-
-      h1 {
-        max-width: 650px;
-      }
-
-      // ----------------------------------------
-      // DECORATIVE DIVIDER
-      // ----------------------------------------
-
-      .divider {
-        display: flex;
-        align-items: center;
-
-        margin: 28px 0 24px;
-
-        width: 80px;
-
-        span {
-          display: block;
-
-          width: 56px;
-          height: 2px;
-
-          background: var(--gold);
-
-          position: relative;
-
-          &::after {
-            content: "";
-
-            position: absolute;
-
-            right: -8px;
-            top: 50%;
-
-            width: 7px;
-            height: 7px;
-
-            border: 2px solid var(--gold);
-
-            transform: translateY(-50%) rotate(45deg);
-          }
-        }
-      }
-
-      // ----------------------------------------
-      // DESCRIPTION
-      // ----------------------------------------
-
-      p {
-        max-width: 520px;
-      }
-
-      // ----------------------------------------
-      // BUTTONS
-      // ----------------------------------------
-
-      .btn-container {
-        display: flex;
-        align-items: center;
-        gap: 16px;
-        z-index: 2;
-        margin-top: 34px;
-      }
-    }
-
-    .eyebrow {
-      display: inline-flex;
-      align-items: center;
-      gap: 16px;
-
-      margin-bottom: 22px;
-
-      font-family: "Oswald", sans-serif;
-      font-size: 18px;
-      font-weight: 900;
-      letter-spacing: 0.35em;
-      text-transform: uppercase;
-
-      color: var(--gold);
-
-      &::before {
-        content: "";
-        width: 58px;
-        height: 2px;
-
-        background: var(--gold);
-      }
-    }
-    .scroll {
-      position: absolute;
-
-      bottom: 30px;
-      left: 7vw;
-
-      z-index: 5;
-
-      display: flex;
-      align-items: center;
-      gap: 12px;
-
-      font-family: "Oswald", sans-serif;
-      font-size: 11px;
-      font-weight: 600;
-
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-
-      color: var(--navy);
-      text-decoration: none;
-
-      span:last-child {
-        opacity: 0.7;
-      }
-    }
-
-    .scroll-line {
-      width: 50px;
-      height: 1px;
-
-      background: var(--gold);
-    }
     .heading {
       display: flex;
       flex-direction: column;
@@ -337,6 +114,30 @@
       max-width: 700px;
       margin: 0 auto 1.5rem;
       text-align: center;
+    }
+    .second-section {
+      .about__fan {
+        position: absolute;
+        top: -19.5rem;
+        right: 18rem;
+        width: 800px;
+        height: auto;
+        transform: rotate(270deg);
+        z-index: -2;
+        pointer-events: none;
+
+        opacity: 0.2;
+
+        img {
+          width: 100%;
+          height: 100%;
+
+          object-fit: contain;
+          object-position: right center;
+
+          display: block;
+        }
+      }
     }
   }
 }
@@ -419,63 +220,65 @@
       }
       .hero {
         min-height: calc(100svh - 72px);
-        
-          // ----------------------------------------------
-          // VIDEO
-          // ----------------------------------------------
-        
-          &__video {
-            clip-path: polygon(62% 0, 100% 0, 100% 100%, 46% 100%);
-          }
-        
-          // ----------------------------------------------
-          // VIDEO OVERLAY
-          // ----------------------------------------------
-        
-          &__video-overlay {
-            clip-path: polygon(62% 0, 100% 0, 100% 100%, 46% 100%);
-        
-            background: linear-gradient(90deg,
-                rgba(14, 26, 43, 0.02) 0%,
-                rgba(14, 26, 43, 0.2) 100%);
-          }
-        
-          // ----------------------------------------------
-          // IVORY PANEL
-          // ----------------------------------------------
-        
-          &::before {
-            width: 7%;
-            clip-path: polygon(0 0, 82% 0, 73% 100%, 0 100%);
-          }
-        
-          // ----------------------------------------------
-          // FAN
-          // ----------------------------------------------
-        
-          &__fan {
-            top: 9%;
-          }
-        
-          // ----------------------------------------------
-          // CONTENT
-          // ----------------------------------------------
-        
-          &__content {
-            width: 64%;
-        
-            margin-top: -5rem;
-        
-            padding: 80px 0 80px 6vw;
-          }
-        
-          &__inner {
-            width: 100%;
-        
-            max-width: 475px;
-          }
+
+        // ----------------------------------------------
+        // VIDEO
+        // ----------------------------------------------
+
+        &__video {
+          clip-path: polygon(62% 0, 100% 0, 100% 100%, 42% 100%);
+        }
+
+        // ----------------------------------------------
+        // VIDEO OVERLAY
+        // ----------------------------------------------
+
+        &__video-overlay {
+          clip-path: polygon(62% 0, 100% 0, 100% 100%, 42% 100%);
+
+          background: linear-gradient(
+            90deg,
+            rgba(14, 26, 43, 0.02) 0%,
+            rgba(14, 26, 43, 0.2) 100%
+          );
+        }
+
+        // ----------------------------------------------
+        // IVORY PANEL
+        // ----------------------------------------------
+
+        &::before {
+          width: 7%;
+          clip-path: polygon(0 0, 82% 0, 73% 100%, 0 100%);
+        }
+
+        // ----------------------------------------------
+        // FAN
+        // ----------------------------------------------
+
+        &__fan {
+          top: 9%;
+        }
+
+        // ----------------------------------------------
+        // CONTENT
+        // ----------------------------------------------
+
+        &__content {
+          width: 50%;
+
+          margin-top: -5rem;
+
+          padding: 80px 0 80px 6vw;
+        }
+
+        &__inner {
+          width: 100%;
+
+          max-width: 540px;
         }
       }
+    }
   }
 }
 @media screen and (max-width: 768px) {
@@ -638,7 +441,6 @@
           display: flex;
 
           align-items: flex-start;
-
         }
 
         &__inner {
@@ -656,7 +458,6 @@
         // ----------------------------------------------
 
         &__fan {
-
           top: -10rem;
 
           bottom: -25rem;
@@ -665,9 +466,6 @@
 
           height: auto;
         }
-
-
-
 
         // If your Button component creates .btn
 

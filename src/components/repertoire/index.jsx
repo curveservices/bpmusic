@@ -1,5 +1,6 @@
 import g4 from "../../assets/images/g4.jpg";
 import rep1 from "../../assets/images/rep1.jpg";
+import Button from "../button";
 import "./index.scss";
 
 const repertoireItems = [
@@ -79,6 +80,9 @@ const Repertoire = () => {
             </div>
           </article>
         ))}
+        <div className="btn-container">
+          <Button text="Contact us" link="/contact-us" />
+        </div>
       </div>
     </section>
   );

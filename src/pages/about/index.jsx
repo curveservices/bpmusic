@@ -19,6 +19,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import "./index.scss";
 import AboutCards from "../../components/cards/aboutCards";
+import HeroVideo from "../../components/heroVideo";
 const cardItems = [
   {
     icon: faMusic,
@@ -38,8 +39,8 @@ const cardItems = [
   },
   {
     icon: faStar,
-    title: "Location",
-    description: "Proudly loca, performing across Kent and the South east",
+    title: "Where to find us",
+    description: "Proudly local, performing across Kent and the South east",
   },
   {
     icon: faHeart,
@@ -57,60 +58,23 @@ const About = () => {
     <>
       <div className="about-page">
         <FadeInSection>
-          <section className="hero">
-            {/* Video background */}
-            <Suspense fallback={<LoadingSpinner />}>
-              <div className="hero__video">
-                <LazyVideo
-                  alt="Pensinsular Big Band in Kent"
-                  src={about}
-                  type="video/mp4"
-                  className="video"
-                />
-              </div>
-            </Suspense>
-            <div className="hero__video-overlay" />
-            {/* Art Deco fan */}
-            <div className="hero__fan" aria-hidden="true">
-              <img src={fan} alt="Peninsular big band" />
-            </div>
-            <div className="hero__content">
-              <div className="hero__inner">
-                <span className="eyebrow">
-                  KEEPING THE GOLDEN AGE OF SWING ALIVE
-                </span>
-                <h1>The Peninsular Big Band</h1>
-
-                <div className="divider">
-                  <span />
-                </div>
-
-                <p>
-                  The Peinnsula Big Band is a 18-piece ensemble dedicated to the
-                  timeless music of the swing era. From the iconic sounds of
-                  Count Basie and Duke Ellington to the classic arrangements of
-                  Glenn Miller, we bring energy, elegance and excitement to
-                  every stage.
-                </p>
-
-                <div className="btn-container">
-                  <Button text="Upcomming events" link="/events" />
-
-                  <Button
-                    text="Book the band"
-                    link="/contact"
-                    background="var(--navy-light)"
-                    color="var(--ivory)"
-                  />
-                </div>
-              </div>
-            </div>
-            {/* Bottom scroll indicator */}
-            <a href="#the-band" className="scroll" aria-label="Scroll to about">
-              <span className="scroll-line" />
-              <span>Scroll</span>
-            </a>
-          </section>
+          <HeroVideo
+            VidSrc={about}
+            eyebrow="KEEPING THE GOLDEN AGE OF SWING ALIVE"
+            h1="The Peninsular Big Band"
+            p="The Peinnsula Big Band is a 18-piece ensemble dedicated to the
+                timeless music of the swing era. From the iconic sounds of
+                Count Basie and Duke Ellington to the classic arrangements of
+                Glenn Miller, we bring energy, elegance and excitement to
+                every stage."
+            button1Text="Upcoming events"
+            button1Link="/events"
+            button2Text="Book the Band"
+            button2Link="/contact"
+            background="var(--navy)"
+            color="var(--ivory)"
+            href="#the-band"
+          />
         </FadeInSection>
         <CTA />
         <FadeInSection>
@@ -118,20 +82,16 @@ const About = () => {
             <div className="about__fan" aria-hidden="true">
               <img src={fan} alt="Peninsular big band" />
             </div>
-            <div
-              className="second__inner"
-              id="the-band"
-            >
+            <div className="second__inner" id="the-band">
               <Textbox
                 src={pbb}
                 eyebrow="The Spirit of Live Music."
                 h1="Our Story"
                 p="Since 2007, the Peninsula Big Band has been bringing the timeless energy of the big band era to audiences across Kent and beyond."
 
-                p1="From Glenn Miller and Count Basie to The Beatles, Sade and Michael Jackson, our 15-piece orchestra blends classic swing with modern favourites — creating unforgettable live music for festivals, dinner dances, fundraisers and special events."
+                p1="From Glenn Miller and Count Basie to The Beatles, Sade and Michael Jackson, our 18-piece orchestra blends classic swing with modern favourites — creating unforgettable live music for festivals, dinner dances, fundraisers and special events."
                 buttonText="Book the band"
                 link="/book-us"
-                reverse="true"
               />
             </div>
           </section>
@@ -150,7 +110,7 @@ const About = () => {
                 src={sax}
                 eyebrow="A HIGH-ENERGY SAXOPHONE ENSEMBLE"
                 h1="An Elegant off-shoot"
-                p="Mainly Sax is the dynamic little brother of The Peninsula
+                p="Mainly Sax is the dynamic sibling of The Peninsula
                     Big Band."
 
                 p1=" Featuring four saxophonists and a tight rhythm section, this
@@ -165,9 +125,7 @@ const About = () => {
           </section>
         </FadeInSection>
         <FadeInSection>
-          <AboutCards 
-            mainTitle="Peninsular Big Band" 
-            items={cardItems}/>
+          <AboutCards mainTitle="Peninsular Big Band" items={cardItems} />
         </FadeInSection>
       </div>
     </>

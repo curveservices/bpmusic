@@ -26,7 +26,7 @@ const events = [
   },
 ];
 
-const Events = () => {
+const EventCards = () => {
   return (
     <section className="events" id="events">
       <div className="events__container">
@@ -101,4 +101,4 @@ const Events = () => {
   );
 };
 
-export default Events;
+export default EventCards;

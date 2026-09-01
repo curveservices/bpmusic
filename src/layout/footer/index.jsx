@@ -50,7 +50,7 @@ const Footer = () => {
           <nav className="footer__nav">
             <Link to="/">Home</Link>
 
-            <Link to="/about">About</Link>
+            <Link to="/about-us">About</Link>
 
             <Link to="/events">Events</Link>
 

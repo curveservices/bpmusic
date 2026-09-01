@@ -7,7 +7,7 @@
   flex-wrap: wrap;
   justify-content: center;
   gap: 1rem;
-  padding: 5rem 4rem 2rem;
+  padding: 5rem 4rem 4rem;
   cursor: pointer;
 
   // ==========================================
@@ -67,7 +67,11 @@
 
   &.reverse {
     flex-direction: row-reverse;
-
+    background: var(--navy);
+    h1.main, p {
+      color: var(--ivory) !important;
+    }
+    
     .frame {
       width: 560px;
       height: 500px;
