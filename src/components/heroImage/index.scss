@@ -244,3 +244,186 @@
   margin: 0 auto 1.5rem;
   text-align: center;
 }
+
+// ========================
+// TABLET
+// ========================
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .hero {
+      min-height: calc(100svh - 72px);
+      // ----------------------------------------
+      // IMAGE
+      // ----------------------------------------
+      &__image {
+        position: absolute;
+        inset: 0;
+        z-index: -0;
+        overflow: hidden;
+        // Creates the angled edge between content
+        // and video.
+        clip-path: polygon(64% 0, 100% 0, 100% 100%, 44% 100%);
+    
+        background: #bfb6a0;
+    
+        img {
+          position: absolute;
+          width: 600px;
+          max-width: 100%;
+          max-height: 1200px;
+          top: 5.5rem;
+          right: 0rem;
+          object-fit: cover;
+        }
+      }
+    
+      &__image-overlay {
+    
+        clip-path: polygon(64% 0, 100% 0, 100% 100%, 44% 100%);
+      }
+    
+
+
+    // ----------------------------------------------
+    // IVORY PANEL
+    // ----------------------------------------------
+
+    &::before {
+      width: 7%;
+      clip-path: polygon(0 0, 82% 0, 73% 100%, 0 100%);
+    }
+
+    // ----------------------------------------------
+    // FAN
+    // ----------------------------------------------
+
+    &__fan {
+      top: 5%;
+    }
+
+    // ----------------------------------------------
+    // CONTENT
+    // ----------------------------------------------
+
+    &__content {
+      width: 60%;
+
+      margin-top: -5rem;
+
+      padding: 80px 0 75px 6vw;
+    }
+
+    &__inner {
+      width: 100%;
+
+      max-width: 550px;
+    }
+  }
+}
+
+// ========================
+// MOBILE
+// ========================
+@media screen and (max-width: 768px) {
+  .hero {
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      // ----------------------------------------------
+      // IMAGE
+      // ----------------------------------------------
+  
+      &__image {
+        position: relative;
+        inset: auto;
+        order: 1;
+        width: 100%;
+        height: 30svh;
+        min-height: 200px;
+        clip-path: none;
+        overflow: hidden;
+  
+        img {
+          width: 100%;
+          height: 32svh;
+          display: block;
+          right: 0;
+        }
+      }
+  
+      // ----------------------------------------------
+      // IMAGE OVERLAY
+      // ----------------------------------------------
+  
+      &__image-overlay {
+        position: absolute;
+        inset: 0;
+  
+        z-index: 1;
+  
+        display: block;
+  
+        clip-path: none;
+  
+        pointer-events: none;
+        overflow: hidden;
+      }
+  
+      // ----------------------------------------------
+      // CONTENT
+      // ----------------------------------------------
+  
+      &__content {
+        position: relative;
+  
+        order: 2;
+  
+        width: 100%;
+  
+        min-height: auto;
+  
+        margin-top: 0;
+  
+        padding: 2rem 1.5rem 0;
+  
+        display: flex;
+  
+        align-items: flex-start;
+      }
+  
+      &__inner {
+        position: relative;
+  
+        width: 100%;
+  
+        max-width: none;
+  
+        z-index: 1;
+      }
+  
+      // ----------------------------------------------
+      // FAN
+      // ----------------------------------------------
+  
+      &__fan {
+        top: -10rem;
+  
+        bottom: -25rem;
+  
+        width: 100%;
+  
+        height: auto;
+      }
+  
+      // If your Button component creates .btn
+  
+      .btn {
+        width: 100%;
+      }
+      // ----------------------------------------------
+      // SCROLL INDICATOR
+      // ----------------------------------------------
+      & a.scroll {
+        display: none;
+      }
+    }
+}

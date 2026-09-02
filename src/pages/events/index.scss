@@ -2,3 +2,58 @@
   .second__section {
   }
 }
+
+// ==================================================
+// TABLET
+// ==================================================
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .events-page {
+    // ==================================================
+    // SECOND SECTION
+    // ==================================================
+
+    .second-section {
+      position: relative;
+
+      overflow: hidden;
+
+      .about__fan {
+        top: -25rem;
+
+        right: 24rem;
+        width: 100%;
+      }
+    }
+  }
+}
+
+// ==================================================
+// MOBILE
+// ==================================================
+
+@media screen and (max-width: 768px) {
+  .events-page {
+    // ==================================================
+    // SECOND SECTION
+    // ==================================================
+
+    .second-section {
+      position: relative;
+
+      overflow: hidden;
+
+      .second-inner {
+        a.scroll {
+          display: none;
+        }
+      }
+
+      .about__fan {
+        top: 5.5rem;
+        right: 0px;
+        width: 500px;
+      }
+    }
+  }
+}

@@ -39,7 +39,7 @@ const eventItems = [
     image: rep,
     day: "Saturday",
     number: 14,
-    month: "jume",
+    month: "June",
     year: 2026,
     time: "7:30pm",
   },

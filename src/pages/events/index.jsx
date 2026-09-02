@@ -21,7 +21,7 @@ const Events = () => {
           <HeroImage
             VidSrc={events}
             eyebrow="Performing live near you"
-            h1="Live swing. unforgettable nights"
+            h1="Step Into the Golden Age of Swing"
             p="We perform at a variety of venues and events across Kent and the south-east.
             Come and experience the timeless sound of a full big band, live."
             button1Text="About the band"
@@ -33,7 +33,8 @@ const Events = () => {
           />
         </FadeInSection>
 
-        <Featured id="upcoming-events"
+        <Featured
+          id="upcoming-events"
           src={salute}
           eyebrow="FEATURED APPEARANCE"
           featureTitle="SALUTE TO THE '40S"
