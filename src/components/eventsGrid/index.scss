@@ -2,12 +2,12 @@
   position: relative;
   display: flex;
   flex-direction: column;
-  padding: 2rem 0;
+  padding: 2rem 0 0;
   .events__items {
     display: flex;
     flex-direction: column;
     gap: 4rem;
-    margin: 2rem 4rem;
+    margin: 1rem 4rem;
     .events__card {
       position: relative;
 

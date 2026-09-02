@@ -12,6 +12,7 @@ const NotFound = lazy(() => import("./pages/404"));
 const Home = lazy(() => import("./pages/home/index.jsx"));
 const About = lazy(() => import("./pages/about/index.jsx"));
 const Events = lazy(() => import("./pages/events/index.jsx"));
+const Gallery = lazy(() => import("./pages/gallery/index.jsx"));
 import "./App.scss";
 
 const router = createBrowserRouter(
@@ -39,6 +40,14 @@ const router = createBrowserRouter(
           element={
             <Suspense fallback={<LoadingSpinner />}>
               <Events />
+            </Suspense>
+          }
+        />
+        <Route
+          path="gallery"
+          element={
+            <Suspense fallback={<LoadingSpinner />}>
+              <Gallery />
             </Suspense>
           }
         />

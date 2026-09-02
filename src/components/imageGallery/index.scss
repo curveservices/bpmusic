@@ -1,0 +1,498 @@
+.gallery {
+    position: relative;
+
+    padding: 5rem 3rem 6rem;
+
+    background: var(--ivory);
+
+    overflow: hidden;
+
+    // ==========================================
+    // GRID
+    // ==========================================
+
+    &__grid {
+        display: grid;
+
+        grid-template-columns:
+            repeat(3, 1fr);
+
+        gap: 1.5rem;
+
+        max-width: 1400px;
+
+        margin: 0 auto;
+    }
+
+
+    // ==========================================
+    // GALLERY ITEM
+    // ==========================================
+
+    &__item {
+        position: relative;
+
+        width: 100%;
+
+        padding: 0;
+
+        border: 0;
+
+        background: none;
+
+        cursor: pointer;
+
+        text-align: left;
+    }
+
+
+    // ==========================================
+    // ART DECO FRAME
+    // ==========================================
+
+    &__frame {
+        position: relative;
+
+        width: 100%;
+
+        aspect-ratio: 4 / 3;
+
+        padding: 10px;
+
+        background: var(--navy);
+
+        border: 1px solid rgba(200, 169, 106, 0.7);
+
+        overflow: hidden;
+
+        box-shadow: var(--box-shadow);
+
+        transition:
+            transform 0.4s ease,
+            box-shadow 0.4s ease;
+    }
+
+
+    // Inner frame
+
+    &__frame::before {
+        content: "";
+
+        position: absolute;
+
+        inset: 8px;
+
+        border: 1px solid rgba(200, 169, 106, 0.6);
+
+        z-index: 3;
+
+        pointer-events: none;
+    }
+
+
+    &__frame::after {
+        content: "";
+
+        position: absolute;
+
+        inset: 14px;
+
+        border: 1px solid rgba(200, 169, 106, 0.3);
+
+        z-index: 3;
+
+        pointer-events: none;
+    }
+
+
+    // ==========================================
+    // IMAGE
+    // ==========================================
+
+    &__frame img {
+        width: 100%;
+
+        height: 100%;
+
+        display: block;
+
+        object-fit: cover;
+
+        filter:
+            saturate(0.75) contrast(1.05);
+
+        transition:
+            transform 0.6s ease,
+            filter 0.6s ease;
+    }
+
+
+    // ==========================================
+    // CORNER DETAILS
+    // ==========================================
+
+    &__corner {
+        position: absolute;
+
+        width: 28px;
+
+        height: 28px;
+
+        z-index: 5;
+
+        pointer-events: none;
+
+        opacity: 0.9;
+
+        transition:
+            width 0.4s ease,
+            height 0.4s ease;
+    }
+
+
+    &__corner--tl {
+        top: 8px;
+        left: 8px;
+
+        border-top: 1px solid var(--gold);
+        border-left: 1px solid var(--gold);
+    }
+
+
+    &__corner--tr {
+        top: 8px;
+        right: 8px;
+
+        border-top: 1px solid var(--gold);
+        border-right: 1px solid var(--gold);
+    }
+
+
+    &__corner--bl {
+        bottom: 8px;
+        left: 8px;
+
+        border-bottom: 1px solid var(--gold);
+        border-left: 1px solid var(--gold);
+    }
+
+
+    &__corner--br {
+        bottom: 8px;
+        right: 8px;
+
+        border-bottom: 1px solid var(--gold);
+        border-right: 1px solid var(--gold);
+    }
+
+
+    // ==========================================
+    // HOVER OVERLAY
+    // ==========================================
+
+    &__overlay {
+        position: absolute;
+
+        inset: 0;
+
+        display: flex;
+
+        align-items: center;
+
+        justify-content: center;
+
+        background:
+            rgba(14, 26, 43, 0.45);
+
+        opacity: 0;
+
+        z-index: 4;
+
+        transition:
+            opacity 0.4s ease;
+
+        color: var(--gold-light);
+
+        font-size: 1.5rem;
+    }
+
+
+    &__item:hover {
+
+        .gallery__frame {
+            transform: translateY(-5px);
+
+            box-shadow:
+                0 25px 50px rgba(14, 26, 43, 0.35);
+        }
+
+        img {
+            transform: scale(1.04);
+
+            filter:
+                saturate(0.95) contrast(1.05);
+        }
+
+        .gallery__overlay {
+            opacity: 1;
+        }
+
+        .gallery__corner {
+            width: 34px;
+            height: 34px;
+        }
+    }
+
+
+    // ==========================================
+    // LIGHTBOX
+    // ==========================================
+
+    &__lightbox {
+        position: fixed;
+
+        inset: 0;
+
+        z-index: 9999;
+
+        display: flex;
+
+        align-items: center;
+
+        justify-content: center;
+
+        padding: 4rem;
+
+        background:
+            rgba(14, 26, 43, 0.94);
+    }
+
+
+    &__lightbox-image {
+        position: relative;
+
+        max-width: 1100px;
+
+        max-height: 85vh;
+
+        padding: 12px;
+
+        background: var(--ivory);
+
+        border: 1px solid var(--gold);
+
+        box-shadow:
+            0 30px 80px rgba(0, 0, 0, 0.5);
+    }
+
+
+    &__lightbox-image::before {
+        content: "";
+
+        position: absolute;
+
+        inset: 6px;
+
+        border: 1px solid rgba(200, 169, 106, 0.5);
+
+        pointer-events: none;
+    }
+
+
+    &__lightbox-image img {
+        display: block;
+
+        max-width: 100%;
+
+        max-height: 80vh;
+
+        object-fit: contain;
+    }
+
+
+    // ==========================================
+    // CLOSE
+    // ==========================================
+
+    &__close {
+        position: absolute;
+
+        top: 30px;
+
+        right: 40px;
+
+        width: 45px;
+
+        height: 45px;
+
+        border: 1px solid var(--gold);
+
+        background: var(--navy);
+
+        color: var(--gold);
+
+        font-size: 30px;
+
+        line-height: 1;
+
+        cursor: pointer;
+
+        z-index: 5;
+
+        transition:
+            background 0.3s ease,
+            color 0.3s ease;
+
+        &:hover {
+            background: var(--gold);
+
+            color: var(--navy);
+        }
+    }
+
+
+    // ==========================================
+    // ARROWS
+    // ==========================================
+
+    &__arrow {
+        position: absolute;
+
+        top: 50%;
+
+        transform: translateY(-50%);
+
+        width: 50px;
+
+        height: 50px;
+
+        border: 1px solid var(--gold);
+
+        background: var(--navy);
+
+        color: var(--gold);
+
+        cursor: pointer;
+
+        z-index: 5;
+
+        transition:
+            background 0.3s ease,
+            color 0.3s ease;
+
+        &:hover {
+            background: var(--gold);
+
+            color: var(--navy);
+        }
+    }
+
+
+    &__arrow--left {
+        left: 30px;
+    }
+
+
+    &__arrow--right {
+        right: 30px;
+    }
+}
+
+
+// ==================================================
+// TABLET
+// ==================================================
+
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+
+    .gallery {
+
+        padding:
+            4rem 2rem 5rem;
+
+
+        &__grid {
+            grid-template-columns:
+                repeat(2, 1fr);
+
+            gap: 1.25rem;
+        }
+    }
+}
+
+
+// ==================================================
+// MOBILE
+// ==================================================
+
+@media screen and (max-width: 768px) {
+
+    .gallery {
+
+        padding:
+            3rem 1rem 4rem;
+
+
+        &__heading {
+
+            margin-bottom: 2.5rem;
+
+            .h2-title {
+
+                gap: 0.75rem;
+
+                h2 {
+                    font-size: 1.5rem;
+                }
+            }
+
+            p {
+                font-size: 14px;
+            }
+        }
+
+
+        &__grid {
+            grid-template-columns: 1fr;
+
+            gap: 1rem;
+        }
+
+
+        &__frame {
+            aspect-ratio: 16 / 10;
+        }
+
+
+        &__lightbox {
+            padding: 1rem;
+        }
+
+
+        &__arrow {
+
+            width: 42px;
+
+            height: 42px;
+
+            &--left {
+                left: 10px;
+            }
+
+            &--right {
+                right: 10px;
+            }
+        }
+
+
+        &__close {
+            top: 15px;
+
+            right: 15px;
+
+            width: 40px;
+
+            height: 40px;
+        }
+    }
+}

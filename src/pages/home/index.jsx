@@ -33,6 +33,7 @@ const Home = () => {
         <FadeInSection>
           <HeroVideo
             VidSrc={home}
+            fallback={<LoadingSpinner />}
             eyebrow="The Peninsula Big Band"
             h1="Experience the Golden Age of Swing"
             p="The Peninsula Big Band is a 15-18 piece traditional swing

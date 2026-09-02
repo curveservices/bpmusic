@@ -60,6 +60,7 @@ const About = () => {
         <FadeInSection>
           <HeroVideo
             VidSrc={about}
+            fallback={<LoadingSpinner/>}
             eyebrow="KEEPING THE GOLDEN AGE OF SWING ALIVE"
             h1="The Peninsular Big Band"
             p="The Peinnsula Big Band is a 18-piece ensemble dedicated to the

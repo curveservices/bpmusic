@@ -19,6 +19,7 @@ const HeroVideo = ({
   background,
   color,
   about,
+  fallback,
   href
 }) => {
   return (
@@ -31,6 +32,7 @@ const HeroVideo = ({
             src={VidSrc}
             type="video/mp4"
             className="about-video"
+            fallback={fallback}
           />
         </div>
       </Suspense>
