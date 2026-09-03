@@ -1,173 +1,341 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import {
+  collection,
+  getDocs,
+  limit,
+  orderBy,
+  query,
+  startAfter,
+} from "firebase/firestore";
+
+import { db } from "../../../firebase.config.js";
+
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faExpand,
   faChevronLeft,
   faChevronRight,
+  faXmark,
 } from "@fortawesome/free-solid-svg-icons";
-import g1 from "../../assets/images/g1.jpg";
-import g2 from "../../assets/images/g2.jpg";
-import g3 from "../../assets/images/g3.webp";
-import g4 from "../../assets/images/g4.jpg";
-import g5 from "../../assets/images/g5.webp";
-import g6 from "../../assets/images/g6.jpg";
+import LoadingSpinner from "../loadingSpinner/index.jsx";
 
 import "./index.scss";
-import HeroImage from "../../components/heroImage";
 
-const ImageGallery = ({ images = [] }) => {
-    const [activeImage, setActiveImage] = useState(null);
+const PAGE_SIZE = 9;
 
-    const defaultImages = [
-        {
-            src: g1,
-            alt: "Peninsula Big Band performing live",
-        },
-        {
-            src: g2,
-            alt: "Peninsula Big Band musicians",
-        },
-        {
-            src: g3,
-            alt: "Peninsula Big Band performance",
-        },
-        {
-            src: g4,
-            alt: "Peninsula Big Band at an event",
-        },
-        {
-            src: g5,
-            alt: "Peninsula Big Band playing live",
-        },
-        {
-            src: g6,
-            alt: "Peninsula Big Band musicians performing",
-        },
-    ];
+const ImageGallery = () => {
+  const [images, setImages] = useState([]);
+  const [lastDoc, setLastDoc] = useState(null);
 
-    const galleryImages = images.length ? images : defaultImages;
+  const [loading, setLoading] = useState(true);
+  const [loadingMore, setLoadingMore] = useState(false);
 
-    const openImage = (index) => {
-        setActiveImage(index);
-    };
+  const [hasMore, setHasMore] = useState(true);
 
-    const closeImage = () => {
-        setActiveImage(null);
-    };
+  const [activeImage, setActiveImage] = useState(null);
 
-    const nextImage = (e) => {
-        e.stopPropagation();
+  // ==========================================
+  // FETCH GALLERY
+  // ==========================================
 
-        setActiveImage((current) =>
-            current === galleryImages.length - 1 ? 0 : current + 1,
+  const fetchImages = async (loadMore = false) => {
+    try {
+      if (loadMore) {
+        setLoadingMore(true);
+      } else {
+        setLoading(true);
+      }
+
+      const galleryRef = collection(db, "gallery");
+
+      let galleryQuery;
+
+      if (loadMore && lastDoc) {
+        galleryQuery = query(
+          galleryRef,
+          orderBy("createdAt", "desc"),
+          startAfter(lastDoc),
+          limit(PAGE_SIZE),
         );
-    };
-
-    const previousImage = (e) => {
-        e.stopPropagation();
-
-        setActiveImage((current) =>
-            current === 0 ? galleryImages.length - 1 : current - 1,
+      } else {
+        galleryQuery = query(
+          galleryRef,
+          orderBy("createdAt", "desc"),
+          limit(PAGE_SIZE),
         );
+      }
+
+      const snapshot = await getDocs(galleryQuery);
+
+      const newImages = snapshot.docs.map((doc) => ({
+        id: doc.id,
+        ...doc.data(),
+      }));
+
+      setImages((currentImages) =>
+        loadMore ? [...currentImages, ...newImages] : newImages,
+      );
+
+      if (snapshot.docs.length > 0) {
+        setLastDoc(snapshot.docs[snapshot.docs.length - 1]);
+      }
+
+      setHasMore(snapshot.docs.length === PAGE_SIZE);
+    } catch (error) {
+      console.error("Error loading gallery:", error);
+    } finally {
+      setLoading(false);
+      setLoadingMore(false);
+    }
+  };
+
+  // ==========================================
+  // INITIAL LOAD
+  // ==========================================
+
+  useEffect(() => {
+    fetchImages();
+  }, []);
+
+  // ==========================================
+  // LOAD MORE
+  // ==========================================
+
+  const handleLoadMore = () => {
+    if (!loadingMore && hasMore) {
+      fetchImages(true);
+    }
+  };
+
+  // ==========================================
+  // LIGHTBOX
+  // ==========================================
+
+  const openLightbox = (id) => {
+    setActiveImage(id);
+    document.body.style.overflow = "hidden";
+  };
+
+  const closeLightbox = () => {
+    setActiveImage(null);
+    document.body.style.overflow = "";
+  };
+
+  // ==========================================
+  // NEXT / PREVIOUS
+  // ==========================================
+
+  const activeIndex = images.findIndex((image) => image.id === activeImage);
+
+  const nextImage = (e) => {
+    e.stopPropagation();
+
+    setActiveImage(
+      images[activeIndex === images.length - 1 ? 0 : activeIndex + 1].id,
+    );
+  };
+
+  const previousImage = (e) => {
+    e.stopPropagation();
+
+    setActiveImage(
+      images[activeIndex === 0 ? images.length - 1 : activeIndex - 1].id,
+    );
+  };
+
+  // ==========================================
+  // KEYBOARD CONTROLS
+  // ==========================================
+
+  useEffect(() => {
+    const handleKeyDown = (event) => {
+      if (activeImage === null) return;
+
+      if (event.key === "Escape") {
+        closeLightbox();
+      }
+
+      if (event.key === "ArrowRight") {
+        nextImage(event);
+      }
+
+      if (event.key === "ArrowLeft") {
+        previousImage(event);
+      }
     };
+
+    window.addEventListener("keydown", handleKeyDown);
+
+    return () => {
+      window.removeEventListener("keydown", handleKeyDown);
+    };
+  }, [activeImage, activeIndex]);
+
+  // ==========================================
+  // LOADING
+  // ==========================================
+
+  if (loading) {
     return (
-      <section className="gallery" id="gallery">
-        <div className="heading">
-          <div className="h2-title">
-            <span className="divider" />
+      <section className="image-gallery">
+        <div className="image-gallery__loading">
+          <span>Loading gallery</span>
+          <span><LoadingSpinner /></span>
+        </div>
+      </section>
+    );
+  }
 
-            <h2>Moments from the Stage</h2>
+  // ==========================================
+  // ACTIVE LIGHTBOX IMAGE
+  // ==========================================
 
-            <span className="divider" />
-          </div>
+  const selectedImage = images.find((image) => image.id === activeImage);
 
-          <p>
-            A glimpse behind the music, from live performances to unforgettable
-            nights of swing.
-          </p>
+  return (
+    <section className="image-gallery">
+      {/* ======================================
+          HEADING
+      ====================================== */}
+
+      <div className="heading">
+        <div className="h2-title">
+          <span className="divider" />
+
+          <h2>Moments from the Stage</h2>
+
+          <span className="divider" />
         </div>
 
-        {/* ----------------------------------------
-          Gallery
-      ---------------------------------------- */}
+        <p>
+          From the golden age of swing to today's live performances, take a look
+          behind the music.
+        </p>
+      </div>
 
-        <div className="gallery__grid">
-          {galleryImages.map((image, index) => (
-            <button
-              type="button"
-              className="gallery__item"
-              key={`${image.src}-${index}`}
-              onClick={() => openImage(index)}
-              aria-label={`View ${image.alt}`}
-            >
-              <div className="gallery__frame">
-                <img src={image.src} alt={image.alt} loading="lazy" />
+      {/* ======================================
+          GALLERY GRID
+      ====================================== */}
 
-                <span className="gallery__corner gallery__corner--tl" />
-                <span className="gallery__corner gallery__corner--tr" />
-                <span className="gallery__corner gallery__corner--bl" />
-                <span className="gallery__corner gallery__corner--br" />
-
-                <div className="gallery__overlay">
-                  <FontAwesomeIcon icon={faExpand} />
-                </div>
-              </div>
-            </button>
-          ))}
-        </div>
-
-        {/* ----------------------------------------
-          Lightbox
-      ---------------------------------------- */}
-
-        {activeImage !== null && (
-          <div
-            className="gallery__lightbox"
-            onClick={closeImage}
-            role="dialog"
-            aria-modal="true"
-            aria-label="Image viewer"
+      <div className="image-gallery__grid">
+        {images.map((image) => (
+          <button
+            type="button"
+            className="image-gallery__item"
+            key={image.id}
+            onClick={() => openLightbox(image.id)}
+            aria-label={`View ${image.alt || "gallery image"}`}
           >
-            <button
-              type="button"
-              className="gallery__close"
-              onClick={closeImage}
-              aria-label="Close image"
-            >
-              ×
-            </button>
-
-            <button
-              type="button"
-              className="gallery__arrow gallery__arrow--left"
-              onClick={previousImage}
-              aria-label="Previous image"
-            >
-              <FontAwesomeIcon icon={faChevronLeft} />
-            </button>
-
-            <div
-              className="gallery__lightbox-image"
-              onClick={(e) => e.stopPropagation()}
-            >
+            <div className="image-gallery__frame">
               <img
-                src={galleryImages[activeImage].src}
-                alt={galleryImages[activeImage].alt}
+                src={image.thumbnailUrl || image.imageUrl}
+                alt={image.alt || "Peninsula Big Band"}
+                loading="lazy"
+              />
+
+              {/* Inner Art Deco frame */}
+
+              <span className="frame-line frame-line--top" />
+              <span className="frame-line frame-line--bottom" />
+              <span className="frame-line frame-line--left" />
+              <span className="frame-line frame-line--right" />
+
+              {/* Corners */}
+
+              <span className="corner corner--tl" />
+              <span className="corner corner--tr" />
+              <span className="corner corner--bl" />
+              <span className="corner corner--br" />
+
+              {/* Hover */}
+
+              <span className="image-gallery__overlay">
+                <FontAwesomeIcon icon={faExpand} />
+              </span>
+            </div>
+
+            {image.caption && (
+              <span className="image-gallery__caption">{image.caption}</span>
+            )}
+          </button>
+        ))}
+      </div>
+
+      {/* ======================================
+          LOAD MORE
+      ====================================== */}
+
+      {hasMore && (
+        <div className="image-gallery__load">
+          <button
+            type="button"
+            className="image-gallery__load-button"
+            onClick={handleLoadMore}
+            disabled={loadingMore}
+          >
+            {loadingMore ? "Loading..." : "View More"}
+          </button>
+        </div>
+      )}
+
+      {/* ======================================
+          LIGHTBOX
+      ====================================== */}
+
+      {selectedImage && (
+        <div className="image-gallery__lightbox" onClick={closeLightbox}>
+          {/* Close */}
+
+          <button
+            type="button"
+            className="image-gallery__close"
+            onClick={closeLightbox}
+            aria-label="Close image"
+          >
+            <FontAwesomeIcon icon={faXmark} />
+          </button>
+
+          {/* Previous */}
+
+          <button
+            type="button"
+            className="image-gallery__arrow image-gallery__arrow--left"
+            onClick={previousImage}
+            aria-label="Previous image"
+          >
+            <FontAwesomeIcon icon={faChevronLeft} />
+          </button>
+
+          {/* Image */}
+
+          <div
+            className="image-gallery__lightbox-content"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <div className="image-gallery__lightbox-frame">
+              <img
+                src={selectedImage.imageUrl}
+                alt={selectedImage.alt || "Peninsula Big Band"}
               />
             </div>
 
-            <button
-              type="button"
-              className="gallery__arrow gallery__arrow--right"
-              onClick={nextImage}
-              aria-label="Next image"
-            >
-              <FontAwesomeIcon icon={faChevronRight} />
-            </button>
+            {selectedImage.caption && <p>{selectedImage.caption}</p>}
           </div>
-        )}
-      </section>
-    );
-}
+
+          {/* Next */}
+
+          <button
+            type="button"
+            className="image-gallery__arrow image-gallery__arrow--right"
+            onClick={nextImage}
+            aria-label="Next image"
+          >
+            <FontAwesomeIcon icon={faChevronRight} />
+          </button>
+        </div>
+      )}
+    </section>
+  );
+};
 
 export default ImageGallery;
