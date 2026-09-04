@@ -58,8 +58,6 @@ const HeroVideo = ({
             <Button
               text={button2Text}
               link={button2Link}
-              background={background}
-              color={color}
             />
           </div>
         </div>

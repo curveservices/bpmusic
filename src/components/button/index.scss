@@ -5,9 +5,9 @@
   text-align: center;
   width: fit-content;
   padding: 0.6rem 2rem;
-  border: 1px solid var(--gold);
-  background: var(--gold);
-  color: var(--navy);
+  border: 2px solid var(--gold);
+  background: var(--navy);
+  color: var(--ivory);
   font-family: "Oswald", sans-serif;
   font-size: 18px;
   font-weight: 500;
@@ -16,10 +16,10 @@
   cursor: pointer;
 
   &:hover {
-    background: var(--navy-light);
-    color: var(--ivory);
-    box-shadow: var(--box-shadow);
-    transform: translateY(-3px);
+    background: var(--gold);
+    color: var(--navy);
+    box-shadow: var(--button-glow);
+    transform: translateY(-2px);
   }
 
   .flat-btn + .flat-btn {

@@ -19,7 +19,7 @@ const Gallery = ({ images = [] }) => {
         <HeroImage
           eyebrow="A GLIMPSE BEHIND THE MUSIC"
           h1="THE GOLDEN ERA, BROUGHT TO LIFE"
-          p="Take a look at some of our favourite photos from performances, events and behind the scenes."
+          p="Step behind the scenes and relive some of our favourite moments, from vibrant live performances and community events to the atmosphere, energy and unforgettable memories shared along the way."
           VidSrc={hero}
           button1Text="About the band"
           button1Link="/about-us"
@@ -30,11 +30,12 @@ const Gallery = ({ images = [] }) => {
         />
       </FadeInSection>
       <Metrics />
-      <FadeInSection>
-        <div className="second__section">
+
+      <div className="second__section">
+        <FadeInSection>
           <ImageGallery />
-        </div>
-      </FadeInSection>
+        </FadeInSection>
+      </div>
     </div>
   );
 };
