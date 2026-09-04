@@ -414,10 +414,9 @@
         height: auto;
       }
   
-      // If your Button component creates .btn
-  
-      .btn {
+      .btn-container {
         width: 100%;
+        margin: 3rem 2rem;
       }
       // ----------------------------------------------
       // SCROLL INDICATOR

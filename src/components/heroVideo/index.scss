@@ -305,7 +305,6 @@
         position: relative;
         inset: auto;
         order: 1;
-        width: 100%;
         height: 30svh;
         min-height: 200px;
         clip-path: none;
@@ -385,16 +384,16 @@
         height: auto;
       }
   
-      // If your Button component creates .btn
   
-      .btn {
+      .btn-container {
         width: 100%;
+        margin: 3rem 2rem;
       }
   
       // ----------------------------------------------
       // SCROLL INDICATOR
       // ----------------------------------------------
-      & a.scroll {
+      a.scroll {
         display: none;
       }
     }

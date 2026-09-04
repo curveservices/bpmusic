@@ -377,52 +377,6 @@
           background: var(--gold);
         }
       }
-      // ==================================================
-      // HERO
-      // ==================================================
-
-     
-
-      .scroll {
-        position: absolute;
-
-        bottom: 30px;
-        left: 7vw;
-
-        z-index: 5;
-
-        display: flex;
-        align-items: center;
-        gap: 12px;
-        font-size: 9px;
-        font-weight: 600;
-
-        letter-spacing: 0.2em;
-        text-transform: uppercase;
-
-        color: var(--navy);
-        text-decoration: none;
-
-        span:last-child {
-          opacity: 0.7;
-        }
-      }
-
-      .scroll-line {
-        width: 50px;
-        height: 1px;
-
-        background: var(--gold);
-      }
-
-      .heading {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        max-width: 700px;
-        margin: 0 auto 1.5rem;
-        text-align: center;
-      }
     }
   }
 }
