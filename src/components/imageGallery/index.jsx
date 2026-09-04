@@ -283,7 +283,13 @@ const ImageGallery = () => {
       ====================================== */}
 
       {selectedImage && (
-        <div className="image-gallery__lightbox" onClick={closeLightbox}>
+        <div
+          className="image-gallery__lightbox"
+          role="dialog"
+          aria-modal="true"
+          aria-label="Image gallery"
+          onClick={closeLightbox}
+        >
           {/* Close */}
 
           <button
