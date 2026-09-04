@@ -4,7 +4,7 @@ import { getFirestore } from "firebase/firestore";
 import { getAnalytics } from "firebase/analytics";
 
 const firebaseConfig = {
-  apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
+  apiKey: import.meta.env.VITE_FIREBASE,
   authDomain: "peninsular-big-band.firebaseapp.com",
   projectId: "peninsular-big-band",
   storageBucket: "peninsular-big-band.firebasestorage.app",
