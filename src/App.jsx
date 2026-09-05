@@ -13,6 +13,7 @@ const Home = lazy(() => import("./pages/home/index.jsx"));
 const About = lazy(() => import("./pages/about/index.jsx"));
 const Events = lazy(() => import("./pages/events/index.jsx"));
 const Gallery = lazy(() => import("./pages/gallery/index.jsx"));
+const Contact = lazy(() => import("./pages/contact/index.jsx"));
 import "./App.scss";
 
 const router = createBrowserRouter(
@@ -48,6 +49,14 @@ const router = createBrowserRouter(
           element={
             <Suspense fallback={<LoadingSpinner />}>
               <Gallery />
+            </Suspense>
+          }
+        />
+        <Route
+          path="contact-us"
+          element={
+            <Suspense fallback={<LoadingSpinner />}>
+              <Contact />
             </Suspense>
           }
         />

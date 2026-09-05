@@ -6,6 +6,7 @@ import useScrollState from "../../components/scrollState";
 import Metrics from "../../components/metrics";
 import ImageGallery from "../../components/imageGallery";
 import hero from "../../assets/images/gallery.jpg";
+import CTA from "../../components/cta";
 
 const Gallery = ({ images = [] }) => {
   const FadeInSection = ({ children }) => {
@@ -36,6 +37,7 @@ const Gallery = ({ images = [] }) => {
           <ImageGallery />
         </FadeInSection>
       </div>
+      <CTA />
     </div>
   );
 };

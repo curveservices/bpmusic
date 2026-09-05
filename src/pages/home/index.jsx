@@ -99,14 +99,12 @@ const Home = () => {
             />
           </FadeInSection>
         </section>
-        <FadeInSection>
-          <section className="third-section">
-            <div className="third__inner">
-              <EventCards />
-              <Repertoire />
-            </div>
-          </section>
-        </FadeInSection>
+        <section className="third-section">
+          <div className="third__inner">
+            <EventCards />
+            <Repertoire />
+          </div>
+        </section>
         <FadeInSection>
           <section className="fourth-section">
             <GalleryPreview />
