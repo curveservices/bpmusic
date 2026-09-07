@@ -24,7 +24,7 @@ const Gallery = ({ images = [] }) => {
           VidSrc={hero}
           button1Text="About the band"
           button1Link="/about-us"
-          button2Link="/book-us"
+          button2Link="/contact-us"
           button2Text="book the band"
           background="var(--navy)"
           color="var(--ivory)"

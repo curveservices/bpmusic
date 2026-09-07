@@ -54,7 +54,7 @@
   .text-box {
     flex: 1;
 
-    padding: 1rem 4rem;
+    padding: 0rem 4rem;
 
     position: relative;
 
@@ -68,6 +68,7 @@
   &.reverse {
     flex-direction: row-reverse;
     background: var(--navy);
+    z-index: 0;
     h1.main, p {
       color: var(--ivory) !important;
     }

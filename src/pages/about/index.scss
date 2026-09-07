@@ -37,7 +37,7 @@
     }
   }
   .third__section {
-    padding: 4rem 0 4rem;
+    padding: 2rem 0 3rem;
     background: var(--navy);
     // ==========================================
     // SUBTLE BACKGROUND PATTERN
@@ -55,7 +55,7 @@
 
       transform: translate(-50%, -50%);
 
-      opacity: 0.3;
+      opacity: 0.25;
 
       border-radius: 50%;
 
@@ -70,6 +70,7 @@
       -webkit-mask-image: radial-gradient(circle, black 0%, transparent 68%);
 
       pointer-events: none;
+      z-index: 1;
     }
     h2,
     p,

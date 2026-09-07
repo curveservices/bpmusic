@@ -92,7 +92,7 @@ const About = () => {
 
                 p1="From Glenn Miller and Count Basie to The Beatles, Sade and Michael Jackson, our 18-piece orchestra blends classic swing with modern favourites — creating unforgettable live music for festivals, dinner dances, fundraisers and special events."
                 buttonText="Book the band"
-                link="/book-us"
+                link="/contact-us"
               />
             </div>
           </section>
@@ -120,7 +120,8 @@ const About = () => {
                 p2=" Perfect for smaller venues, cocktail parties and corporate
                     events."
                 buttonText="BOOK MAINLY SAX"
-                link="/book-us"
+                link="/contact-us"
+                reverse
               />
             </div>
           </section>

@@ -56,7 +56,7 @@ const Footer = () => {
 
             <Link to="/gallery">Gallery</Link>
 
-            <Link to="/contact">Contact</Link>
+            <Link to="/contact-us">Contact</Link>
           </nav>
         </div>
 

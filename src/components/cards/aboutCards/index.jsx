@@ -67,7 +67,7 @@ const AboutCards = ({ items, mainTitle, link }) => {
         ))}
       </div>
       <div className="about-footer">
-        <Link to="/book-us" className="about-link">
+        <Link to="/contact-us" className="about-link">
           <span>Book the Band</span>
           <span className="about-arrow">→</span>
         </Link>
