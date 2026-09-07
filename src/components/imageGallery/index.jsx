@@ -322,6 +322,7 @@ const ImageGallery = () => {
               <img
                 src={selectedImage.imageUrl}
                 alt={selectedImage.alt || "Peninsula Big Band"}
+                loading="lazy"
               />
             </div>
 

@@ -30,11 +30,11 @@ const Events = () => {
             button2Text="book the band"
             background="var(--navy)"
             color="var(--ivory)"
+            href="#upcoming-events"
           />
         </FadeInSection>
 
         <Featured
-          id="upcoming-events"
           src={salute}
           eyebrow="FEATURED APPEARANCE"
           featureTitle="SALUTE TO THE '40S"
@@ -47,7 +47,7 @@ const Events = () => {
             <div className="about__fan" aria-hidden="true">
               <img src={fan} alt="Peninsular big band" />
             </div>
-            <div className="second__inner">
+            <div className="second__inner" id="upcoming-events">
               <EventsGrid />
             </div>
           </section>

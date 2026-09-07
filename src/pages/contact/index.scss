@@ -1,0 +1,1092 @@
+.contact-page {
+    // ==================================================
+    // HERO
+    // ==================================================
+
+    .contact-hero {
+
+        position: relative;
+
+        min-height: 600px;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        overflow: hidden;
+
+        background: var(--navy);
+
+        text-align: center;
+        margin-top: 4rem;
+
+        // ------------------------------------------
+        // RADIAL ART DECO PATTERN
+        // ------------------------------------------
+
+        &__pattern {
+
+            position: absolute;
+
+            width: 900px;
+            height: 900px;
+
+            top: 50%;
+            left: 50%;
+
+            transform: translate(-50%, -50%);
+
+            opacity: 0.14;
+
+            background:
+                repeating-conic-gradient(from 0deg,
+                    transparent 0deg 9deg,
+                    var(--gold) 9deg 10deg);
+
+            border-radius: 50%;
+
+            mask-image:
+                radial-gradient(circle,
+                    black 0%,
+                    transparent 68%);
+
+            -webkit-mask-image:
+                radial-gradient(circle,
+                    black 0%,
+                    transparent 68%);
+
+            pointer-events: none;
+        }
+
+
+        // ------------------------------------------
+        // ART DECO FRAME
+        // ------------------------------------------
+
+        &::before {
+
+            content: "";
+
+            position: absolute;
+
+            inset: 25px;
+
+            border: 1px solid rgba(200, 169, 106, 0.5);
+
+            pointer-events: none;
+
+        }
+
+
+        &::after {
+
+            content: "";
+
+            position: absolute;
+
+            inset: 37px;
+
+            border: 1px solid rgba(200, 169, 106, 0.2);
+
+            pointer-events: none;
+
+        }
+
+
+        // ------------------------------------------
+        // CONTENT
+        // ------------------------------------------
+
+        &__content {
+
+            position: relative;
+
+            z-index: 2;
+
+            max-width: 800px;
+
+            padding: 3rem;
+
+            color: var(--ivory);
+
+        }
+
+
+        h1 {
+
+            margin: 1.5rem 0 0;
+
+            font-family: "Limelight", serif;
+
+            font-size: clamp(4rem,
+                    7vw,
+                    7rem);
+
+            line-height: 0.95;
+
+            font-weight: 400;
+
+            color: var(--ivory);
+
+        }
+
+
+        .divider {
+
+            display: flex;
+
+            justify-content: center;
+
+            margin: 2rem auto;
+
+            width: 90px;
+
+            span {
+
+                position: relative;
+
+                width: 60px;
+
+                height: 2px;
+
+                background: var(--gold);
+
+                display: block;
+
+
+                &::after {
+
+                    content: "";
+
+                    position: absolute;
+
+                    right: -8px;
+
+                    top: 50%;
+
+                    width: 7px;
+                    height: 7px;
+
+                    border: 2px solid var(--gold);
+
+                    transform:
+                        translateY(-50%) rotate(45deg);
+
+                }
+
+            }
+
+        }
+
+
+        p {
+            color: var(--ivory);
+
+        }
+
+    }
+
+
+    // ==================================================
+    // BOOKING
+    // ==================================================
+
+    .booking {
+        position: relative;
+
+        padding: 2rem;
+        .fan {
+            position: absolute;
+            top: -19.5rem;
+            right: 18rem;
+            width: 800px;
+            height: auto;
+            transform: rotate(270deg);
+            z-index: -0;
+            pointer-events: none;
+    
+            opacity: 0.2;
+    
+            img {
+                width: 100%;
+                height: 100%;
+    
+                object-fit: contain;
+                object-position: right center;
+    
+                display: block;
+            }
+        }
+
+        &__heading {
+
+            max-width: 950px;
+
+            margin: 0 auto 5rem;
+
+            text-align: center;
+
+            .h2-title {
+
+                display: flex;
+
+                align-items: center;
+
+                justify-content: center;
+
+                gap: 20px;
+
+            }
+
+        }
+
+        // ------------------------------------------
+        // CARDS
+        // ------------------------------------------
+
+        &__cards {
+
+            max-width: 1240px;
+
+            margin: auto;
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(2, 1fr);
+
+            gap: 3rem;
+
+        }
+
+
+        &__card {
+
+            position: relative;
+
+            padding: 2rem;
+
+            text-align: center;
+
+            background: var(--navy);
+
+            color: var(--ivory);
+
+            box-shadow: var(--box-shadow);
+
+            overflow: hidden;
+
+            transition:
+                transform 0.4s ease,
+                box-shadow 0.4s ease;
+
+
+            &:hover {
+
+                transform: translateY(-6px);
+
+                box-shadow: var(--button-shadow);
+
+            }
+
+
+            // ----------------------------------------
+            // ART DECO FRAME
+            // ----------------------------------------
+
+            &::before {
+
+                content: "";
+
+                position: absolute;
+
+                inset: 12px;
+
+                border: 1px solid rgba(200, 169, 106, 0.45);
+
+                pointer-events: none;
+
+            }
+
+
+            &::after {
+
+                content: "";
+
+                position: absolute;
+
+                inset: 19px;
+
+                border: 1px solid rgba(200, 169, 106, 0.2);
+
+                pointer-events: none;
+
+            }
+
+            h3 {
+                font-size: 2rem;
+                color: var(--ivory);
+
+            }
+
+        }
+
+        // ------------------------------------------
+        // CARD DIVIDER
+        // ------------------------------------------
+
+        &__divider {
+
+            position: relative;
+
+            z-index: 2;
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 10px;
+
+            max-width: 180px;
+
+            margin: 0.5rem auto;
+
+            span {
+
+                flex: 1;
+
+                height: 1px;
+
+                background:
+                    rgba(200, 169, 106, 0.5);
+
+            }
+
+            i {
+
+                color: var(--gold);
+
+                font-style: normal;
+
+            }
+
+        }
+
+
+        // ------------------------------------------
+        // BUTTON
+        // ------------------------------------------
+
+        &__button {
+
+            position: relative;
+
+            z-index: 2;
+
+            display: inline-flex;
+
+            align-items: center;
+
+            gap: 14px;
+
+            margin-top: 0.5rem;
+
+            padding: 10px 0;
+
+            background: transparent;
+
+            border: none;
+
+            border-bottom: 1px solid var(--gold);
+
+            color: var(--ivory);
+
+            font-family: "Oswald", sans-serif;
+
+            font-size: 11px;
+
+            font-weight: 700;
+
+            letter-spacing: 0.25em;
+
+            text-transform: uppercase;
+
+            cursor: pointer;
+
+            transition:
+                gap 0.3s ease,
+                color 0.3s ease;
+
+
+            &:hover {
+
+                gap: 22px;
+
+                color: var(--gold-light);
+
+            }
+
+
+            svg {
+
+                color: var(--gold);
+
+            }
+
+        }
+
+    }
+
+
+    // ==================================================
+    // FORM SECTION
+    // ==================================================
+
+    .booking-form-section {
+
+        position: relative;
+
+        overflow: hidden;
+
+        padding: 8rem 4rem;
+
+        background: var(--navy);
+
+        color: var(--ivory);
+
+
+        // ------------------------------------------
+        // BACKGROUND PATTERN
+        // ------------------------------------------
+
+        &__pattern {
+
+            position: absolute;
+
+            width: 800px;
+            height: 800px;
+
+            right: -350px;
+            top: 50%;
+
+            transform: translateY(-50%);
+
+            opacity: 0.1;
+
+            border-radius: 50%;
+
+            background:
+                repeating-conic-gradient(from 0deg,
+                    transparent 0deg 9deg,
+                    var(--gold) 9deg 10deg);
+
+            mask-image:
+                radial-gradient(circle,
+                    black 0%,
+                    transparent 68%);
+
+            -webkit-mask-image:
+                radial-gradient(circle,
+                    black 0%,
+                    transparent 68%);
+
+            pointer-events: none;
+
+        }
+
+
+        &::before {
+
+            content: "";
+
+            position: absolute;
+
+            inset: 25px;
+
+            border: 1px solid rgba(200, 169, 106, 0.35);
+
+            pointer-events: none;
+
+        }
+
+
+        &__inner {
+
+            position: relative;
+
+            z-index: 2;
+
+            max-width: 1000px;
+
+            margin: auto;
+
+        }
+
+
+        &__heading {
+
+            max-width: 700px;
+
+            margin-bottom: 4rem;
+
+            h2 {
+
+                margin: 1rem 0;
+
+                font-family: "Limelight", serif;
+
+                font-size: clamp(2.5rem,
+                        5vw,
+                        4.5rem);
+
+                font-weight: 400;
+
+                color: var(--ivory);
+
+            }
+
+
+            .divider {
+
+                margin: 1.5rem 0;
+
+            }
+
+
+            p {
+
+                max-width: 650px;
+
+                line-height: 1.8;
+
+                color: var(--ivory);
+
+            }
+
+        }
+
+
+        // ------------------------------------------
+        // FORM
+        // ------------------------------------------
+
+        .booking-form {
+
+            display: flex;
+
+            flex-direction: column;
+
+            gap: 2rem;
+
+        }
+
+
+        .form-row {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(2, 1fr);
+
+            gap: 2rem;
+
+        }
+
+
+        .form-group {
+
+            display: flex;
+
+            flex-direction: column;
+
+            gap: 8px;
+
+
+            label {
+
+                font-family: "Oswald", sans-serif;
+
+                font-size: 13px;
+
+                font-weight: 700;
+
+                letter-spacing: 0.25em;
+
+                text-transform: uppercase;
+
+                color: var(--gold);
+
+            }
+
+
+            input,
+            select,
+            textarea {
+
+                width: 100%;
+
+                padding: 15px 16px;
+
+                background:
+                    rgba(255, 255, 255, 0.04);
+
+                border: 1px solid rgba(200, 169, 106, 0.35);
+
+                border-radius: 0;
+
+                outline: none;
+
+                color: var(--ivory);
+
+                font-family: "Oswald", sans-serif;
+
+                font-size: 16px;
+                letter-spacing: 0.15em;
+                transition:
+                    border-color 0.3s ease,
+                    background 0.3s ease;
+
+
+                &:focus {
+
+                    border-color: var(--gold);
+
+                    background:
+                        rgba(255, 255, 255, 0.07);
+
+                }
+
+            }
+
+
+            select {
+
+                option {
+
+                    background: var(--navy);
+
+                    color: var(--ivory);
+
+                }
+
+            }
+
+
+            textarea {
+
+                resize: vertical;
+
+                min-height: 150px;
+
+            }
+
+        }
+
+
+        &__submit {
+
+            margin-top: 1rem;
+
+            display: flex;
+
+            justify-content: flex-start;
+
+        }
+
+    }
+
+
+    // ==================================================
+    // CONTACT DETAILS
+    // ==================================================
+
+    .contact-details {
+
+        padding: 4rem;
+
+        text-align: center;
+        position: relative;
+        background: var(--gold);
+        overflow: hidden;
+        
+            // ==========================================
+            // FAN BACKGROUND
+            // ==========================================
+        
+            .fan {
+                position: absolute;
+                top: 90%;
+                left: 50%;
+                width: 100%;
+                max-width: 100%;
+                height: auto;
+                transform: translate(-50%, -50%) rotate(180deg);
+                opacity: 0.3;
+                pointer-events: none;
+                user-select: none;
+                z-index: 0;
+                mix-blend-mode: multiply;
+            }
+        
+            // ==========================================
+            // ART DECO OUTER FRAME
+            // ==========================================
+        
+            &::before {
+                content: "";
+                position: absolute;
+                inset: 14px;
+                border: 1px solid rgba(14, 26, 43, 0.45);
+                pointer-events: none;
+                z-index: 1;
+            }
+        
+            // ==========================================
+            // INNER FRAME
+            // ==========================================
+        
+            &::after {
+                content: "";
+                position: absolute;
+                inset: 21px;
+                border: 1px solid rgba(14, 26, 43, 0.18);
+                pointer-events: none;
+                z-index: 1;
+            }
+
+
+        .h2-title {
+
+            display: flex;
+
+            justify-content: center;
+
+            align-items: center;
+
+            gap: 20px;
+
+            margin-bottom: 2rem;
+
+        }
+
+
+        &__items {
+
+            display: flex;
+
+            justify-content: center;
+
+            gap: 5rem;
+
+        }
+
+
+        a {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 1rem;
+
+            text-decoration: none;
+
+            color: var(--text);
+
+            transition:
+                color 0.3s ease;
+
+
+            svg {
+                color: var(--navy);
+                font-size: 1.5rem;
+            }
+
+
+            div {
+
+                display: flex;
+
+                flex-direction: column;
+
+                align-items: flex-start;
+
+                gap: 8px;
+
+            }
+
+
+            span {
+
+                font-family: "Oswald", sans-serif;
+                font-size: 13px;
+                font-weight: 700;
+                letter-spacing: 0.25em;
+                text-transform: uppercase;
+
+            }
+
+
+            strong {
+
+                font-family: "Oswald", sans-serif;
+
+                font-size: 16px;
+
+            }
+
+
+            &:hover {
+
+                color: var(--ivory);
+
+            }
+
+        }
+
+    }
+}
+
+
+// ==================================================
+// TABLET
+// ==================================================
+
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+
+    .contact-page {
+
+        .contact-hero {
+
+            min-height: 580px;
+
+            &__content {
+
+                padding: 4rem;
+
+            }
+
+            h1 {
+
+                font-size: clamp(3.5rem,
+                        8vw,
+                        5.5rem);
+
+            }
+
+        }
+
+
+        .booking {
+            .fan {
+                top: -25rem;
+                    right: 25rem;
+                    width: 100%;
+                    object-fit: contain;
+                    object-position: right center;
+            }
+            padding: 6rem 3rem;
+
+
+            &__cards {
+
+                gap: 2rem;
+
+            }
+
+
+            &__card {
+
+                padding: 3.5rem 2rem;
+
+                h3 {
+
+                    font-size: 2rem;
+
+                }
+
+            }
+
+        }
+
+
+        .booking-form-section {
+
+            padding: 7rem 3rem;
+
+        }
+        .contact-details {
+            .fan {
+                    width: 100%;
+                }
+        }
+
+    }
+
+}
+
+
+// ==================================================
+// MOBILE
+// ==================================================
+
+@media (max-width: 768px) {
+
+    .contact-page {
+
+        .contact-hero {
+            min-height: 600px;
+
+            &::before {
+                inset: 15px;
+            }
+
+            &::after {
+                inset: 25px;
+            }
+
+
+            &__content {
+
+                padding: 3rem 2rem;
+
+            }
+
+
+            h1 {
+
+                font-size: clamp(3rem,
+                        14vw,
+                        4.5rem);
+
+            }
+
+
+            p {
+
+                font-size: 14px;
+
+            }
+
+        }
+
+        .booking {
+            position: relative;
+            .fan {
+                top: -12rem;
+                right: 200px;
+                width: 500px;
+                overflow: hidden;
+            }
+
+            padding: 5rem 1.5rem;
+
+
+            &__heading {
+
+                margin-bottom: 3.5rem;
+
+                .h2-title {
+
+                    gap: 10px;
+
+                }
+
+                h2 {
+
+                    font-size: 1.5rem;
+
+                }
+
+            }
+
+
+            &__cards {
+
+                grid-template-columns: 1fr;
+
+            }
+
+
+            &__card {
+
+                padding: 2.25rem 2rem;
+                .eyebrow {
+                    font-size: 12px;
+                }
+                h3 {
+                    font-size: 22px;
+                }
+
+            }
+
+        }
+
+
+        .booking-form-section {
+
+            padding: 2rem;
+
+
+            &::before {
+
+                inset: 15px;
+
+            }
+
+
+            &__heading {
+
+                h2 {
+
+                    font-size: 2.8rem;
+
+                }
+
+            }
+
+
+            .form-row {
+
+                grid-template-columns: 1fr;
+
+                gap: 2rem;
+
+            }
+
+        }
+
+
+        .contact-details {
+
+            padding: 5rem 1.5rem;
+
+
+            .h2-title {
+
+                gap: 10px;
+
+                h2 {
+
+                    font-size: 1.5rem;
+
+                }
+
+            }
+
+
+            &__items {
+
+                flex-direction: column;
+
+                align-items: center;
+
+                gap: 2rem;
+
+            }
+
+        }
+
+    }
+
+}

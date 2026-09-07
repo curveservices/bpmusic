@@ -28,11 +28,12 @@ const Gallery = ({ images = [] }) => {
           button2Text="book the band"
           background="var(--navy)"
           color="var(--ivory)"
+          href="#gallery"
         />
       </FadeInSection>
       <Metrics />
 
-      <div className="second__section">
+      <div className="second__section" id="gallery">
         <FadeInSection>
           <ImageGallery />
         </FadeInSection>

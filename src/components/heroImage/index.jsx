@@ -15,6 +15,7 @@ const HeroImage = ({
   button1Text,
   button2Link,
   button2Text,
+  href,
   background,
   color,
 }) => {
@@ -54,7 +55,7 @@ const HeroImage = ({
       </div>
 
       {/* Bottom scroll indicator */}
-      <a href="#about" className="scroll" aria-label="Scroll to about">
+      <a href={href} className="scroll" aria-label="Scroll to about">
         <span className="scroll-line" />
         <span>Scroll</span>
       </a>

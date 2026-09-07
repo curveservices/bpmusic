@@ -84,7 +84,7 @@ const EventCards = () => {
               </div>
 
               {/* CTA */}
-              <a href="#" className="event-card__link">
+              <a href="/events/#upcoming-events" className="event-card__link">
                 <span>View Event</span>
                 <span className="event-card__arrow">→</span>
               </a>
