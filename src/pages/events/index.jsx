@@ -26,7 +26,7 @@ const Events = () => {
             Come and experience the timeless sound of a full big band, live."
             button1Text="About the band"
             button1Link="/about-us"
-            button2Link="/book-us"
+            button2Link="/contact-us"
             button2Text="book the band"
             background="var(--navy)"
             color="var(--ivory)"
@@ -40,7 +40,7 @@ const Events = () => {
           featureTitle="SALUTE TO THE '40S"
           featureP="We are proud perform annually at the Historic Dockyard. It's the highlight of our calendar and a much-loved tradition."
           featurebtn="Find out more"
-          link="/events"
+          event="#upcoming-events"
         />
         <FadeInSection>
           <section className="second-section">

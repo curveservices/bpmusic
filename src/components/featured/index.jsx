@@ -3,7 +3,7 @@ import quarter from "../../assets/images/quarter.png";
 import "./index.scss";
 
 const Featured = (props) => {
-  const { src, featureTitle, eyebrow, featureP, featurebtn } = props;
+  const { src, featureTitle, eyebrow, featureP, featurebtn, event } = props;
   return (
     <div className="featured-container">
       <img src={quarter} alt="" className="top-left quarter" />
@@ -21,7 +21,7 @@ const Featured = (props) => {
           <span className="eyebrow">{eyebrow}</span>
           <h3 className="feature-title">{featureTitle}</h3>
           <p>{featureP}</p>
-          <Button text={featurebtn} link="/events" />
+          <Button text={featurebtn} link={event} />
         </div>
       </div>
     </div>
