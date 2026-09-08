@@ -20,6 +20,7 @@ import {
 import "./index.scss";
 import AboutCards from "../../components/cards/aboutCards";
 import HeroVideo from "../../components/heroVideo";
+import Helmet from "../../components/helmet";
 const cardItems = [
   {
     icon: faMusic,
@@ -56,11 +57,33 @@ const About = () => {
   };
   return (
     <>
+      <Helmet
+        title="About Us | Peninsula Big Band in Kent"
+        description="Learn more about the Peninsula Big Band and our journey since 2007."
+        keywords="big band, swing, Kent, south east, music, Peninsula Big Band"
+        link="https://www.pbmusic.org.uk/about-us"
+      schemaMarkup={{
+        "@context": "https://schema.org",
+        "@type": "MusicGroup",
+        name: "Peninsula Big Band",
+        description:
+          "The Peninsula Big Band is a 15-18 piece traditional swing orchestra based in Kent, performing timeless classics from the great dance bands alongside modern favourites.",
+        url: "https://www.pbmusic.org.uk/",
+        address: {
+          "@type": "PostalAddress",
+          addressLocality: "Kent",
+          addressRegion: "South East England",
+          addressCountry: "United Kingdom",
+        },
+        telephone: "+44 7702 056378",
+        email: "bprankard@me.com",
+      }}
+      />
       <div className="about-page">
         <FadeInSection>
           <HeroVideo
             VidSrc={about}
-            fallback={<LoadingSpinner/>}
+            fallback={<LoadingSpinner />}
             eyebrow="KEEPING THE GOLDEN AGE OF SWING ALIVE"
             h1="The Peninsular Big Band"
             p="The Peinnsula Big Band is a 18-piece ensemble dedicated to the
@@ -71,7 +94,7 @@ const About = () => {
             button1Text="Upcoming events"
             button1Link="/events"
             button2Text="Book the Band"
-            button2Link="/contact"
+            button2Link="/contact-us?band=peninsula-big-band"
             background="var(--navy)"
             color="var(--ivory)"
             href="#the-band"
@@ -92,7 +115,7 @@ const About = () => {
 
                 p1="From Glenn Miller and Count Basie to The Beatles, Sade and Michael Jackson, our 18-piece orchestra blends classic swing with modern favourites — creating unforgettable live music for festivals, dinner dances, fundraisers and special events."
                 buttonText="Book the band"
-                link="/contact-us"
+                link="/contact-us?band=peninsula-big-band"
               />
             </div>
           </section>
@@ -120,7 +143,7 @@ const About = () => {
                 p2=" Perfect for smaller venues, cocktail parties and corporate
                     events."
                 buttonText="BOOK MAINLY SAX"
-                link="/contact-us"
+                link="/contact-us?band=mainly-sax"
                 reverse
               />
             </div>

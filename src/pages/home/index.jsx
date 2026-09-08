@@ -18,9 +18,10 @@ import EventCards from "../../components/cards/eventCards";
 import Repertoire from "../../components/repertoire";
 import GalleryPreview from "../../components/galleryPreview";
 import CTA from "../../components/cta";
-
-import "./index.scss";
 import HeroVideo from "../../components/heroVideo";
+import Helmet from "../../components/helmet/index.jsx";
+import "./index.scss";
+
 
 const Home = () => {
   const FadeInSection = ({ children }) => {
@@ -29,6 +30,33 @@ const Home = () => {
   };
   return (
     <>
+      <Helmet
+        title="Peninsula Big Band | Big Band Music in Kent"
+        description="The Peninsula Big Band is a 15-18 piece traditional swing orchestra based in Kent, performing timeless classics from the great dance bands alongside modern favourites."
+        keywords="big band, swing, Kent, south east, music, Peninsula Big Band"
+        schemaMarkup={{
+          "@context": "https://schema.org",
+          "@type": "MusicGroup",
+          name: "Peninsula Big Band",
+          description:
+            "The Peninsula Big Band is a 15-18 piece traditional swing orchestra based in Kent, performing timeless classics from the great dance bands alongside modern favourites.",
+          url: "https://www.pbmusic.org.uk/",
+          sameAs: [
+            "https://www.facebook.com/PeninsulaBigBand",
+            "https://www.instagram.com/peninsulabigband/",
+            "https://www.youtube.com/@PeninsulaBigBand",
+          ],
+          image: ["https://www.pbmusic.org.uk/assets/images/events.jpg"],
+          address: {
+            "@type": "PostalAddress",
+            addressLocality: "Kent",
+            addressRegion: "South East England",
+            addressCountry: "United Kingdom",
+          },
+          telephone: "+44 7702 056378",
+          email: "bprankard@me.com",
+        }}
+      />
       <div className="home-page">
         <FadeInSection>
           <HeroVideo
@@ -42,7 +70,7 @@ const Home = () => {
             button1Text="Upcoming events"
             button1Link="/events/#upcoming-events"
             button2Text="Book the Band"
-            button2Link="/book-us"
+            button2Link="/contact-us?band=peninsula-big-band"
             background="var(--navy)"
             color="var(--ivory)"
             href="#about"
@@ -95,7 +123,7 @@ const Home = () => {
               featureTitle="SALUTE TO THE '40S"
               featureP="We are proud to perform annually at the Historic Dockyard. It's a highlight of our calendar and a much-loved tradition."
               featurebtn="Find out more"
-              link="/events"
+              event="/events#upcoming-events"
             />
           </FadeInSection>
         </section>

@@ -114,7 +114,10 @@ const Navbar = () => {
             </div>
           </div>
         </nav>
-        <Button text="Book The Band" />
+        <Button
+          text="Book The Band"
+          link="/contact-us?band=peninsula-big-band"
+        />
         <MenuToggle showNav={showNav} setShowNav={setShowNav} />
       </header>
     </>

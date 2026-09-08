@@ -8,6 +8,7 @@ import EventsGrid from "../../components/eventsGrid";
 
 import "./index.scss";
 import CTA from "../../components/cta";
+import Helmet from "../../components/helmet";
 
 const Events = () => {
   const FadeInSection = ({ children }) => {
@@ -16,6 +17,20 @@ const Events = () => {
   };
   return (
     <>
+      <Helmet
+        title="Events | Peninsula Big Band in Kent"
+        description="Check out our upcoming events and performances across Kent and the south-east."
+        keywords="events, performances, Peninsula Big Band, big band, swing, Kent, south east, music"
+        link="https://www.pbmusic.org.uk/events"
+        schemaMarkup={{
+          "@context": "https://schema.org",
+          "@type": "Event",
+          name: "Peninsula Big Band Events",
+          description:
+            "Check out our upcoming events and performances across Kent and the south-east.",
+          url: "https://www.pbmusic.org.uk/events",
+        }}
+      />
       <div className="events-page">
         <FadeInSection>
           <HeroImage
@@ -26,7 +41,7 @@ const Events = () => {
             Come and experience the timeless sound of a full big band, live."
             button1Text="About the band"
             button1Link="/about-us"
-            button2Link="/contact-us"
+            button2Link="/contact-us?band=peninsula-big-band"
             button2Text="book the band"
             background="var(--navy)"
             color="var(--ivory)"
