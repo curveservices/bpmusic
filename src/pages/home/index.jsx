@@ -1,16 +1,11 @@
-import { Suspense } from "react";
 import home from "../../assets/images/hero.mp4";
-import sax from "../../assets/images/sax.jpg";
+import sax from "../../assets/images/sax.webp";
 import about from "../../assets/images/about.webp";
-import rep from "../../assets/images/g4.jpg";
-import modern from "../../assets/images/rep1.jpg";
-import fan from "../../assets/images/bg_5.png";
-import LazyVideo from "../../components/LazyVideo";
+import fan from "../../assets/images/bg_5.webp";
 import useScrollState from "../../components/scrollState";
 import LoadingSpinner from "../../components/loadingSpinner";
-import Button from "../../components/button";
 import Metrics from "../../components/metrics";
-import salute from "../../assets/images/salute-40s.jpg";
+import salute from "../../assets/images/salute-40s.webp";
 import Textbox from "../../components/textBox";
 import AboutCards from "../../components/cards/aboutCards";
 import Featured from "../../components/featured";
@@ -21,7 +16,6 @@ import CTA from "../../components/cta";
 import HeroVideo from "../../components/heroVideo";
 import Helmet from "../../components/helmet/index.jsx";
 import "./index.scss";
-
 
 const Home = () => {
   const FadeInSection = ({ children }) => {

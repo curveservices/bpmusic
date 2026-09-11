@@ -1,14 +1,14 @@
 import HeroImage from "../../components/heroImage";
-import events from "../../assets/images/events.jpg";
-import salute from "../../assets/images/salute-40s.jpg";
-import fan from "../../assets/images/bg_5.png";
+import events from "../../assets/images/events.webp";
+import salute from "../../assets/images/salute-40s.webp";
+import fan from "../../assets/images/bg_5.webp";
 import Featured from "../../components/featured";
 import useScrollState from "../../components/scrollState";
 import EventsGrid from "../../components/eventsGrid";
-
-import "./index.scss";
 import CTA from "../../components/cta";
 import Helmet from "../../components/helmet";
+
+import "./index.scss";
 
 const Events = () => {
   const FadeInSection = ({ children }) => {

@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom";
-import fan from "../../assets/images/bg_5.png";
 
 import "./index.scss";
 

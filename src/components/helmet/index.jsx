@@ -27,8 +27,7 @@ const Helmet = ({ title, description, keywords, schemaMarkup }) => {
       "og:description": description,
       "og:type": "website",
       "og:url": "https://www.pbmusic.org.uk/",
-      "og:image":
-        "https://www.pbmusic.org.uk/assets/images/events.jpg",
+      "og:image": "https://www.pbmusic.org.uk/assets/images/events.jpg",
     };
 
     Object.entries(ogTags).forEach(([property, content]) => {

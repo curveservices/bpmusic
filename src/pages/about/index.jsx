@@ -1,15 +1,11 @@
-import { Suspense } from "react";
 import about from "../../assets/images/about_video.mp4";
-import pbb from "../../assets/images/about_PBB.jpg";
-import fan from "../../assets/images/bg_5.png";
-import sax from "../../assets/images/mainly-sax.jpg";
-import Button from "../../components/button";
+import pbb from "../../assets/images/about_PBB.webp";
+import fan from "../../assets/images/bg_5.webp";
+import sax from "../../assets/images/mainly-sax.webp";
 import useScrollState from "../../components/scrollState";
 import LoadingSpinner from "../../components/loadingSpinner";
-import LazyVideo from "../../components/LazyVideo";
 import Textbox from "../../components/textBox";
 import CTA from "../../components/cta";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faHeart,
   faMusic,
@@ -17,10 +13,12 @@ import {
   faStar,
   faHeartMusicCameraBolt,
 } from "@fortawesome/free-solid-svg-icons";
-import "./index.scss";
 import AboutCards from "../../components/cards/aboutCards";
 import HeroVideo from "../../components/heroVideo";
 import Helmet from "../../components/helmet";
+
+import "./index.scss";
+
 const cardItems = [
   {
     icon: faMusic,
@@ -62,22 +60,22 @@ const About = () => {
         description="Learn more about the Peninsula Big Band and our journey since 2007."
         keywords="big band, swing, Kent, south east, music, Peninsula Big Band"
         link="https://www.pbmusic.org.uk/about-us"
-      schemaMarkup={{
-        "@context": "https://schema.org",
-        "@type": "MusicGroup",
-        name: "Peninsula Big Band",
-        description:
-          "The Peninsula Big Band is a 15-18 piece traditional swing orchestra based in Kent, performing timeless classics from the great dance bands alongside modern favourites.",
-        url: "https://www.pbmusic.org.uk/",
-        address: {
-          "@type": "PostalAddress",
-          addressLocality: "Kent",
-          addressRegion: "South East England",
-          addressCountry: "United Kingdom",
-        },
-        telephone: "+44 7702 056378",
-        email: "bprankard@me.com",
-      }}
+        schemaMarkup={{
+          "@context": "https://schema.org",
+          "@type": "MusicGroup",
+          name: "Peninsula Big Band",
+          description:
+            "The Peninsula Big Band is a 15-18 piece traditional swing orchestra based in Kent, performing timeless classics from the great dance bands alongside modern favourites.",
+          url: "https://www.pbmusic.org.uk/",
+          address: {
+            "@type": "PostalAddress",
+            addressLocality: "Kent",
+            addressRegion: "South East England",
+            addressCountry: "United Kingdom",
+          },
+          telephone: "+44 7702 056378",
+          email: "bprankard@me.com",
+        }}
       />
       <div className="about-page">
         <FadeInSection>

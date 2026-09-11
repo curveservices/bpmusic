@@ -1,11 +1,9 @@
 import { useState, useEffect } from "react";
 import NavBar from "../nav";
 import { Outlet, ScrollRestoration, useLocation } from "react-router-dom";
-// import Footer from "../footer";
-import "./index.scss";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faArrowUp } from "@fortawesome/free-solid-svg-icons";
 import Footer from "../footer";
+
+import "./index.scss";
 
 const Layout = () => {
   const [showButton, setShowButton] = useState(false);

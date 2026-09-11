@@ -1,5 +1,5 @@
 import Button from "../button";
-import fan from "../../assets/images/bg_5.png";
+import fan from "../../assets/images/bg_5.webp";
 import "./index.scss";
 
 const CTA = () => {

@@ -1,9 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
-import logo from "../../assets/images/logo.webp";
+import logo from "../../assets/images/logo.svg";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import MenuToggle from "../../components/menuToggle";
-import Socials from "../../components/socials";
 import Button from "../../components/button";
 import "./index.scss";
 import {

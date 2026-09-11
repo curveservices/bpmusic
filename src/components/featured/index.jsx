@@ -1,5 +1,5 @@
 import Button from "../button";
-import quarter from "../../assets/images/quarter.png";
+import quarter from "../../assets/images/quarter.webp";
 import "./index.scss";
 
 const Featured = (props) => {

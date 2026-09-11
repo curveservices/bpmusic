@@ -102,56 +102,56 @@
         }
       }
     }
-  //   .heading {
-  //     display: flex;
-  //     flex-direction: column;
-  //     align-items: center;
-  //     max-width: 700px;
-  //     margin: 0 auto 1.5rem;
-  //     text-align: center;
+    //   .heading {
+    //     display: flex;
+    //     flex-direction: column;
+    //     align-items: center;
+    //     max-width: 700px;
+    //     margin: 0 auto 1.5rem;
+    //     text-align: center;
 
-  //   .h2-title {
-  //     display: flex;
-  //     align-items: center;
-  //     justify-content: center;
-  //     gap: 1.5rem;
-  //     width: 100%;
+    //   .h2-title {
+    //     display: flex;
+    //     align-items: center;
+    //     justify-content: center;
+    //     gap: 1.5rem;
+    //     width: 100%;
 
-  //     .divider {
-  //       position: relative;
+    //     .divider {
+    //       position: relative;
 
-  //       width: 85px;
-  //       height: 2px;
+    //       width: 85px;
+    //       height: 2px;
 
-  //       background: var(--gold);
+    //       background: var(--gold);
 
-  //       &::after {
-  //         content: "";
+    //       &::after {
+    //         content: "";
 
-  //         position: absolute;
+    //         position: absolute;
 
-  //         top: 50%;
+    //         top: 50%;
 
-  //         width: 6px;
-  //         height: 6px;
+    //         width: 6px;
+    //         height: 6px;
 
-  //         border: 2px solid var(--gold);
+    //         border: 2px solid var(--gold);
 
-  //         background: var(--ivory);
+    //         background: var(--ivory);
 
-  //         transform: translateY(-50%) rotate(45deg);
-  //       }
+    //         transform: translateY(-50%) rotate(45deg);
+    //       }
 
-  //       &:first-child::after {
-  //         right: -3px;
-  //       }
+    //       &:first-child::after {
+    //         right: -3px;
+    //       }
 
-  //       &:last-child::after {
-  //         left: -3px;
-  //       }
-  //     }
-  //   }
-  // }
+    //       &:last-child::after {
+    //         left: -3px;
+    //       }
+    //     }
+    //   }
+    // }
     h3 {
       font-family: "Limelight", serif;
       font-optical-sizing: auto;
@@ -283,7 +283,6 @@
           opacity: initial;
         }
       }
-     
     }
   }
 }

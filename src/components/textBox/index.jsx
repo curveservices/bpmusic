@@ -1,5 +1,5 @@
 import Button from "../button";
-import frame from "../../assets/images/frame.png";
+import frame from "../../assets/images/frame.webp";
 import "./index.scss";
 
 const Textbox = ({

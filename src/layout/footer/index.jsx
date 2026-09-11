@@ -1,6 +1,6 @@
 import { faFacebookF, faYoutube } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import quarter from "../../assets/images/quarter.png";
+import quarter from "../../assets/images/quarter.webp";
 import { Link } from "react-router-dom";
 
 import fan from "../../assets/images/bg_5.png";

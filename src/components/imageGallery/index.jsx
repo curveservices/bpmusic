@@ -180,7 +180,9 @@ const ImageGallery = () => {
       <section className="image-gallery">
         <div className="image-gallery__loading">
           <span>Loading gallery</span>
-          <span><LoadingSpinner /></span>
+          <span>
+            <LoadingSpinner />
+          </span>
         </div>
       </section>
     );

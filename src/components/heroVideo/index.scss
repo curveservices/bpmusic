@@ -230,62 +230,64 @@
 
 @media screen and (min-width: 768px) and (max-width: 1024px) {
   .hero {
-      min-height: calc(100svh - 72px);
-      // ----------------------------------------------
-      // VIDEO
-      // ----------------------------------------------
-  
-      &__video {
-        clip-path: polygon(62% 0, 100% 0, 100% 100%, 42% 100%);
-      }
-  
-      // ----------------------------------------------
-      // VIDEO OVERLAY
-      // ----------------------------------------------
-  
-      &__video-overlay {
-        clip-path: polygon(62% 0, 100% 0, 100% 100%, 42% 100%);
-  
-        background: linear-gradient(90deg,
-            rgba(14, 26, 43, 0.02) 0%,
-            rgba(14, 26, 43, 0.2) 100%);
-      }
-  
-      // ----------------------------------------------
-      // IVORY PANEL
-      // ----------------------------------------------
-  
-      &::before {
-        width: 7%;
-        clip-path: polygon(0 0, 82% 0, 73% 100%, 0 100%);
-      }
-  
-      // ----------------------------------------------
-      // FAN
-      // ----------------------------------------------
-  
-      &__fan {
-        top: 5%;
-      }
-  
-      // ----------------------------------------------
-      // CONTENT
-      // ----------------------------------------------
-  
-      &__content {
-        width: 50%;
-  
-        margin-top: -5rem;
-  
-        padding: 80px 0 80px 6vw;
-      }
-  
-      &__inner {
-        width: 100%;
-  
-        max-width: 540px;
-      }
+    min-height: calc(100svh - 72px);
+    // ----------------------------------------------
+    // VIDEO
+    // ----------------------------------------------
+
+    &__video {
+      clip-path: polygon(62% 0, 100% 0, 100% 100%, 42% 100%);
     }
+
+    // ----------------------------------------------
+    // VIDEO OVERLAY
+    // ----------------------------------------------
+
+    &__video-overlay {
+      clip-path: polygon(62% 0, 100% 0, 100% 100%, 42% 100%);
+
+      background: linear-gradient(
+        90deg,
+        rgba(14, 26, 43, 0.02) 0%,
+        rgba(14, 26, 43, 0.2) 100%
+      );
+    }
+
+    // ----------------------------------------------
+    // IVORY PANEL
+    // ----------------------------------------------
+
+    &::before {
+      width: 7%;
+      clip-path: polygon(0 0, 82% 0, 73% 100%, 0 100%);
+    }
+
+    // ----------------------------------------------
+    // FAN
+    // ----------------------------------------------
+
+    &__fan {
+      top: 5%;
+    }
+
+    // ----------------------------------------------
+    // CONTENT
+    // ----------------------------------------------
+
+    &__content {
+      width: 50%;
+
+      margin-top: -5rem;
+
+      padding: 80px 0 80px 6vw;
+    }
+
+    &__inner {
+      width: 100%;
+
+      max-width: 540px;
+    }
+  }
 }
 
 // =========================
@@ -294,107 +296,106 @@
 
 @media screen and (max-width: 768px) {
   .hero {
-      display: flex;
-      flex-direction: column;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    // ----------------------------------------------
+    // VIDEO
+    // ----------------------------------------------
+
+    &__video {
+      position: relative;
+      inset: auto;
+      order: 1;
+      height: 30svh;
+      min-height: 200px;
+      clip-path: none;
       overflow: hidden;
-      // ----------------------------------------------
-      // VIDEO
-      // ----------------------------------------------
-  
-      &__video {
-        position: relative;
-        inset: auto;
-        order: 1;
-        height: 30svh;
-        min-height: 200px;
-        clip-path: none;
-        overflow: hidden;
-  
-        video {
-          width: 100%;
-  
-          height: 32svh;
-  
-          display: block;
-  
-          object-fit: cover;
-        }
-      }
-  
-      // ----------------------------------------------
-      // VIDEO OVERLAY
-      // ----------------------------------------------
-  
-      &__video-overlay {
-        position: absolute;
-        inset: 0;
-  
-        z-index: 1;
-  
+
+      video {
+        width: 100%;
+
+        height: 32svh;
+
         display: block;
-  
-        clip-path: none;
-  
-        pointer-events: none;
-      }
-  
-      // ----------------------------------------------
-      // CONTENT
-      // ----------------------------------------------
-  
-      &__content {
-        position: relative;
-  
-        order: 2;
-  
-        width: 100%;
-  
-        min-height: auto;
-  
-        margin-top: 0;
-  
-        padding: 2rem 1.5rem 0;
-  
-        display: flex;
-  
-        align-items: flex-start;
-      }
-  
-      &__inner {
-        position: relative;
-  
-        width: 100%;
-  
-        max-width: none;
-  
-        z-index: 1;
-      }
-  
-      // ----------------------------------------------
-      // FAN
-      // ----------------------------------------------
-  
-      &__fan {
-        top: -10rem;
-  
-        bottom: -25rem;
-  
-        width: 100%;
-  
-        height: auto;
-      }
-  
-  
-      .btn-container {
-        width: 100%;
-        margin: 3rem 2rem;
-      }
-  
-      // ----------------------------------------------
-      // SCROLL INDICATOR
-      // ----------------------------------------------
-      a.scroll {
-        display: none;
+
+        object-fit: cover;
       }
     }
+
+    // ----------------------------------------------
+    // VIDEO OVERLAY
+    // ----------------------------------------------
+
+    &__video-overlay {
+      position: absolute;
+      inset: 0;
+
+      z-index: 1;
+
+      display: block;
+
+      clip-path: none;
+
+      pointer-events: none;
+    }
+
+    // ----------------------------------------------
+    // CONTENT
+    // ----------------------------------------------
+
+    &__content {
+      position: relative;
+
+      order: 2;
+
+      width: 100%;
+
+      min-height: auto;
+
+      margin-top: 0;
+
+      padding: 2rem 1.5rem 0;
+
+      display: flex;
+
+      align-items: flex-start;
+    }
+
+    &__inner {
+      position: relative;
+
+      width: 100%;
+
+      max-width: none;
+
+      z-index: 1;
+    }
+
+    // ----------------------------------------------
+    // FAN
+    // ----------------------------------------------
+
+    &__fan {
+      top: -10rem;
+
+      bottom: -25rem;
+
+      width: 100%;
+
+      height: auto;
+    }
+
+    .btn-container {
+      width: 100%;
+      margin: 3rem 2rem;
+    }
+
+    // ----------------------------------------------
+    // SCROLL INDICATOR
+    // ----------------------------------------------
+    a.scroll {
+      display: none;
+    }
+  }
 }

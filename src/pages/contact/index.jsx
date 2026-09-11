@@ -2,18 +2,16 @@ import { useEffect, useState } from "react";
 import { useSearchParams } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
-  faMusic,
   faEnvelope,
   faPhone,
   faArrowRight,
 } from "@fortawesome/free-solid-svg-icons";
-import fan from "../../assets/images/bg_5.png";
-
+import fan from "../../assets/images/bg_5.webp";
 import Button from "../../components/button";
-
-import "./index.scss";
 import useScrollState from "../../components/scrollState";
 import Helmet from "../../components/helmet";
+
+import "./index.scss";
 
 const Contact = () => {
   const [searchParams] = useSearchParams();
@@ -38,10 +36,10 @@ const Contact = () => {
       block: "start",
     });
   };
-const FadeInSection = ({ children }) => {
-  useScrollState();
-  return <div className={`fade-in-on-scroll`}>{children}</div>;
-};
+  const FadeInSection = ({ children }) => {
+    useScrollState();
+    return <div className={`fade-in-on-scroll`}>{children}</div>;
+  };
   return (
     <>
       <Helmet

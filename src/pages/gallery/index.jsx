@@ -1,6 +1,3 @@
-import { useState } from "react";
-
-import "./index.scss";
 import HeroImage from "../../components/heroImage";
 import useScrollState from "../../components/scrollState";
 import Metrics from "../../components/metrics";
@@ -8,6 +5,8 @@ import ImageGallery from "../../components/imageGallery";
 import hero from "../../assets/images/gallery.jpg";
 import CTA from "../../components/cta";
 import Helmet from "../../components/helmet";
+
+import "./index.scss";
 
 const Gallery = ({ images = [] }) => {
   const FadeInSection = ({ children }) => {

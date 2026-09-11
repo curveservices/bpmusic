@@ -1,6 +1,6 @@
 import salute from "../../assets/images/salute-40s.jpg";
-import rep from "../../assets/images/g4.jpg";
-import g4 from "../../assets/images/rep1.jpg";
+import rep from "../../assets/images/g4.webp";
+import g4 from "../../assets/images/rep1.webp";
 import "./index.scss";
 
 const eventItems = [

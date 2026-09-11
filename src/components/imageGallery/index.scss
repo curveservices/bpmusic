@@ -1,733 +1,667 @@
 .image-gallery {
+  position: relative;
+
+  padding: 5rem 3rem 7rem;
+
+  background: var(--ivory);
+
+  overflow: hidden;
+
+  // ==========================================
+  // HEADING
+  // ==========================================
+
+  .heading {
+    max-width: 800px;
+
+    margin: 0 auto 5rem;
+
+    text-align: center;
+
+    .h2-title {
+      display: flex;
+
+      align-items: center;
+      justify-content: center;
+
+      gap: 1.5rem;
+    }
+
+    p {
+      max-width: 620px;
+
+      margin: 1.5rem auto 0;
+
+      font-family: "Montserrat", sans-serif;
+
+      font-size: 15px;
+
+      line-height: 1.8;
+
+      color: var(--navy);
+    }
+  }
+
+  // ==========================================
+  // GRID
+  // ==========================================
+
+  &__grid {
+    display: grid;
+
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+
+    gap: 2rem;
+
+    max-width: 1400px;
+
+    margin: 0 auto;
+  }
+
+  // ==========================================
+  // ITEM
+  // ==========================================
+
+  &__item {
     position: relative;
 
-    padding: 5rem 3rem 7rem;
+    display: block;
 
-    background: var(--ivory);
+    width: 100%;
+
+    padding: 0;
+
+    border: none;
+
+    background: none;
+
+    text-align: left;
+
+    cursor: pointer;
+  }
+
+  // ==========================================
+  // FRAME
+  // ==========================================
+
+  &__frame {
+    position: relative;
+
+    aspect-ratio: 4 / 3;
+
+    padding: 10px;
+
+    background: var(--navy);
+
+    border: 1px solid var(--gold);
+
+    box-shadow: var(--box-shadow);
 
     overflow: hidden;
 
+    transition:
+      transform 0.45s ease,
+      box-shadow 0.45s ease;
+  }
 
-    // ==========================================
-    // HEADING
-    // ==========================================
+  // ==========================================
+  // IMAGE
+  // ==========================================
 
-    .heading {
-        max-width: 800px;
+  &__frame img {
+    display: block;
 
-        margin: 0 auto 5rem;
+    width: 100%;
+    height: 100%;
 
-        text-align: center;
+    object-fit: cover;
 
-        .h2-title {
-            display: flex;
+    filter: saturate(0.75) contrast(1.05);
 
-            align-items: center;
-            justify-content: center;
+    transition:
+      transform 0.7s ease,
+      filter 0.7s ease;
+  }
 
-            gap: 1.5rem;
-        }
+  // ==========================================
+  // INNER FRAME
+  // ==========================================
 
-        p {
-            max-width: 620px;
+  .frame-line {
+    position: absolute;
 
-            margin: 1.5rem auto 0;
+    z-index: 3;
 
-            font-family: "Montserrat", sans-serif;
+    pointer-events: none;
 
-            font-size: 15px;
+    background: rgba(200, 169, 106, 0.55);
+  }
 
-            line-height: 1.8;
+  .frame-line--top {
+    top: 8px;
+    left: 8px;
+    right: 8px;
 
-            color: var(--navy);
-        }
+    height: 1px;
+  }
+
+  .frame-line--bottom {
+    bottom: 8px;
+    left: 8px;
+    right: 8px;
+
+    height: 1px;
+  }
+
+  .frame-line--left {
+    top: 8px;
+    bottom: 8px;
+    left: 8px;
+
+    width: 1px;
+  }
+
+  .frame-line--right {
+    top: 8px;
+    bottom: 8px;
+    right: 8px;
+
+    width: 1px;
+  }
+
+  // ==========================================
+  // ART DECO CORNERS
+  // ==========================================
+
+  .corner {
+    position: absolute;
+
+    z-index: 4;
+
+    width: 28px;
+    height: 28px;
+
+    pointer-events: none;
+
+    transition:
+      width 0.4s ease,
+      height 0.4s ease;
+  }
+
+  .corner--tl {
+    top: 14px;
+    left: 14px;
+
+    border-top: 1px solid var(--gold-light);
+    border-left: 1px solid var(--gold-light);
+  }
+
+  .corner--tr {
+    top: 14px;
+    right: 14px;
+
+    border-top: 1px solid var(--gold-light);
+    border-right: 1px solid var(--gold-light);
+  }
+
+  .corner--bl {
+    bottom: 14px;
+    left: 14px;
+
+    border-bottom: 1px solid var(--gold-light);
+    border-left: 1px solid var(--gold-light);
+  }
+
+  .corner--br {
+    bottom: 14px;
+    right: 14px;
+
+    border-bottom: 1px solid var(--gold-light);
+    border-right: 1px solid var(--gold-light);
+  }
+
+  // ==========================================
+  // HOVER OVERLAY
+  // ==========================================
+
+  &__overlay {
+    position: absolute;
+
+    inset: 0;
+
+    z-index: 2;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    background: rgba(14, 26, 43, 0.5);
+
+    color: var(--gold-light);
+
+    font-size: 1.4rem;
+
+    opacity: 0;
+
+    transition: opacity 0.4s ease;
+  }
+
+  // ==========================================
+  // HOVER
+  // ==========================================
+
+  &__item:hover {
+    .image-gallery__frame {
+      transform: translateY(-6px);
+
+      box-shadow: 0 25px 50px rgba(14, 26, 43, 0.35);
     }
 
+    img {
+      transform: scale(1.05);
 
-    // ==========================================
-    // GRID
-    // ==========================================
-
-    &__grid {
-        display: grid;
-
-        grid-template-columns:
-            repeat(3, minmax(0, 1fr));
-
-        gap: 2rem;
-
-        max-width: 1400px;
-
-        margin: 0 auto;
+      filter: saturate(1) contrast(1.05);
     }
 
-
-    // ==========================================
-    // ITEM
-    // ==========================================
-
-    &__item {
-        position: relative;
-
-        display: block;
-
-        width: 100%;
-
-        padding: 0;
-
-        border: none;
-
-        background: none;
-
-        text-align: left;
-
-        cursor: pointer;
+    .image-gallery__overlay {
+      opacity: 1;
     }
-
-
-    // ==========================================
-    // FRAME
-    // ==========================================
-
-    &__frame {
-        position: relative;
-
-        aspect-ratio: 4 / 3;
-
-        padding: 10px;
-
-        background: var(--navy);
-
-        border: 1px solid var(--gold);
-
-        box-shadow: var(--box-shadow);
-
-        overflow: hidden;
-
-        transition:
-            transform 0.45s ease,
-            box-shadow 0.45s ease;
-    }
-
-
-    // ==========================================
-    // IMAGE
-    // ==========================================
-
-    &__frame img {
-        display: block;
-
-        width: 100%;
-        height: 100%;
-
-        object-fit: cover;
-
-        filter:
-            saturate(0.75) contrast(1.05);
-
-        transition:
-            transform 0.7s ease,
-            filter 0.7s ease;
-    }
-
-
-    // ==========================================
-    // INNER FRAME
-    // ==========================================
-
-    .frame-line {
-        position: absolute;
-
-        z-index: 3;
-
-        pointer-events: none;
-
-        background:
-            rgba(200, 169, 106, 0.55);
-    }
-
-
-    .frame-line--top {
-        top: 8px;
-        left: 8px;
-        right: 8px;
-
-        height: 1px;
-    }
-
-
-    .frame-line--bottom {
-        bottom: 8px;
-        left: 8px;
-        right: 8px;
-
-        height: 1px;
-    }
-
-
-    .frame-line--left {
-        top: 8px;
-        bottom: 8px;
-        left: 8px;
-
-        width: 1px;
-    }
-
-
-    .frame-line--right {
-        top: 8px;
-        bottom: 8px;
-        right: 8px;
-
-        width: 1px;
-    }
-
-
-    // ==========================================
-    // ART DECO CORNERS
-    // ==========================================
 
     .corner {
-        position: absolute;
-
-        z-index: 4;
-
-        width: 28px;
-        height: 28px;
-
-        pointer-events: none;
-
-        transition:
-            width 0.4s ease,
-            height 0.4s ease;
+      width: 36px;
+      height: 36px;
     }
+  }
 
+  // ==========================================
+  // CAPTION
+  // ==========================================
 
-    .corner--tl {
-        top: 14px;
-        left: 14px;
+  &__caption {
+    display: block;
 
-        border-top: 1px solid var(--gold-light);
-        border-left: 1px solid var(--gold-light);
-    }
+    margin-top: 0.8rem;
 
+    padding-left: 0.25rem;
 
-    .corner--tr {
-        top: 14px;
-        right: 14px;
+    font-family: "Montserrat", sans-serif;
 
-        border-top: 1px solid var(--gold-light);
-        border-right: 1px solid var(--gold-light);
-    }
+    font-size: 11px;
 
+    font-weight: 600;
 
-    .corner--bl {
-        bottom: 14px;
-        left: 14px;
+    letter-spacing: 0.08em;
 
-        border-bottom: 1px solid var(--gold-light);
-        border-left: 1px solid var(--gold-light);
-    }
-
-
-    .corner--br {
-        bottom: 14px;
-        right: 14px;
-
-        border-bottom: 1px solid var(--gold-light);
-        border-right: 1px solid var(--gold-light);
-    }
-
-
-    // ==========================================
-    // HOVER OVERLAY
-    // ==========================================
-
-    &__overlay {
-        position: absolute;
-
-        inset: 0;
-
-        z-index: 2;
-
-        display: flex;
-
-        align-items: center;
-        justify-content: center;
-
-        background:
-            rgba(14, 26, 43, 0.5);
-
-        color: var(--gold-light);
-
-        font-size: 1.4rem;
-
-        opacity: 0;
-
-        transition:
-            opacity 0.4s ease;
-    }
-
-
-    // ==========================================
-    // HOVER
-    // ==========================================
-
-    &__item:hover {
-
-        .image-gallery__frame {
-            transform: translateY(-6px);
-
-            box-shadow:
-                0 25px 50px rgba(14, 26, 43, 0.35);
-        }
-
-
-        img {
-            transform: scale(1.05);
-
-            filter:
-                saturate(1) contrast(1.05);
-        }
-
-
-        .image-gallery__overlay {
-            opacity: 1;
-        }
-
-
-        .corner {
-            width: 36px;
-            height: 36px;
-        }
-    }
-
-
-    // ==========================================
-    // CAPTION
-    // ==========================================
-
-    &__caption {
-        display: block;
-
-        margin-top: 0.8rem;
-
-        padding-left: 0.25rem;
-
-        font-family: "Montserrat", sans-serif;
-
-        font-size: 11px;
-
-        font-weight: 600;
-
-        letter-spacing: 0.08em;
-
-        text-transform: uppercase;
-
-        color: var(--navy);
-    }
-
-
-    // ==========================================
-    // LOAD MORE
-    // ==========================================
-
-    &__load {
-        display: flex;
-
-        justify-content: center;
-
-        margin-top: 4rem;
-    }
-
-
-    &__load-button {
     text-transform: uppercase;
-        letter-spacing: 2px;
-        text-decoration: none;
-        text-align: center;
-        width: fit-content;
-        padding: 0.6rem 2rem;
-        border: 2px solid var(--gold);
-        background: var(--navy);
-        color: var(--ivory);
-        font-family: "Oswald", sans-serif;
-        font-size: 18px;
-        font-weight: 500;
-        box-shadow: var(--button-shadow);
-        transition: all 0.3s ease-in-out;
-        cursor: pointer;
 
-        transition:
-            background 0.3s ease,
-            color 0.3s ease,
-            box-shadow 0.3s ease,
-            transform 0.3s ease;
+    color: var(--navy);
+  }
 
-        &:hover {
-            background: var(--gold);
-            transform: translateY(-3px);
-            color: var(--navy);
-            box-shadow: var(--button-glow);
-        }
+  // ==========================================
+  // LOAD MORE
+  // ==========================================
 
-        &:disabled {
-            opacity: 0.5;
+  &__load {
+    display: flex;
 
-            cursor: wait;
-        }
+    justify-content: center;
+
+    margin-top: 4rem;
+  }
+
+  &__load-button {
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-decoration: none;
+    text-align: center;
+    width: fit-content;
+    padding: 0.6rem 2rem;
+    border: 2px solid var(--gold);
+    background: var(--navy);
+    color: var(--ivory);
+    font-family: "Oswald", sans-serif;
+    font-size: 18px;
+    font-weight: 500;
+    box-shadow: var(--button-shadow);
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+
+    transition:
+      background 0.3s ease,
+      color 0.3s ease,
+      box-shadow 0.3s ease,
+      transform 0.3s ease;
+
+    &:hover {
+      background: var(--gold);
+      transform: translateY(-3px);
+      color: var(--navy);
+      box-shadow: var(--button-glow);
     }
 
+    &:disabled {
+      opacity: 0.5;
 
-    // ==========================================
-    // LOADING
-    // ==========================================
-
-    &__loading {
-        min-height: 400px;
-
-        display: flex;
-
-        align-items: center;
-        justify-content: center;
-
-        font-family: "Oswald", sans-serif;
-
-        font-size: 12px;
-
-        font-weight: 600;
-
-        letter-spacing: 0.15em;
-
-        text-transform: uppercase;
-
-        color: var(--navy);
+      cursor: wait;
     }
+  }
 
+  // ==========================================
+  // LOADING
+  // ==========================================
 
-    // ==========================================
-    // LIGHTBOX
-    // ==========================================
+  &__loading {
+    min-height: 400px;
 
-    &__lightbox {
-        position: absolute;
-        inset: 0;
+    display: flex;
 
-        z-index: 9999;
+    align-items: center;
+    justify-content: center;
 
-        display: flex;
+    font-family: "Oswald", sans-serif;
 
-        align-items: center;
-        justify-content: center;
+    font-size: 12px;
 
-        padding: 5rem;
+    font-weight: 600;
 
-        background:
-            rgba(14, 26, 43, 0.95);
+    letter-spacing: 0.15em;
+
+    text-transform: uppercase;
+
+    color: var(--navy);
+  }
+
+  // ==========================================
+  // LIGHTBOX
+  // ==========================================
+
+  &__lightbox {
+    position: absolute;
+    inset: 0;
+
+    z-index: 9999;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 5rem;
+
+    background: rgba(14, 26, 43, 0.95);
+  }
+
+  // ==========================================
+  // LIGHTBOX IMAGE
+  // ==========================================
+
+  &__lightbox-content {
+    position: relative;
+    top: 0;
+
+    max-width: 1100px;
+
+    max-height: 85vh;
+
+    text-align: center;
+  }
+
+  &__lightbox-frame {
+    position: relative;
+
+    padding: 12px;
+
+    background: var(--ivory);
+
+    border: 1px solid var(--gold);
+
+    box-shadow: 0 30px 80px rgba(0, 0, 0, 0.5);
+  }
+
+  &__lightbox-frame::before {
+    content: "";
+
+    position: absolute;
+
+    inset: 7px;
+
+    border: 1px solid rgba(200, 169, 106, 0.5);
+
+    pointer-events: none;
+
+    z-index: 2;
+  }
+
+  &__lightbox-frame img {
+    display: block;
+
+    max-width: 100%;
+
+    max-height: 75vh;
+
+    object-fit: contain;
+  }
+
+  &__lightbox-content p {
+    margin-top: 1rem;
+
+    color: var(--ivory);
+
+    font-family: "Oswald", sans-serif;
+
+    font-size: 12px;
+
+    letter-spacing: 0.08em;
+
+    text-transform: uppercase;
+  }
+
+  // ==========================================
+  // CLOSE
+  // ==========================================
+
+  &__close {
+    position: absolute;
+
+    top: 25px;
+    right: 30px;
+
+    z-index: 10;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    width: 45px;
+    height: 45px;
+
+    border: 1px solid var(--gold);
+
+    background: var(--navy);
+
+    color: var(--gold);
+
+    font-size: 18px;
+
+    cursor: pointer;
+
+    transition:
+      background 0.3s ease,
+      color 0.3s ease;
+
+    &:hover {
+      background: var(--gold);
+
+      color: var(--navy);
     }
+  }
 
+  // ==========================================
+  // ARROWS
+  // ==========================================
 
-    // ==========================================
-    // LIGHTBOX IMAGE
-    // ==========================================
+  &__arrow {
+    position: absolute;
 
-    &__lightbox-content {
-        position: relative;
-        top: 0;
+    top: 50%;
 
-        max-width: 1100px;
+    z-index: 10;
 
-        max-height: 85vh;
+    display: flex;
 
-        text-align: center;
+    align-items: center;
+    justify-content: center;
+
+    width: 50px;
+    height: 50px;
+
+    border: 1px solid var(--gold);
+
+    background: var(--navy);
+
+    color: var(--gold);
+
+    cursor: pointer;
+
+    transform: translateY(-50%);
+
+    transition:
+      background 0.3s ease,
+      color 0.3s ease;
+
+    &:hover {
+      background: var(--gold);
+
+      color: var(--navy);
     }
+  }
 
+  &__arrow--left {
+    left: 30px;
+  }
 
-    &__lightbox-frame {
-        position: relative;
-
-        padding: 12px;
-
-        background: var(--ivory);
-
-        border: 1px solid var(--gold);
-
-        box-shadow:
-            0 30px 80px rgba(0, 0, 0, 0.5);
-    }
-
-
-    &__lightbox-frame::before {
-        content: "";
-
-        position: absolute;
-
-        inset: 7px;
-
-        border: 1px solid rgba(200, 169, 106, 0.5);
-
-        pointer-events: none;
-
-        z-index: 2;
-    }
-
-
-    &__lightbox-frame img {
-        display: block;
-
-        max-width: 100%;
-
-        max-height: 75vh;
-
-        object-fit: contain;
-    }
-
-
-    &__lightbox-content p {
-        margin-top: 1rem;
-
-        color: var(--ivory);
-
-        font-family: "Oswald", sans-serif;
-
-        font-size: 12px;
-
-        letter-spacing: 0.08em;
-
-        text-transform: uppercase;
-    }
-
-
-    // ==========================================
-    // CLOSE
-    // ==========================================
-
-    &__close {
-        position: absolute;
-
-        top: 25px;
-        right: 30px;
-
-        z-index: 10;
-
-        display: flex;
-
-        align-items: center;
-        justify-content: center;
-
-        width: 45px;
-        height: 45px;
-
-        border: 1px solid var(--gold);
-
-        background: var(--navy);
-
-        color: var(--gold);
-
-        font-size: 18px;
-
-        cursor: pointer;
-
-        transition:
-            background 0.3s ease,
-            color 0.3s ease;
-
-        &:hover {
-            background: var(--gold);
-
-            color: var(--navy);
-        }
-    }
-
-
-    // ==========================================
-    // ARROWS
-    // ==========================================
-
-    &__arrow {
-        position: absolute;
-
-        top: 50%;
-
-        z-index: 10;
-
-        display: flex;
-
-        align-items: center;
-        justify-content: center;
-
-        width: 50px;
-        height: 50px;
-
-        border: 1px solid var(--gold);
-
-        background: var(--navy);
-
-        color: var(--gold);
-
-        cursor: pointer;
-
-        transform: translateY(-50%);
-
-        transition:
-            background 0.3s ease,
-            color 0.3s ease;
-
-        &:hover {
-            background: var(--gold);
-
-            color: var(--navy);
-        }
-    }
-
-
-    &__arrow--left {
-        left: 30px;
-    }
-
-
-    &__arrow--right {
-        right: 30px;
-    }
+  &__arrow--right {
+    right: 30px;
+  }
 }
-
 
 // ==================================================
 // TABLET
 // ==================================================
 
 @media screen and (min-width: 769px) and (max-width: 1024px) {
+  .image-gallery {
+    padding: 4rem 2rem 5rem;
 
-    .image-gallery {
+    &__grid {
+      grid-template-columns: repeat(2, 1fr);
 
-        padding:
-            4rem 2rem 5rem;
-
-
-        &__grid {
-            grid-template-columns:
-                repeat(2, 1fr);
-
-            gap: 1.5rem;
-        }
-
-
-        &__heading {
-            margin-bottom: 3.5rem;
-        }
-
-
-        &__lightbox {
-            padding: 3rem;
-        }
+      gap: 1.5rem;
     }
-}
 
+    &__heading {
+      margin-bottom: 3.5rem;
+    }
+
+    &__lightbox {
+      padding: 3rem;
+    }
+  }
+}
 
 // ==================================================
 // MOBILE
 // ==================================================
 
 @media screen and (max-width: 768px) {
+  .image-gallery {
+    padding: 3.5rem 1rem 4rem;
 
-    .image-gallery {
+    &__heading {
+      margin-bottom: 2.5rem;
 
-        padding:
-            3.5rem 1rem 4rem;
+      .h2-title {
+        gap: 0.7rem;
 
-
-        &__heading {
-
-            margin-bottom: 2.5rem;
-
-            .h2-title {
-                gap: 0.7rem;
-
-                h2 {
-                    font-size: 1.45rem;
-                }
-            }
-
-            p {
-                padding: 0 1rem;
-
-                font-size: 13px;
-            }
+        h2 {
+          font-size: 1.45rem;
         }
+      }
 
+      p {
+        padding: 0 1rem;
 
-        &__grid {
-            grid-template-columns: 1fr;
-
-            gap: 1.5rem;
-        }
-
-
-        &__frame {
-            aspect-ratio: 4 / 3;
-        }
-
-
-        &__caption {
-            font-size: 10px;
-        }
-
-
-        &__lightbox {
-            padding: 1rem;
-        }
-
-        &__lightbox-content {
-            max-width: 100%;
-            max-width: 100%;
-            max-height: calc(100vh - 120px);
-        }
-
-
-        &__lightbox-frame {
-            max-width: 100%;
-            max-width: 100%;
-            max-height: calc(100vh - 120px);
-            padding: 7px;
-        }
-
-
-        &__lightbox-frame img {
-            width: auto;
-            height: auto;
-            max-width: 100%;
-            max-height: calc(100vh - 120px);
-            max-height: 75vh;
-            object-fit: contain;
-        }
-
-        &__lightbox-content p {
-            max-width: 90%;
-            margin-top: 0.75rem;
-            font-size: 11px;
-        }
-
-
-        &__arrow {
-            width: 38px;
-            height: 38px;
-
-            &--left {
-                left: 6px;
-            }
-
-            &--right {
-                right: 6px;
-            }
-        }
-
-
-        &__close {
-            top: 12px;
-            right: 12px;
-
-            width: 40px;
-            height: 40px;
-        }
+        font-size: 13px;
+      }
     }
+
+    &__grid {
+      grid-template-columns: 1fr;
+
+      gap: 1.5rem;
+    }
+
+    &__frame {
+      aspect-ratio: 4 / 3;
+    }
+
+    &__caption {
+      font-size: 10px;
+    }
+
+    &__lightbox {
+      padding: 1rem;
+    }
+
+    &__lightbox-content {
+      max-width: 100%;
+      max-width: 100%;
+      max-height: calc(100vh - 120px);
+    }
+
+    &__lightbox-frame {
+      max-width: 100%;
+      max-width: 100%;
+      max-height: calc(100vh - 120px);
+      padding: 7px;
+    }
+
+    &__lightbox-frame img {
+      width: auto;
+      height: auto;
+      max-width: 100%;
+      max-height: calc(100vh - 120px);
+      max-height: 75vh;
+      object-fit: contain;
+    }
+
+    &__lightbox-content p {
+      max-width: 90%;
+      margin-top: 0.75rem;
+      font-size: 11px;
+    }
+
+    &__arrow {
+      width: 38px;
+      height: 38px;
+
+      &--left {
+        left: 6px;
+      }
+
+      &--right {
+        right: 6px;
+      }
+    }
+
+    &__close {
+      top: 12px;
+      right: 12px;
+
+      width: 40px;
+      height: 40px;
+    }
+  }
 }

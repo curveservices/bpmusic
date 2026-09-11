@@ -69,10 +69,11 @@
     flex-direction: row-reverse;
     background: var(--navy);
     z-index: 0;
-    h1.main, p {
+    h1.main,
+    p {
       color: var(--ivory) !important;
     }
-    
+
     .frame {
       width: 560px;
       height: 500px;

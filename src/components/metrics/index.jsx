@@ -1,6 +1,6 @@
 import { useInView } from "react-intersection-observer";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import quarter from "../../assets/images/quarter.png";
+import quarter from "../../assets/images/quarter.webp";
 import {
   faCalendar,
   faLocationPin,

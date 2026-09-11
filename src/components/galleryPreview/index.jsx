@@ -1,11 +1,11 @@
-import g1 from "../../assets/images/g1.jpg";
-import g2 from "../../assets/images/g2.jpg";
+import g1 from "../../assets/images/g1.webp";
+import g2 from "../../assets/images/g2.webp";
 import g3 from "../../assets/images/g3.webp";
-import g4 from "../../assets/images/g4.jpg";
+import g4 from "../../assets/images/g4.webp";
 import g5 from "../../assets/images/g5.webp";
-import g6 from "../../assets/images/g6.jpg";
-import g7 from "../../assets/images/g7.jpg";
-import rep1 from "../../assets/images/rep1.jpg";
+import g6 from "../../assets/images/g6.webp";
+import g7 from "../../assets/images/g7.webp";
+import rep1 from "../../assets/images/rep1.webp";
 import "./index.scss";
 
 const galleryImages = [

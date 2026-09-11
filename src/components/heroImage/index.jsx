@@ -1,9 +1,8 @@
 import { Suspense } from "react";
-import LazyVideo from "../LazyVideo";
 import Button from "../button";
 import LoadingSpinner from "../loadingSpinner";
 
-import fan from "../../assets/images/bg_5.png";
+import fan from "../../assets/images/bg_5.webp";
 import "./index.scss";
 
 const HeroImage = ({
@@ -46,10 +45,7 @@ const HeroImage = ({
           <div className="btn-container">
             <Button text={button1Text} link={button1Link} />
 
-            <Button
-              text={button2Text}
-              link={button2Link}
-            />
+            <Button text={button2Text} link={button2Link} />
           </div>
         </div>
       </div>
