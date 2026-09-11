@@ -118,7 +118,7 @@ const Footer = () => {
           <p>
             © {new Date().getFullYear()}{" "}
             <a
-              href="https://immutable-studio.co.uk"
+              href="https://www.immutable-studio.co.uk"
               target="_blank"
               rel="noopener noreferrer"
             >
