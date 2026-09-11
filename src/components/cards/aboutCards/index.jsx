@@ -61,7 +61,7 @@ const AboutCards = ({ items, mainTitle, link }) => {
                 />
               )}
             </div>
-            <h4 className="title">{card.title}</h4>
+            <div className="title">{card.title}</div>
             <p>{card.description}</p>
           </div>
         ))}

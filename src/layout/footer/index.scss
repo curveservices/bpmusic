@@ -107,7 +107,7 @@
     font-size: 14px;
     line-height: 1.8;
     text-align: center;
-    color: rgba(247, 243, 236, 0.6);
+    color: var(--ivory);
   }
 
   // ==========================================
@@ -140,7 +140,7 @@
       font-family: "Oswald", sans-serif;
       font-size: 14px;
       text-decoration: none;
-      color: rgba(247, 243, 236, 0.75);
+      color: var(--ivory);
       transition:
         color 0.25s ease,
         transform 0.25s ease;
@@ -176,7 +176,7 @@
 
       text-decoration: none;
 
-      color: rgba(247, 243, 236, 0.75);
+      color: var(--ivory);
     }
 
     a {
@@ -240,7 +240,7 @@
 
     line-height: 1.7;
 
-    color: rgba(247, 243, 236, 0.5);
+    color: var(--ivory);
   }
 
   // ==========================================

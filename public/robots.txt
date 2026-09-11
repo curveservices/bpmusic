@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /about-us
+Allow: /events
+Allow: /gallery
+Allow: /contact-us
