@@ -2,7 +2,7 @@ import HeroImage from "../../components/heroImage";
 import useScrollState from "../../components/scrollState";
 import Metrics from "../../components/metrics";
 import ImageGallery from "../../components/imageGallery";
-import hero from "../../assets/images/gallery.jpg";
+import hero from "../../assets/images/gallery.webp";
 import CTA from "../../components/cta";
 import Helmet from "../../components/helmet";
 
