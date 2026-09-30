@@ -1,6 +1,6 @@
 import home from "../../assets/images/hero.mp4";
-import sax from "../../assets/images/sax.webp";
-import about from "../../assets/images/about.webp";
+import sax from "../../assets/images/mainly-sax.webp";
+import about from "../../assets/images/events.webp";
 import fan from "../../assets/images/bg_5.webp";
 import useScrollState from "../../components/scrollState";
 import LoadingSpinner from "../../components/loadingSpinner";
@@ -85,7 +85,7 @@ const Home = () => {
             <FadeInSection>
               <Textbox
                 src={about}
-                eyebrow="about Peninsular Big Band"
+                eyebrow="about Peninsula Big Band"
                 h1="A tradition of swing since 2007"
                 p="Formed in Kent, The Peninsula Big Band brings together professional and experienced amateur musicians who share a passion for the timeless sound of the big band era.
                         For over 15 years we have been delighting audiences across the South East with authentic swing classics and modern favourites."
