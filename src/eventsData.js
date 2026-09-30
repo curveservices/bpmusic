@@ -1,4 +1,4 @@
-import e1 from "./assets/images/events.webp";
+import e1 from "./assets/images/about_PBB.webp";
 import e2 from "./assets/images/mainly-sax.webp";
 import e3 from "./assets/images/pbb-xmas.webp";
 import e4 from "./assets/images/xmas-event.webp";
