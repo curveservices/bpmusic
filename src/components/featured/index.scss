@@ -1,7 +1,8 @@
 .featured-container {
   display: flex;
   justify-content: space-between;
-  padding: 0rem 4rem;
+  height: 400px;
+  padding: 1rem 4rem;
   background: var(--navy);
   margin: 0rem 0 0;
   cursor: pointer;
@@ -97,6 +98,7 @@
   .featured-container {
     padding: 0rem 2rem;
     margin: 0rem 0 0;
+    height: 515px;
 
     .quarter {
       width: 200px;

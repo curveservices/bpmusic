@@ -1,0 +1,63 @@
+import e1 from "./assets/images/events.webp";
+import e2 from "./assets/images/mainly-sax.webp";
+import e3 from "./assets/images/pbb-xmas.webp";
+import e4 from "./assets/images/xmas-event.webp";
+
+export const events = [
+    {
+        id: 1,
+        eyebrow: "Big Band at the Church",
+        title: "Hoo Church",
+        location: "Hoo St Werburgh Parish Church",
+        p: "Big Band swing evening, BYO Nibbles and Tipple, refreshments available at the interval",
+        ticket: "£10.00",
+        image: e1,
+        day: "Saturday",
+        date: 24,
+        month: "October",
+        year: 2026,
+        time: "7:30pm",
+    },
+    {
+        id: 2,
+        eyebrow: "Private Event",
+        title: "Ryarsh Village Hall",
+        location: "Birling Road, Ryarsh",
+        p: "Celebrating a 40th Birthday",
+        ticket: "private event",
+        image: e2,
+        day: "Saturday",
+        date: "28",
+        month: "November",
+        year: 2026,
+        time: "8:00pm",
+    },
+    {
+        id: 3,
+        eyebrow: "Christmas Concert",
+        title: "Wouldham Christmas",
+        location: "All Saints Church, Wouldham",
+        ticket: "Tickets on Entry",
+        p: "An evening of Christmas favourites and festive cheer to get you in the mood for the big day",
+        image: e3,
+        day: "Friday",
+        date: "04",
+        month: "December",
+        year: 2026,
+        time: "7:00pm",
+    },
+    {
+        id: 4,
+        eyebrow: "Christmas Concert",
+        title: "Chritmas at Christchurch Snodland",
+        location: "Christ Church, Malling Road",
+        ticket: "Tickets on Entry",
+        p: "An evening of Christmas favourites and festive cheer to get you in the mood for the big day",
+        image: e4,
+        day: "Friday",
+        date: "11",
+        month: "December",
+        year: 2026,
+        time: "7:00pm",
+    },
+];

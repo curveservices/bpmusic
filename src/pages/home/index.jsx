@@ -111,14 +111,7 @@ const Home = () => {
             </FadeInSection>
           </div>
           <FadeInSection>
-            <Featured
-              src={salute}
-              eyebrow="FEATURED APPEARANCE"
-              featureTitle="SALUTE TO THE '40S"
-              featureP="We are proud to perform annually at the Historic Dockyard. It's a highlight of our calendar and a much-loved tradition."
-              featurebtn="Find out more"
-              event="/events#upcoming-events"
-            />
+            <Featured/>
           </FadeInSection>
         </section>
         <section className="third-section">

@@ -1,11 +1,14 @@
 import Button from "../button";
 import quarter from "../../assets/images/quarter.webp";
+import { events } from "../../eventsData";
 import "./index.scss";
 
-const Featured = (props) => {
-  const { src, featureTitle, eyebrow, featureP, featurebtn, event } = props;
+const Featured = () => {
+ const featuredEvent = events.slice(2, 3)
   return (
     <div className="featured-container">
+      {featuredEvent.map((event) => (
+      <>
       <img src={quarter} alt="" className="top-left quarter" />
       <img src={quarter} alt="" className="top-right quarter" />
       <img src={quarter} alt="" className="btm-left quarter" />
@@ -14,16 +17,19 @@ const Featured = (props) => {
       <div className="img-text-box">
         <img
           className="feature-img"
-          src={src}
-          alt={`Penisular Big Bad, ${featureTitle} in Kent`}
+          src={event.image}
+          alt={`Penisular Big Bad, ${event.title} in Kent`}
         />
         <div className="feature-text-box">
-          <span className="eyebrow">{eyebrow}</span>
-          <h3 className="feature-title">{featureTitle}</h3>
-          <p>{featureP}</p>
-          <Button text={featurebtn} link={event} />
+          <span className="eyebrow">Featured Event</span>
+          <h3 className="feature-title">{event.title}</h3>
+          <p>{event.p}</p>
+          <Button text="Find out more" link={`/events/#${event.id}`} />
         </div>
       </div>
+      </>
+      ))};
+     
     </div>
   );
 };

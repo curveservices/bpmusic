@@ -1,6 +1,5 @@
 import HeroImage from "../../components/heroImage";
 import events from "../../assets/images/events.webp";
-import salute from "../../assets/images/salute-40s.webp";
 import fan from "../../assets/images/bg_5.webp";
 import Featured from "../../components/featured";
 import useScrollState from "../../components/scrollState";
@@ -49,14 +48,8 @@ const Events = () => {
           />
         </FadeInSection>
 
-        <Featured
-          src={salute}
-          eyebrow="FEATURED APPEARANCE"
-          featureTitle="SALUTE TO THE '40S"
-          featureP="We are proud perform annually at the Historic Dockyard. It's the highlight of our calendar and a much-loved tradition."
-          featurebtn="Find out more"
-          event="#upcoming-events"
-        />
+        <Featured />
+        
         <FadeInSection>
           <section className="second-section">
             <div className="about__fan" aria-hidden="true">

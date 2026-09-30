@@ -1,32 +1,10 @@
+import { events } from "../../../eventsData";
 import Button from "../../button";
 import "./index.scss";
 
-const events = [
-  {
-    day: "24",
-    month: "AUG",
-    title: "Salute to the '40s",
-    venue: "Historic Dockyard Chatham",
-    location: "Chatham, Kent",
-    featured: true,
-  },
-  {
-    day: "07",
-    month: "SEP",
-    title: "Summer Bandstand",
-    venue: "The Vine Bandstand",
-    location: "Kent",
-  },
-  {
-    day: "21",
-    month: "SEP",
-    title: "Charity Concert",
-    venue: "Community Hall",
-    location: "Medway, Kent",
-  },
-];
 
 const EventCards = () => {
+  const upcomingEvents = events.slice(0, 3)
   return (
     <section className="events" id="events">
       <div className="events__container">
@@ -46,7 +24,7 @@ const EventCards = () => {
 
         {/* Event cards */}
         <div className="events__grid">
-          {events.map((event, index) => (
+          {upcomingEvents.map((event, index) => (
             <article
               className={`event-card ${
                 event.featured ? "event-card--featured" : ""
@@ -58,7 +36,8 @@ const EventCards = () => {
 
               {/* Date */}
               <div className="event-card__date">
-                <span className="event-card__day">{event.day}</span>
+                <span className="event-card__month">{event.day}</span>
+                <span className="event-card__day">{event.date}</span>
 
                 <span className="event-card__month">{event.month}</span>
               </div>
@@ -73,7 +52,7 @@ const EventCards = () => {
               {/* Event information */}
               <div className="event-card__content">
                 <span className="event-card__label">
-                  {event.featured ? "Featured Event" : "Live Performance"}
+                  {event.eyebrow}
                 </span>
 
                 <h3>{event.title}</h3>

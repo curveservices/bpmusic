@@ -1,51 +1,8 @@
-import salute from "../../assets/images/salute-40s.webp";
-import rep from "../../assets/images/g4.webp";
-import g4 from "../../assets/images/rep1.webp";
+import { events } from "../../eventsData";
 import "./index.scss";
 
-const eventItems = [
-  {
-    eyebrow: "1940's festival",
-    title: "Salute to the '40s",
-    location: "Historic Dockyard Chatham",
-    p: "We're delighted to return to this fantastic festival celebrating the music, vehicles and spirit of the 1940s.",
-    ticket: "£15.00",
-    image: salute,
-    day: "Sunday",
-    number: 24,
-    month: "August",
-    year: 2026,
-    time: "4:00pm",
-  },
-  {
-    eyebrow: "Summer concert",
-    title: "Swing in the park",
-    location: "victoria park, faversham",
-    p: "A free afternoon concert in the beautiful surroundings of Victoria Park. Bring a picnic, sit back and enjoy the music.",
-    ticket: "free entry",
-    image: g4,
-    day: "Sunday",
-    number: "06",
-    month: "July",
-    year: 2026,
-    time: "2:00pm",
-  },
-  {
-    eyebrow: "Dinner dance",
-    title: "Salute to swing",
-    location: "the woodville, gravesend",
-    ticket: "£18.00",
-    p: "An evening of classic swing favourites from the golden era. Dust off your dancing shoes and join us for a night to remember.",
-    image: rep,
-    day: "Saturday",
-    number: 14,
-    month: "June",
-    year: 2026,
-    time: "7:30pm",
-  },
-];
-
 const EventsGrid = () => {
+  const eventItems = events
   return (
     <section className="events__grid" id="events">
       {/* Section heading */}
@@ -62,15 +19,16 @@ const EventsGrid = () => {
           <article
             className={`events__card ${
               index % 2 !== 0 ? "events__card-reverse" : ""
-            }`}
-            key={item.title}
+              }`}
+            id={item.id}
+            key={item.id}
           >
             {/* date - time */}
             <div className="events-card__date">
               {/* Decorative background */}
               <div className="events-card__pattern" />
               <span className="events-card__day">{item.day}</span>
-              <span className="events-card__number">{item.number}</span>
+              <span className="events-card__number">{item.date}</span>
               <span className="events-card__month">{item.month}</span>
               <span className="events-card__year">{item.year}</span>
               {/* Decorative divider */}
