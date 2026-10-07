@@ -1,5 +1,6 @@
 import { events } from "../../../eventsData";
 import Button from "../../button";
+import { Link } from "react-router-dom";
 import "./index.scss";
 
 
@@ -63,10 +64,10 @@ const EventCards = () => {
               </div>
 
               {/* CTA */}
-              <a href={`/events/#${event.id}`} className="event-card__link">
+              <Link to={`/events#${event.id}`} className="event-card__link">
                 <span>View Event</span>
                 <span className="event-card__arrow">→</span>
-              </a>
+              </Link>
             </article>
           ))}
         </div>
