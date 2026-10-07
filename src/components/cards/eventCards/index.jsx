@@ -24,7 +24,7 @@ const EventCards = () => {
         </div>
 
         {/* Event cards */}
-        <div className="events__grid">
+        <div className="events__card-grid">
           {upcomingEvents.map((event, index) => (
             <article
               className={`event-card ${
