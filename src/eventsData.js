@@ -1,4 +1,4 @@
-import e1 from "./assets/images/about_PBB.webp";
+import christmasFayre from "./assets/images/christmas-fayre.jpg";
 import e2 from "./assets/images/mainly-sax.webp";
 import e3 from "./assets/images/pbb-xmas.webp";
 import e4 from "./assets/images/xmas-event.webp";
@@ -6,20 +6,6 @@ import e4 from "./assets/images/xmas-event.webp";
 export const events = [
     {
         id: 1,
-        eyebrow: "Big Band at the Church",
-        title: "Hoo Church",
-        location: "Hoo St Werburgh Parish Church",
-        p: "Big Band swing evening, BYO Nibbles and Tipple, refreshments available at the interval",
-        ticket: "£10.00",
-        image: e1,
-        day: "Saturday",
-        date: 24,
-        month: "October",
-        year: 2026,
-        time: "7:30pm",
-    },
-    {
-        id: 2,
         eyebrow: "Private Event",
         title: "Ryarsh Village Hall",
         location: "Birling Road, Ryarsh",
@@ -33,7 +19,7 @@ export const events = [
         time: "8:00pm",
     },
     {
-        id: 3,
+        id: 2,
         eyebrow: "Christmas Concert",
         title: "Wouldham Christmas",
         location: "All Saints Church, Wouldham",
@@ -47,7 +33,7 @@ export const events = [
         time: "7:00pm",
     },
     {
-        id: 4,
+        id: 3,
         eyebrow: "Christmas Concert",
         title: "Chritmas at Christchurch Snodland",
         location: "Christ Church, Malling Road",
@@ -59,5 +45,19 @@ export const events = [
         month: "December",
         year: 2026,
         time: "7:00pm",
+    },
+    {
+        id: 4,
+        eyebrow: "Christmas Fayre",
+        title: "Castle Hill Amphitheatre",
+        location: "Village Green, Ebbsfleet Valley, Swanscombe",
+        ticket: "Tickets on Entry",
+        p: "Join us for the Ebbsfleet Christmas Fayre, to get you in the mood for the big day",
+        image: christmasFayre,
+        day: "Saturday",
+        date: "19",
+        month: "December",
+        year: 2026,
+        time: "10:15am",
     },
 ];
