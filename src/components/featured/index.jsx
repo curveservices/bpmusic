@@ -4,7 +4,7 @@ import { events } from "../../eventsData";
 import "./index.scss";
 
 const Featured = () => {
- const featuredEvent = events.slice(2, 3)
+ const featuredEvent = events.slice(1, 2)
   return (
     <div className="featured-container">
       {featuredEvent.map((event) => (
