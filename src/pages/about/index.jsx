@@ -2,6 +2,9 @@ import about from "../../assets/images/about_video.mp4";
 import pbb from "../../assets/images/about_PBB.webp";
 import fan from "../../assets/images/bg_5.webp";
 import sax from "../../assets/images/mainly-sax.webp";
+import sax1 from "../../assets/images/sax1.MOV";
+import sax2 from "../../assets/images/sax2.MOV";
+import frame from "../../assets/images/frame.png";
 import useScrollState from "../../components/scrollState";
 import LoadingSpinner from "../../components/loadingSpinner";
 import Textbox from "../../components/textBox";
@@ -18,6 +21,7 @@ import HeroVideo from "../../components/heroVideo";
 import Helmet from "../../components/helmet";
 
 import "./index.scss";
+import LazyVideo from "../../components/LazyVideo";
 
 const cardItems = [
   {
@@ -144,6 +148,10 @@ const About = () => {
                 link="/contact-us?band=mainly-sax"
                 reverse
               />
+            </div>
+            <div className="sax-video">
+              <LazyVideo src={sax1} controls={true} />
+              <LazyVideo src={sax2} controls={true} />
             </div>
           </section>
         </FadeInSection>

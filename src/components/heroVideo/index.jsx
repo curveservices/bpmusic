@@ -31,6 +31,7 @@ const HeroVideo = ({
             src={VidSrc}
             type="video/mp4"
             className="about-video"
+            controls={false}
             fallback={fallback}
           />
         </div>
