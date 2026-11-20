@@ -121,6 +121,18 @@
         width: 100%;
       }
     }
+    .third__section {
+      .sax-video {
+        justify-content: center;
+          video {
+            width: 400px;
+            height: 400px;
+            z-index: 999;
+            border-radius: 5px;
+            box-shadow: var(--button-glow);
+          }
+        }
+    }
   }
 }
 
@@ -169,6 +181,17 @@
       &::before {
         width: 400px !important;
         height: 400px !important;
+      }
+      .sax-video {
+        flex-direction: column;
+        align-items: center;
+        gap: 3rem;
+        padding: 32px;
+
+        video {
+          width: 300px;
+          height: 350px;
+        }
       }
     }
   }
