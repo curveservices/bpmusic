@@ -1,7 +1,7 @@
 import christmasFayre from "./assets/images/christmas-fayre.jpg";
 import e2 from "./assets/images/mainly-sax.webp";
 import e3 from "./assets/images/pbb-xmas.webp";
-import e4 from "./assets/images/xmas-event.webp";
+import e4 from "./assets/images/e4.jpg";
 
 export const events = [
     {
@@ -48,11 +48,25 @@ export const events = [
     },
     {
         id: 4,
+        eyebrow: "Mainly Sax",
+        title: "It's a wonderful Life",
+        location: "showcase cinema Bluewater",
+        ticket: "Free Entry",
+        p: "Join Mainly Sax for the 80th anniversary of the 1947 classic film “It's a wonderful Life” at the showcase cinema Bluewater",
+        image: e4,
+        day: "Saturday",
+        date: "12",
+        month: "December",
+        year: 2026,
+        time: "6:00pm",
+    },
+    {
+        id: 5,
         eyebrow: "Christmas Fayre",
         title: "Castle Hill Amphitheatre",
         location: "Village Green, Ebbsfleet Valley, Swanscombe",
         ticket: "Free Entry",
-        p: "Join us for the Ebbsfleet Christmas Fayre, to get you in the mood for the big day",
+        p: "Join Mainly Sax for the Ebbsfleet Christmas Fayre, to get you in the mood for the big day",
         image: e3,
         day: "Saturday",
         date: "19",

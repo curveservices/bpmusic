@@ -67,7 +67,10 @@ const AboutCards = ({ items, mainTitle, link }) => {
         ))}
       </div>
       <div className="about-footer">
-        <Link to="/contact-us?band=peninsula-big-band" className="about-link">
+        <Link
+          to="/contact-us/?band=peninsula-big-band#booking-form"
+          className="about-link"
+        >
           <span>Book the Band</span>
           <span className="about-arrow">→</span>
         </Link>

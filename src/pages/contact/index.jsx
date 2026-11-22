@@ -25,6 +25,8 @@ const Contact = () => {
       setSubject("Booking enquiry - Mainly Sax");
     } else if (bandFromUrl === "peninsula-big-band") {
       setSubject("Booking enquiry - Peninsula Big Band");
+    } else if (bandFromUrl === "classical-quartet") {
+      setSubject("Booking enquiry - Classical Quartet");
     }
   }, [bandFromUrl]);
 
@@ -159,6 +161,27 @@ const Contact = () => {
                   <FontAwesomeIcon icon={faArrowRight} />
                 </button>
               </article>
+              {/* Classical Quintet */}
+              <article className="booking__card booking__card--featured booking__quintet">
+                <span className="eyebrow">Classical quartet</span>
+
+                <h3>Il Quartetto Fienile</h3>
+
+                <div className="booking__divider">
+                  <span />
+                  <i>◇</i>
+                  <span />
+                </div>
+
+                <button
+                  type="button"
+                  className="booking__button"
+                  onClick={() => handleBooking("Classical Quartet")}
+                >
+                  Book The quartet
+                  <FontAwesomeIcon icon={faArrowRight} />
+                </button>
+              </article>
             </div>
           </section>
         </FadeInSection>
@@ -245,6 +268,10 @@ const Contact = () => {
 
                       <option value="Booking enquiry - Mainly Sax">
                         Book Mainly Sax
+                      </option>
+
+                      <option value="Booking enquiry - Classical Quartet">
+                        Book Classical Quartet
                       </option>
 
                       <option value="General enquiry">General enquiry</option>

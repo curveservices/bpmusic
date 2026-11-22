@@ -1,6 +1,7 @@
 import about from "../../assets/images/about_video.mp4";
 import pbb from "../../assets/images/about_PBB.webp";
 import fan from "../../assets/images/bg_5.webp";
+import quintet from "../../assets/images/about.webp";
 import sax from "../../assets/images/mainly-sax.webp";
 import sax1 from "../../assets/images/sax1.mp4";
 import sax2 from "../../assets/images/sax2.mp4";
@@ -111,12 +112,12 @@ const About = () => {
               <Textbox
                 src={pbb}
                 eyebrow="The Spirit of Live Music."
-                h1="Our Story"
+                h1="The Big Band"
                 p="Since 2007, the Peninsula Big Band has been bringing the timeless energy of the big band era to audiences across Kent and beyond."
 
                 p1="From Glenn Miller and Count Basie to The Beatles, Sade and Michael Jackson, our 18-piece orchestra blends classic swing with modern favourites — creating unforgettable live music for festivals, dinner dances, fundraisers and special events."
                 buttonText="Book the band"
-                link="/contact-us?band=peninsula-big-band"
+                link="/contact-us/?band=peninsula-big-band#booking-form"
               />
             </div>
           </section>
@@ -124,17 +125,10 @@ const About = () => {
         <FadeInSection>
           <section className="third__section" id="mainly-sax">
             <div className="third__inner">
-              <div className="heading">
-                <div className="h2-title">
-                  <span className="divider" />
-                  <h2>Mainly Sax</h2>
-                  <span className="divider" />
-                </div>
-              </div>
               <Textbox
                 src={sax}
-                eyebrow="A HIGH-ENERGY SAXOPHONE ENSEMBLE"
-                h1="An Elegant off-shoot"
+                eyebrow="An Elegant off-shoot"
+                h1="Mainly Sax"
                 p="Mainly Sax is the dynamic sibling of The Peninsula
                     Big Band."
 
@@ -144,13 +138,39 @@ const About = () => {
                 p2=" Perfect for smaller venues, cocktail parties and corporate
                     events."
                 buttonText="BOOK MAINLY SAX"
-                link="/contact-us?band=mainly-sax"
+                link="/contact-us/?band=mainly-sax#booking-form"
                 reverse
               />
+            </div>
+            <div className="heading">
+              <div className="h2-title">
+                <span className="divider" />
+                <h2>Sounds From Mainly Sax</h2>
+                <span className="divider" />
+              </div>
             </div>
             <div className="sax-video">
               <LazyVideo src={sax1} controls={true} />
               <LazyVideo src={sax2} controls={true} />
+            </div>
+          </section>
+        </FadeInSection>
+        <FadeInSection>
+          <section className="fourth__section" id="classical-quintet">
+            <div className="fourth-inner">
+              <div className="about__fan" aria-hidden="true">
+                <img src={fan} alt="Peninsular big band" />
+              </div>
+              <Textbox
+                src={quintet}
+                eyebrow="Our Classical quartet"
+                h1="Il Quartetto Fienile"
+                p="The barn quartet comprises 2 flutes, clarinet and bass clarinet. "
+                p1="We play music from Mozart to Mendlesoon, ABBA to Albinoni. Ideal for weddings or drinks parties putting class in to your event."
+                p2=""
+                buttonText="Book the quartet"
+                link="/contact-us/?band=classical-quartet#booking-form"
+              />
             </div>
           </section>
         </FadeInSection>

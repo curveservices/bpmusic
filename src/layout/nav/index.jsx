@@ -115,7 +115,7 @@ const Navbar = () => {
         </nav>
         <Button
           text="Book The Band"
-          link="/contact-us?band=peninsula-big-band"
+          link="/contact-us/?band=peninsula-big-band#booking-form"
         />
         <MenuToggle showNav={showNav} setShowNav={setShowNav} />
       </header>

@@ -20,7 +20,7 @@ const CTA = () => {
       <div className="cta__btn-container">
         <Button
           text="Book The Band Now"
-          link="/contact-us?band=peninsula-big-band"
+          link="/contact-us/?band=peninsula-big-band#booking-form"
           background="var(--navy)"
           color="var(--ivory)"
           padding={1.4}

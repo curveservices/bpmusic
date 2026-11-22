@@ -1,7 +1,7 @@
 import React, { useRef, useEffect, useState } from "react";
 import "./index.scss";
 
-const LazyVideo = ({ src, type, fallback, ariaLabel, ...props }) => {
+const LazyVideo = ({ src, type, fallback, ariaLabel, controls, ...props }) => {
   const videoRef = useRef(null);
   const [isLoading, setIsLoading] = useState(false);
 
@@ -32,7 +32,7 @@ const LazyVideo = ({ src, type, fallback, ariaLabel, ...props }) => {
           muted
           playsInline
           loop
-          controls
+          controls={controls}
           aria-label={ariaLabel}
           className="video"
         >
@@ -41,11 +41,7 @@ const LazyVideo = ({ src, type, fallback, ariaLabel, ...props }) => {
           <track src={src} kind="captions" srclang="en" label="english_captions" />
         </video>
       ) : (
-        <img
-          loading="lazy"
-          className="fallback"
-          src={fallback}
-          alt="Loading video..."
+        <div
         />
       )}
     </div>

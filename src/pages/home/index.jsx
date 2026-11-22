@@ -64,7 +64,7 @@ const Home = () => {
             button1Text="Upcoming events"
             button1Link="/events/#upcoming-events"
             button2Text="Book the Band"
-            button2Link="/contact-us?band=peninsula-big-band"
+            button2Link="/contact-us/?band=peninsula-big-band#booking-form"
             background="var(--navy)"
             color="var(--ivory)"
             href="#about"
@@ -111,7 +111,7 @@ const Home = () => {
             </FadeInSection>
           </div>
           <FadeInSection>
-            <Featured/>
+            <Featured />
           </FadeInSection>
         </section>
         <section className="third-section">

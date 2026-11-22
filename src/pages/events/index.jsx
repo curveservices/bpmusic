@@ -40,7 +40,7 @@ const Events = () => {
             Come and experience the timeless sound of a full big band, live."
             button1Text="About the band"
             button1Link="/about-us"
-            button2Link="/contact-us?band=peninsula-big-band"
+            button2Link="/contact-us/?band=peninsula-big-band#booking-form"
             button2Text="book the band"
             background="var(--navy)"
             color="var(--ivory)"
@@ -49,7 +49,7 @@ const Events = () => {
         </FadeInSection>
 
         <Featured />
-        
+
         <FadeInSection>
           <section className="second-section">
             <div className="about__fan" aria-hidden="true">
