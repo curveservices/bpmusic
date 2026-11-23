@@ -32,7 +32,7 @@ const LazyVideo = ({ src, type, fallback, ariaLabel, controls, ...props }) => {
           muted
           playsInline
           loop
-          controls={controls}
+          controls
           aria-label={ariaLabel}
           className="video"
         >
