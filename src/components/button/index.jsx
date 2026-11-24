@@ -33,7 +33,7 @@ const Button = (props) => {
   );
 
   return isInternal ? (
-    <Link to={link} target={target}>
+    <Link to={link} target={target} type={type}>
       {buttonElement}
     </Link>
   ) : (

@@ -10,15 +10,29 @@ import fan from "../../assets/images/bg_5.webp";
 import Button from "../../components/button";
 import useScrollState from "../../components/scrollState";
 import Helmet from "../../components/helmet";
+import emailjs from "@emailjs/browser";
 
 import "./index.scss";
-
+const FadeInSection = ({ children }) => {
+  useScrollState();
+  return <div className={`fade-in-on-scroll`}>{children}</div>;
+};
 const Contact = () => {
   const [searchParams] = useSearchParams();
 
   const bandFromUrl = searchParams.get("band");
 
   const [subject, setSubject] = useState("");
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [phone, setPhone] = useState("");
+  const [eventDate, setEventDate] = useState("");
+  const [eventType, setEventType] = useState("");
+  const [message, setMessage] = useState("");
+  const [showThankYou, setShowThankYou] = useState(false);
+  const [submitted, setSubmitted] = useState(false);
+  const [error, setError] = useState("");
+  const [sending, setSending] = useState(false);
 
   useEffect(() => {
     if (bandFromUrl === "mainly-sax") {
@@ -38,10 +52,51 @@ const Contact = () => {
       block: "start",
     });
   };
-  const FadeInSection = ({ children }) => {
-    useScrollState();
-    return <div className={`fade-in-on-scroll`}>{children}</div>;
-  };
+  
+const sendEmail = async (e) => {
+  e.preventDefault();
+
+  setSending(true);
+  setError("");
+
+  try {
+    await emailjs.send(
+      import.meta.env.VITE_EMAILJS_SERVICE_ID,
+      import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+      {
+        band: subject.replace("Booking enquiry - ", ""),
+        subject,
+        user_name: name,
+        user_email: email,
+        phone,
+        event_date: eventDate,
+        event_type: eventType,
+        message,
+      },
+      {
+        publicKey: import.meta.env.VITE_EMAILJS_PUBLIC_KEY,
+      },
+    );
+    // Clear the form
+    setName("");
+    setEmail("");
+    setPhone("");
+    setSubject("");
+    setEventDate("");
+    setEventType("");
+    setMessage("");
+
+    // Show thank-you popup
+    setShowThankYou(true);
+
+    setSubmitted(true);
+  } catch (error) {
+    console.error("Email sending failed:", error);
+    setError("Sorry, your message couldn't be sent. Please try again.");
+  } finally {
+    setSending(false);
+  }
+};
   return (
     <>
       <Helmet
@@ -69,7 +124,7 @@ const Contact = () => {
       <div className="contact-page">
         {/* ==================================================
           HERO
-      ================================================== */}
+          ================================================== */}
 
         <FadeInSection>
           <section className="contact-hero">
@@ -95,7 +150,7 @@ const Contact = () => {
 
         {/* ==================================================
           BOOKING OPTIONS
-      ================================================== */}
+        ================================================== */}
 
         <FadeInSection>
           <section className="booking">
@@ -188,7 +243,7 @@ const Contact = () => {
 
         {/* ==================================================
           BOOKING FORM
-      ================================================== */}
+          ================================================== */}
 
         <FadeInSection>
           <section className="booking-form-section" id="booking-form">
@@ -211,7 +266,7 @@ const Contact = () => {
                 </p>
               </div>
 
-              <form className="booking-form">
+              <form className="booking-form" onSubmit={sendEmail}>
                 <div className="form-row">
                   <div className="form-group">
                     <label htmlFor="name">Your Name</label>
@@ -221,6 +276,8 @@ const Contact = () => {
                       type="text"
                       name="name"
                       placeholder="Your name"
+                      value={name}
+                      onChange={(e) => setName(e.target.value)}
                       required
                     />
                   </div>
@@ -233,6 +290,8 @@ const Contact = () => {
                       type="email"
                       name="email"
                       placeholder="Your email address"
+                      value={email}
+                      onChange={(e) => setEmail(e.target.value)}
                       required
                     />
                   </div>
@@ -247,6 +306,8 @@ const Contact = () => {
                       type="tel"
                       name="phone"
                       placeholder="Your telephone number"
+                      value={phone}
+                      onChange={(e) => setPhone(e.target.value)}
                     />
                   </div>
 
@@ -283,7 +344,13 @@ const Contact = () => {
                   <div className="form-group">
                     <label htmlFor="event-date">Event Date</label>
 
-                    <input id="event-date" type="date" name="eventDate" />
+                    <input
+                      id="event-date"
+                      type="date"
+                      name="eventDate"
+                      value={eventDate}
+                      onChange={(e) => setEventDate(e.target.value)}
+                    />
                   </div>
 
                   <div className="form-group">
@@ -294,6 +361,8 @@ const Contact = () => {
                       type="text"
                       name="eventType"
                       placeholder="Festival, concert, charity event..."
+                      value={eventType}
+                      onChange={(e) => setEventType(e.target.value)}
                     />
                   </div>
                 </div>
@@ -306,16 +375,15 @@ const Contact = () => {
                     name="message"
                     rows="6"
                     placeholder="Tell us a little about your event, venue, timings and anything else you think we should know..."
+                    value={message}
+                    onChange={(e) => setMessage(e.target.value)}
                   />
                 </div>
 
                 <div className="booking-form__submit">
-                  <Button
-                    text="Send Enquiry"
-                    background="var(--gold)"
-                    color="var(--navy)"
-                  />
+                  <input className="flat-btn" type="submit" value="Submit" />
                 </div>
+                {error && <div className="booking-form__error">{error}</div>}
               </form>
             </div>
           </section>
@@ -323,7 +391,7 @@ const Contact = () => {
 
         {/* ==================================================
           DIRECT CONTACT
-      ================================================== */}
+        ================================================== */}
 
         <FadeInSection>
           <section className="contact-details">
@@ -355,6 +423,49 @@ const Contact = () => {
             </div>
           </section>
         </FadeInSection>
+        {showThankYou && (
+          <div className="thank-you-overlay">
+            <div
+              className="thank-you-popup"
+              role="dialog"
+              aria-modal="true"
+              aria-labelledby="thank-you-title"
+            >
+              <button
+                className="thank-you-popup__close"
+                type="button"
+                onClick={() => setShowThankYou(false)}
+                aria-label="Close thank you message"
+              >
+                &times;
+              </button>
+
+              <span className="eyebrow">Enquiry received</span>
+
+              <div className="thank-you-popup__divider">
+                <span />
+                <i>◇</i>
+                <span />
+              </div>
+
+              <h2 id="thank-you-title">Thank You!</h2>
+
+              <p>
+                Your enquiry has been successfully sent. We appreciate you
+                getting in touch and will be back in contact as soon as
+                possible.
+              </p>
+
+              <button
+                className="thank-you-popup__button"
+                type="button"
+                onClick={() => setShowThankYou(false)}
+              >
+                CLOSE
+              </button>
+            </div>
+          </div>
+        )}
       </div>
     </>
   );
