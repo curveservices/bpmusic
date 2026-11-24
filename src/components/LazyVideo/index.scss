@@ -1,59 +1,107 @@
-.fallback {
-  display: block;
+.video-container {
+  position: relative;
   width: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: auto;
-  object-fit: cover;
-  opacity: 0.8;
-  transition: opacity 0.3s ease;
-  &.loading {
-    opacity: 0;
-  }
-  &.loaded {
-    opacity: 1;
-  }
+  height: 100%;
+  overflow: hidden;
 }
+
 .video {
+  display: block;
   width: 100%;
   height: 100%;
   object-fit: cover;
-  display: block;
   opacity: 0.8;
-  transition: opacity 0.5s ease;
-  filter: brightness(1.2);
   filter: saturate(0.8);
-  &.loading {
-    opacity: 0;
+}
+
+.video-controls {
+  position: absolute;
+  z-index: 5;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  min-height: 56px;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 20px;
+  font-family: var(--body);
+  color: var(--ivory);
+  background: linear-gradient(0deg,
+      rgba(14, 26, 43, 0.95),
+      rgba(14, 26, 43, 0.65));
+
+  &__button {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    padding: 0;
+    border: none;
+    background: transparent;
+    color: var(--gold);
+    font-size: 19px;
+    cursor: pointer;
+    transition: color 0.2s ease;
+
+    &:hover {
+      color: var(--ivory);
+    }
+
+    &:focus-visible {
+      outline: 2px solid var(--gold);
+      outline-offset: 3px;
+    }
   }
-  &.loaded {
-    opacity: 1;
+
+  &__time {
+    flex-shrink: 0;
+    font-size: 11px;
+    font-variant-numeric: tabular-nums;
+    color: var(--ivory);
+  }
+
+  &__progress {
+    flex: 1;
+    min-width: 30px;
+    height: 4px;
+    margin: 0;
+    accent-color: var(--gold);
+    cursor: pointer;
   }
 }
-// =====================================
-// TABLET
-// =====================================
-@media screen and (min-width: 768px) and (max-width: 1032px) {
-  .video-container {
-    width: 100%;
-    height: 100%;
-  }
-  .fallback {
-    height: 100%;
+
+// Desktop: keep the controls within the visible angled video area
+@media screen and (min-width: 1033px) {
+  .hero__video .video-controls {
+    padding-left: 46%;
   }
 }
-//======================================
-// MOBILE
-//======================================
-@media screen and (max-width: 768px) {
-  .video-container {
-    height: 100%;
+
+// Tablet and mobile: use the full rectangular video width
+@media screen and (max-width: 1032px) {
+  .hero__video .video-controls {
+    padding-left: 16px;
   }
-  .video,
-  .fallback {
-    transform: initial;
-    object-fit: cover;
+}
+
+@media screen and (max-width: 480px) {
+  .video-controls {
+    gap: 7px;
+    padding: 8px 10px;
+    min-height: 48px;
+
+    &__button {
+      width: 26px;
+      height: 28px;
+      font-size: 17px;
+    }
+
+    &__time {
+      font-size: 10px;
+    }
   }
 }
