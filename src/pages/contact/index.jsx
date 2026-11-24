@@ -52,51 +52,51 @@ const Contact = () => {
       block: "start",
     });
   };
-  
-const sendEmail = async (e) => {
-  e.preventDefault();
 
-  setSending(true);
-  setError("");
+  const sendEmail = async (e) => {
+    e.preventDefault();
 
-  try {
-    await emailjs.send(
-      import.meta.env.VITE_EMAILJS_SERVICE_ID,
-      import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
-      {
-        band: subject.replace("Booking enquiry - ", ""),
-        subject,
-        user_name: name,
-        user_email: email,
-        phone,
-        event_date: eventDate,
-        event_type: eventType,
-        message,
-      },
-      {
-        publicKey: import.meta.env.VITE_EMAILJS_PUBLIC_KEY,
-      },
-    );
-    // Clear the form
-    setName("");
-    setEmail("");
-    setPhone("");
-    setSubject("");
-    setEventDate("");
-    setEventType("");
-    setMessage("");
+    setSending(true);
+    setError("");
 
-    // Show thank-you popup
-    setShowThankYou(true);
+    try {
+      await emailjs.send(
+        import.meta.env.VITE_EMAILJS_SERVICE_ID,
+        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+        {
+          band: subject.replace("Booking enquiry - ", ""),
+          subject,
+          user_name: name,
+          user_email: email,
+          phone,
+          event_date: eventDate,
+          event_type: eventType,
+          message,
+        },
+        {
+          publicKey: import.meta.env.VITE_EMAILJS_PUBLIC_KEY,
+        },
+      );
+      // Clear the form
+      setName("");
+      setEmail("");
+      setPhone("");
+      setSubject("");
+      setEventDate("");
+      setEventType("");
+      setMessage("");
 
-    setSubmitted(true);
-  } catch (error) {
-    console.error("Email sending failed:", error);
-    setError("Sorry, your message couldn't be sent. Please try again.");
-  } finally {
-    setSending(false);
-  }
-};
+      // Show thank-you popup
+      setShowThankYou(true);
+
+      setSubmitted(true);
+    } catch (error) {
+      console.error("Email sending failed:", error);
+      setError("Sorry, your message couldn't be sent. Please try again.");
+    } finally {
+      setSending(false);
+    }
+  };
   return (
     <>
       <Helmet

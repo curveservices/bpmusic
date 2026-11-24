@@ -468,10 +468,10 @@
 
       gap: 2rem;
       &__error {
-      font-family: var(--body);
-      color: var(--ivory);
-      font-size: 20px;
-    }
+        font-family: var(--body);
+        color: var(--ivory);
+        font-size: 20px;
+      }
     }
 
     .form-row {
@@ -549,39 +549,39 @@
         min-height: 150px;
       }
     }
-.flat-btn {
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  text-decoration: none;
-  text-align: center;
-  width: fit-content;
-  padding: 0.6rem 2rem;
-  border: 2px solid var(--gold);
-  background: var(--navy);
-  color: var(--ivory);
-  font-family: "Oswald", sans-serif;
-  font-size: 18px;
-  font-weight: 500;
-  box-shadow: var(--button-shadow);
-  transition: all 0.3s ease-in-out;
-  cursor: pointer;
+    .flat-btn {
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      text-decoration: none;
+      text-align: center;
+      width: fit-content;
+      padding: 0.6rem 2rem;
+      border: 2px solid var(--gold);
+      background: var(--navy);
+      color: var(--ivory);
+      font-family: "Oswald", sans-serif;
+      font-size: 18px;
+      font-weight: 500;
+      box-shadow: var(--button-shadow);
+      transition: all 0.3s ease-in-out;
+      cursor: pointer;
 
-  &:hover {
-    background: var(--gold);
-    color: var(--navy);
-    box-shadow: var(--button-glow);
-    transform: translateY(-2px);
+      &:hover {
+        background: var(--gold);
+        color: var(--navy);
+        box-shadow: var(--button-glow);
+        transform: translateY(-2px);
+      }
+
+      .flat-btn + .flat-btn {
+        margin-top: 1rem;
+      }
+    }
+
+    a {
+      text-decoration: none;
+    }
   }
-
-  .flat-btn+.flat-btn {
-    margin-top: 1rem;
-  }
-}
-
-a {
-  text-decoration: none;
-}
- }
 
   // ==================================================
   // CONTACT DETAILS
@@ -707,119 +707,119 @@ a {
       }
     }
   }
-    .thank-you-overlay {
-      position: fixed;
-      inset: 0;
-      z-index: 9999;
+  .thank-you-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background: rgba(5, 15, 29, 0.85);
+    backdrop-filter: blur(5px);
+    animation: thankYouFadeIn 0.3s ease;
+  }
+
+  .thank-you-popup {
+    position: relative;
+    width: 100%;
+    max-width: 480px;
+    padding: 55px 40px;
+    text-align: center;
+    background: var(--navy);
+    border: 1px solid var(--gold);
+    outline: 1px solid var(--gold);
+    outline-offset: -9px;
+    animation: thankYouSlideIn 0.35s ease;
+
+    &__close {
+      position: absolute;
+      top: 18px;
+      right: 22px;
+      border: none;
+      background: transparent;
+      color: var(--navy);
+      font-size: 30px;
+      cursor: pointer;
+    }
+
+    .eyebrow {
+      color: var(--gold);
+      text-transform: uppercase;
+      font-family: var(--body);
+      font-weight: 900;
+    }
+
+    &__divider {
       display: flex;
       align-items: center;
       justify-content: center;
-      padding: 20px;
-      background: rgba(5, 15, 29, 0.85);
-      backdrop-filter: blur(5px);
-      animation: thankYouFadeIn 0.3s ease;
+      gap: 12px;
+      margin: 25px 0;
+
+      span {
+        width: 65px;
+        height: 1px;
+        background: var(--gold);
+      }
+
+      i {
+        color: var(--gold);
+        font-size: 18px;
+        font-style: normal;
+      }
     }
-  
-    .thank-you-popup {
-      position: relative;
-      width: 100%;
-      max-width: 480px;
-      padding: 55px 40px;
-      text-align: center;
-      background: var(--navy);
+
+    h2 {
+      margin-bottom: 18px;
+      font-size: 38px;
+      color: var(--gold);
+    }
+
+    p {
+      margin-bottom: 30px;
+      line-height: 1.8;
+      color: var(--ivory);
+    }
+
+    &__button {
+      padding: 13px 35px;
       border: 1px solid var(--gold);
-      outline: 1px solid var(--gold);
-      outline-offset: -9px;
-      animation: thankYouSlideIn 0.35s ease;
-  
-      &__close {
-        position: absolute;
-        top: 18px;
-        right: 22px;
-        border: none;
-        background: transparent;
+      background: var(--navy);
+      color: var(--ivory);
+      font-size: 12px;
+      letter-spacing: 2px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+
+      &:hover {
+        background: var(--gold);
         color: var(--navy);
-        font-size: 30px;
-        cursor: pointer;
-      }
-  
-      .eyebrow {
-        color: var(--gold);
-        text-transform: uppercase;
-        font-family: var(--body);
-        font-weight: 900;
-      }
-  
-      &__divider {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 12px;
-        margin: 25px 0;
-  
-        span {
-          width: 65px;
-          height: 1px;
-          background: var(--gold);
-        }
-  
-        i {
-          color: var(--gold);
-          font-size: 18px;
-          font-style: normal;
-        }
-      }
-  
-      h2 {
-        margin-bottom: 18px;
-        font-size: 38px;
-        color: var(--gold);
-      }
-  
-      p {
-        margin-bottom: 30px;
-        line-height: 1.8;
-        color: var(--ivory);
-      }
-  
-      &__button {
-        padding: 13px 35px;
-        border: 1px solid var(--gold);
-        background: var(--navy);
-        color: var(--ivory);
-        font-size: 12px;
-        letter-spacing: 2px;
-        cursor: pointer;
-        transition: all 0.3s ease;
-  
-        &:hover {
-          background: var(--gold);
-          color: var(--navy);
-        }
       }
     }
-  
-    @keyframes thankYouFadeIn {
-      from {
-        opacity: 0;
-      }
-  
-      to {
-        opacity: 1;
-      }
+  }
+
+  @keyframes thankYouFadeIn {
+    from {
+      opacity: 0;
     }
-  
-    @keyframes thankYouSlideIn {
-      from {
-        opacity: 0;
-        transform: translateY(20px);
-      }
-  
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
+
+    to {
+      opacity: 1;
     }
+  }
+
+  @keyframes thankYouSlideIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
 }
 
 // ==================================================

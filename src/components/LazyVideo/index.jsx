@@ -38,11 +38,15 @@ const LazyVideo = ({ src, type, fallback, ariaLabel, controls, ...props }) => {
         >
           <source src={src} type={type} />
           <img loading="lazy" src={fallback} alt="Fallback image" />
-          <track src={src} kind="captions" srclang="en" label="english_captions" />
+          <track
+            src={src}
+            kind="captions"
+            srclang="en"
+            label="english_captions"
+          />
         </video>
       ) : (
-        <div
-        />
+        <div />
       )}
     </div>
   );

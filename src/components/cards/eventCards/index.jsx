@@ -3,9 +3,8 @@ import Button from "../../button";
 import { Link } from "react-router-dom";
 import "./index.scss";
 
-
 const EventCards = () => {
-  const upcomingEvents = events.slice(0, 3)
+  const upcomingEvents = events.slice(0, 3);
   return (
     <section className="events" id="events">
       <div className="events__container">
@@ -52,9 +51,7 @@ const EventCards = () => {
 
               {/* Event information */}
               <div className="event-card__content">
-                <span className="event-card__label">
-                  {event.eyebrow}
-                </span>
+                <span className="event-card__label">{event.eyebrow}</span>
 
                 <h3>{event.title}</h3>
 

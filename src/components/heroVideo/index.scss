@@ -231,45 +231,45 @@
 @media screen and (min-width: 769px) and (max-width: 1032px) {
   .hero {
     display: flex;
-      flex-direction: column;
+    flex-direction: column;
+    overflow: hidden;
+    // ----------------------------------------------
+    // VIDEO
+    // ----------------------------------------------
+
+    &__video {
+      position: relative;
+      inset: auto;
+      order: 0;
+      height: 40svh;
+      min-height: 200px;
+      clip-path: none;
       overflow: hidden;
-      // ----------------------------------------------
-      // VIDEO
-      // ----------------------------------------------
-    
-      &__video {
-        position: relative;
-        inset: auto;
-        order: 0;
+
+      video {
+        width: 100%;
+
         height: 40svh;
-        min-height: 200px;
-        clip-path: none;
-        overflow: hidden;
-    
-        video {
-          width: 100%;
-    
-          height: 40svh;
-    
-          display: block;
-    
-          object-fit: cover;
-        }
+
+        display: block;
+
+        object-fit: cover;
       }
+    }
 
     // ----------------------------------------------
     // IVORY PANEL
     // ----------------------------------------------
 
-        // ----------------------------------------
-        // LEFT CONTENT PANEL
-        // ----------------------------------------
-    
-        &::before {
-          width: 100%;
-    
-          clip-path: initial;
-        }
+    // ----------------------------------------
+    // LEFT CONTENT PANEL
+    // ----------------------------------------
+
+    &::before {
+      width: 100%;
+
+      clip-path: initial;
+    }
 
     // ----------------------------------------------
     // FAN

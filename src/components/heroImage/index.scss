@@ -251,44 +251,44 @@
 @media screen and (min-width: 768px) and (max-width: 1032px) {
   .hero {
     display: flex;
-      flex-direction: column;
+    flex-direction: column;
+    overflow: hidden;
+    // ----------------------------------------------
+    // IMAGE
+    // ----------------------------------------------
+
+    &__image {
+      position: relative;
+      inset: auto;
+      order: 0;
+      width: 100%;
+      height: 50svh;
+      min-height: 200px;
+      clip-path: none;
       overflow: hidden;
-      // ----------------------------------------------
-      // IMAGE
-      // ----------------------------------------------
-      
-        &__image {
-        position: relative;
-          inset: auto;
-          order: 0;
-          width: 100%;
-          height: 50svh;
-          min-height: 200px;
-          clip-path: none;
-          overflow: hidden;
-    img {
-          width: 100%;
-            height: 50svh;
-            right: 0;
-          }
-            }
-      
-            // ----------------------------------------------
-            // IMAGE OVERLAY
-            // ----------------------------------------------
-            &__image-overlay {
-              position: absolute;
-              inset: 0;
-      
-              z-index: 1;
-      
-              display: block;
-      
-              clip-path: none;
-      
-              pointer-events: none;
-              overflow: hidden;
-            }
+      img {
+        width: 100%;
+        height: 50svh;
+        right: 0;
+      }
+    }
+
+    // ----------------------------------------------
+    // IMAGE OVERLAY
+    // ----------------------------------------------
+    &__image-overlay {
+      position: absolute;
+      inset: 0;
+
+      z-index: 1;
+
+      display: block;
+
+      clip-path: none;
+
+      pointer-events: none;
+      overflow: hidden;
+    }
 
     // ----------------------------------------------
     // FAN

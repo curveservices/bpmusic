@@ -2,7 +2,7 @@ import { events } from "../../eventsData";
 import "./index.scss";
 
 const EventsGrid = () => {
-  const eventItems = events
+  const eventItems = events;
   return (
     <section className="events__grid" id="events">
       {/* Section heading */}
@@ -19,7 +19,7 @@ const EventsGrid = () => {
           <article
             className={`events__card ${
               index % 2 !== 0 ? "events__card-reverse" : ""
-              }`}
+            }`}
             id={item.id}
             key={item.id}
           >
